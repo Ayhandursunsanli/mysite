@@ -1,0 +1,925 @@
+{% load static %}
+
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ayhan D. Şanlı | Anasayfa</title>
+
+    <!-- style-css -->
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    
+
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- bs -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- dancing font familiy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <!-- mulish font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- <div class="intro">
+        <h1 class="logo-header">
+            <span class="logo">Hoş</span>
+            <span class="logo">Geldiniz...</span>
+        </h1>
+    </div> -->
+
+    <div class="header">
+        <nav class="navbar navbar-expand-md bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'index' %}">Ayhan D. Şanlı</a>
+
+                <!-- respoensive left menu button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav d-none d-md-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'project' %}">Projelerim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}">Hakkımda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">İletişim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- responsive-socialmedia -->
+                <div class="d-none d-md-flex  d-xl-none justify-content-evenly align-items-center"
+                    style="font-size: 18px; width: 100px; ">
+                    <i class="fa-brands fa-github text-black"></i>
+                    <i class="fa-brands fa-linkedin text-black"></i>
+                </div>
+
+                <div class="navbar-contacts d-none d-xl-block">
+                    <div class="row">
+                        <div class="col-8 d-flex contacts-left">
+                            <ul class="">
+                                <li><i class="fa-regular fa-envelope"></i> ayhandursunsanli@gmail.com</li>
+                                <li><i class="fa-solid fa-phone"></i> +90 536 407 97 31</li>
+                                <li class="text-animation m-0 p-0"></li>
+                            </ul>
+                        </div>
+                        <div class="col-4 contacts-right d-flex justify-content-evenly align-items-center">
+                            <i class="fa-brands fa-github text-black"></i>
+                            <i class="fa-brands fa-linkedin text-black"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="inner-header flex">
+            <div class="container">
+                <div class="owl-carousel owl-theme headerowl">
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="img-box">
+                                    <img src="./img/headerwebphoto.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 item-right d-flex flex-column justify-content-center align-items-center mt-5 mt-lg-0">
+                                <h4>Kullanıcı Dostu Web Siteleri</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Consequuntur libero accusamus quia in fugit. Aut.</p>
+                            </div>
+                        </div>
+                        <img class="headerarrow d-none d-lg-block" src="./img/arrowleft.png" alt="">
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="img-box pb-2">
+                                    <img src="./img/headerwebphoto2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 item-right d-flex flex-column justify-content-center align-items-center mt-5 mt-lg-0">
+                                <h4>Kullanıcı Dostu Web Siteleri</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Consequuntur libero accusamus quia in fugit. Aut.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                </defs>
+                <g class="parallax">
+                    <use class="use" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"/>
+                    <use class="use" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
+                    <use class="use" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
+                    <use class="use" xlink:href="#gentle-wave" x="48" y="7" fill="#fff"/>
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+    </div>
+
+    <!-- responsive left menu -->
+    <div class="offcanvas offcanvas-start left-offcanvas-menu" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title" id="offcanvasExampleLabel">Ayhan D. Şanlı</h4>
+            <a href="{% url 'index' %}">
+                <i class="fa-brands fa-github text-black text-white" style="font-size: 24px;"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-linkedin text-black text-white" style="font-size: 24px;"></i>
+            </a>
+            <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'project' %}">Projelerim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">Hakkımda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">İletişim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave2"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                </defs>
+                <g class="parallax">
+                    <use class="use" xlink:href="#gentle-wave2" x="48" y="0" fill="rgba(255,255,255,0.7"/>
+                    <use class="use" xlink:href="#gentle-wave2" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
+                    <use class="use" xlink:href="#gentle-wave2" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
+                    <use class="use" xlink:href="#gentle-wave2" x="48" y="7" fill="#fff"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <!-- responsive left menu finish -->
+
+    <section class="my-5 section-one">
+        <div class="section-header d-flex flex-column justify-content-center align-items-center">
+            <h4 class="text-center mb-3"> Kullanıcı Dostu Web Siteleri</h4>
+            <img src="./img/lineblack.png" alt="">
+        </div>
+
+        <div class="container py-5" style="overflow: hidden;">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="laptop">
+                        <div class="laptop__screen">
+                            <div class="owl-carousel owl-theme myowl">
+                                <div class="item">
+                                    <img src="./img/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img src="./img/john-schnobrich-FlPc9_VocJ4-unsplash.jpg" alt="">
+                                </div>
+                                <div class="item">
+                                    <img src="./img/lukas-blazek-mcSDtbWXUZU-unsplash.jpg" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="laptop__bottom">
+                            <div class="laptop__under"></div>
+                        </div>
+                        <div class="laptop__shadow"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center mt-5 pt-5 pt-lg-0 mt-lg-0">
+                    <h4 class="minihead mb-4">Size Özgün Tasarımlar...</h4>
+                    <ul>
+                        <li> <b>Kullanıcı Odaklı Tasarım:</b> Kullanıcıların ihtiyaçlarına uygun olarak planlanmış bir
+                            arayüz, kolay gezinme ve anlaşılır bir yapı.</li>
+                        <li> <b>Hızlı Yükleme Süresi:</b> Hızlı yükleme, kullanıcıların siteyi terk etmeden içeriği
+                            görüntülemelerini sağlar.</li>
+                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
+                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
+                        <li> <b>Kolay Kullanılabilirlik:</b> Menülerin, düğmelerin ve diğer işlevlerin kullanımı kolay
+                            olmalıdır. Kullanıcıların istedikleri şeylere kolayca erişebilmeleri önemlidir.</li>
+                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
+                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
+                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
+                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-12 d-flex justify-content-center">
+                        <img src="./img/lineblack2.png" alt="" width="200">
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5 ">
+                <div class="col-lg-6 order-lg-2 sec-responsive">
+                    
+                    <img src="./img/iphone2res.png" alt="">
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 d-flex flex-column align-items-center justify-content-center order-lg-1">
+                    <h4 class="minihead mb-4 text-center">Mobil Cihazlara Uyumlu...</h4>
+                    <ul>
+                        <li> <b>Kullanıcı Odaklı Tasarım:</b> Kullanıcıların ihtiyaçlarına uygun olarak planlanmış bir
+                            arayüz, kolay gezinme ve anlaşılır bir yapı.</li>
+                        <li> <b>Hızlı Yükleme Süresi:</b> Hızlı yükleme, kullanıcıların siteyi terk etmeden içeriği
+                            görüntülemelerini sağlar.</li>
+                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
+                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
+                        <li> <b>Kolay Kullanılabilirlik:</b> Menülerin, düğmelerin ve diğer işlevlerin kullanımı kolay
+                            olmalıdır. Kullanıcıların istedikleri şeylere kolayca erişebilmeleri önemlidir.</li>
+                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
+                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
+                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
+                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-three">
+        <div class="section-header d-flex flex-column justify-content-center align-items-center">
+            <h4 class="text-center mb-3"> Kullanıcı Dostu Web Siteleri</h4>
+            <img src="./img/linewhite.png" alt="">
+        </div>
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 d-flex justify-content-center ">
+                    <div class="owl-carousel owl-theme myowlone">
+                        <div class="item">
+                            <h4 class="minihead mb-4 text-center">E-Ticaret</h4>
+                            <div class="row d-flex justify-content-center mt-5">
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <div class="section-three-img-box">
+                                        <img class="border" src="./img/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center">
+                                    <p class="text-white">E-ticaret sitesi oluştururken, işletmelerin ve müşterilerin
+                                        ihtiyaçlarını dikkate alarak kullanıcı dostu bir platform tasarlamaya
+                                        odaklandım. Ürünleri açık ve çekici bir şekilde sunmak, alışveriş sürecini basit
+                                        ve güvenli hale getirmek benim için temel hedeflerden biriydi. <br> <br>Bununla
+                                        birlikte, ödeme sistemlerinin entegrasyonu ve lojistik süreçlerin optimize
+                                        edilmesi gibi teknik detaylara da büyük önem verdim. Müşterilerin satın alma
+                                        işlemlerini sorunsuz bir şekilde tamamlamalarını sağlamak, başarılı bir
+                                        e-ticaret sitesi için olmazsa olmazlardan biriydi.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h4 class="minihead mb-4 text-center">Kurumsal</h4>
+                            <div class="row d-flex justify-content-center mt-5">
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <div class="section-three-img-box">
+                                        <img class="border" src="./img//lukas-blazek-mcSDtbWXUZU-unsplash.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center">
+                                    <p class="text-white">E-ticaret sitesi oluştururken, işletmelerin ve müşterilerin
+                                        ihtiyaçlarını dikkate alarak kullanıcı dostu bir platform tasarlamaya
+                                        odaklandım. Ürünleri açık ve çekici bir şekilde sunmak, alışveriş sürecini basit
+                                        ve güvenli hale getirmek benim için temel hedeflerden biriydi. <br> <br>Bununla
+                                        birlikte, ödeme sistemlerinin entegrasyonu ve lojistik süreçlerin optimize
+                                        edilmesi gibi teknik detaylara da büyük önem verdim. Müşterilerin satın alma
+                                        işlemlerini sorunsuz bir şekilde tamamlamalarını sağlamak, başarılı bir
+                                        e-ticaret sitesi için olmazsa olmazlardan biriydi.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h4 class="minihead mb-4 text-center">Kişisel</h4>
+                            <div class="row d-flex justify-content-center mt-5">
+                                <div class="col-lg-6 d-flex justify-content-center">
+                                    <div class="section-three-img-box">
+                                        <img class="border" src="./img/v748-toon-131.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center">
+                                    <p class="text-white">E-ticaret sitesi oluştururken, işletmelerin ve müşterilerin
+                                        ihtiyaçlarını dikkate alarak kullanıcı dostu bir platform tasarlamaya
+                                        odaklandım. Ürünleri açık ve çekici bir şekilde sunmak, alışveriş sürecini basit
+                                        ve güvenli hale getirmek benim için temel hedeflerden biriydi. <br> <br>Bununla
+                                        birlikte, ödeme sistemlerinin entegrasyonu ve lojistik süreçlerin optimize
+                                        edilmesi gibi teknik detaylara da büyük önem verdim. Müşterilerin satın alma
+                                        işlemlerini sorunsuz bir şekilde tamamlamalarını sağlamak, başarılı bir
+                                        e-ticaret sitesi için olmazsa olmazlardan biriydi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="learn-more mybtn mt-5">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Projelere Git</span>
+                </button>
+            </div>
+        </div>    
+    </section>
+
+    <section class="section-four">
+        <div class="section-header d-flex flex-column justify-content-center align-items-center">
+            <h4 class="text-center mb-3"> Süreçlerimiz</h4>
+            <img src="./img/lineblack.png" alt="">
+        </div>
+        <h4 class="minihead my-5 text-center"> İhtiyaçlar Hiyerarşisi ile Vizyonunuzu Hayata Geçiriyor!</h4>
+        <div class="container">
+            <p class="text-center">
+                Yazılım Firması olarak, kurumsal ve organizasyonel gelişim, büyüme ve markanın ihtiyaç duyabileceği
+                diğer destek faaliyetleri için ürün ve hizmet desteğinde bulunur. Süreç, en başından sonuna kadar
+                markaya özgü olsa da düzenli, programlı ve başarılı bir iskelet yapı kullanılır. İskelet yapı ise
+                markanın hedef ve ihtiyaçlarına dönük olarak ihtiyaçlar hiyerarşisinin tespiti ile başlar ve kalıcı
+                kalite prensibi nedeniyle sona ermez. Hizmet tesliminden bakım ve destek ünitesi ile projenin
+                beslenmesine dikkat edilir ve bakımları periyodik olarak yapılır.
+                Deneyimli ve başarılı ekiplerinin Web Yazılım ve uygulama odaklı ihtiyaçlar hiyerarşisini oluşturması
+                ile proje başlar. Her bir aşama, farklı departmanların kusursuz iletişimi ve işbirliği ile hazırlanır ve
+                marka sahibine teslim edilir.
+            </p>
+
+            <div class="row my-5">
+                <div class="col-12 plan-head">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation" style="margin-top: 6rem;">
+                            <button class="nav-link active" id="pills-talep-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-talep" type="button" role="tab" aria-controls="pills-talep"
+                                aria-selected="true">
+                                <i class="fa-solid fa-code-pull-request d-none d-lg-inline"></i>
+                                Talep
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation" style="margin-top: 2rem;">
+                            <button class="nav-link" id="pills-analiz-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-analiz" type="button" role="tab" aria-controls="pills-analiz"
+                                aria-selected="false">
+                                <i class="fa-solid fa-magnifying-glass-chart d-none d-lg-inline"></i>
+                                Analiz
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-tasarim-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-tasarim" type="button" role="tab" aria-controls="pills-tasarim"
+                                aria-selected="false">
+                                <i class="fa-solid fa-compass-drafting d-none d-lg-inline"></i>
+                                Tasarım
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-kodlama-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-kodlama" type="button" role="tab" aria-controls="pills-kodlama"
+                                aria-selected="false">
+                                <i class="fa-solid fa-code d-none d-lg-inline"></i>
+                                Kodlama
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation" style="margin-top: 2rem;">
+                            <button class="nav-link" id="pills-test-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-test" type="button" role="tab" aria-controls="pills-test"
+                                aria-selected="false">
+                                <i class="fa-solid fa-stethoscope d-none d-lg-inline"></i>
+                                Test-Yayın
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation" style="margin-top: 6rem;">
+                            <button class="nav-link" id="pills-bakim-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-bakim" type="button" role="tab" aria-controls="pills-bakim"
+                                aria-selected="false">
+                                <i class="fa-solid fa-headset d-none d-lg-inline"></i>
+                                Bakım-Destek
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="plan-imgbox">
+                        <img src="./img/dashedline.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center mt-5">
+                <div class="col-lg-4 plan-details mt-5">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-talep" role="tabpanel"
+                            aria-labelledby="pills-talep-tab" tabindex="0">
+                            Markanın hedefleri ve ihtiyaçlarının alınması ile proje süreci başlar: iletişime önem veren
+                            MGS Software marka taleplerini dinleyerek kreatif çözümler üretir. Proje başlangıcı;
+                            gelişmesi, geliştirmesi ve markaya entegre edilmesi kadar önemlidir. Bu nedenle güçlü
+                            iletişim ağına sahip MGS Software ile yeni dijital dünyaya güçlü bir dijital destek ile kapı
+                            açılır.
+                        </div>
+                        <div class="tab-pane fade" id="pills-analiz" role="tabpanel" aria-labelledby="pills-analiz-tab"
+                            tabindex="0">
+                            Markanın hedef ve ihtiyaçlarının oluşturduğu taleplerinin alınmasının ardından proje analiz
+                            süreci başlar. Bu noktada MGS Software markaya maksimum fayda sağlayabilecek bir proje
+                            tasarısı hazırlar: iş akış diyagramları ve analiz dokümanları oluşturulur. Projenin
+                            başlaması için gerekli analizler, marka sahibine iletilir: marka sahibinin onayı ile tasarım
+                            süreci başlar.
+                        </div>
+                        <div class="tab-pane fade" id="pills-tasarim" role="tabpanel"
+                            aria-labelledby="pills-tasarim-tab" tabindex="0">
+                            Taleplerin ve taleplere dönük analizlerin yapılmasıyla birlikte projenin olgunlaşma safhası
+                            olan tasarım alanına geçilir. Tasarım alanında markanın projesine özgü olarak Wireframe ve
+                            mockup gibi çalışmaların oluşturulmasına başlanır. Süreç içerisinde marka ile kesintisiz
+                            iletişimde olan MGS Software, onay alması halinde arka plan çalışmalarına yani kodlama
+                            kısmına geçer.
+                        </div>
+                        <div class="tab-pane fade" id="pills-kodlama" role="tabpanel"
+                            aria-labelledby="pills-kodlama-tab" tabindex="0">
+                            MGS Software: insan kaynakları, tasarım ve analiz departmanlarından aldığı bilgilere
+                            dayanarak projenin kodlama kısmına geçer. Oluşturulan projenin sağlıklı ve stabil çalışması
+                            için uygulamaya dönük son teknoloji ile komutlar entegre edilir. Her uygulama ve tasarım
+                            için uygun teknolojiler ve alt yapılar kullanılır: teste hazır hale getirilir.
+                        </div>
+                        <div class="tab-pane fade" id="pills-test" role="tabpanel" aria-labelledby="pills-test-tab"
+                            tabindex="0">
+                            Projenin tamamlanma aşaması olan test bölümünde, kodlama sırasında oluşturulan projenin
+                            stabilitesi test edilir. Marka sahibinden son kullanıcıya kadar ulaşan kullanıcı zinciri
+                            arasında boşlukların veya sorunların olup olmadığı gerek somut verilerle gerekse de
+                            kullanıcı deneyimi ile ortaya koyulur. Geniş bir departmana sahip MGS Software çatısı
+                            altında tüm gerekli testler detaylı bir şekilde yapılır ve nihai olarak canlı ortamda yayına
+                            alınır.
+                        </div>
+                        <div class="tab-pane fade" id="pills-bakim" role="tabpanel" aria-labelledby="pills-bakim-tab"
+                            tabindex="0">
+                            Marka sahibi, vizyonundaki modül, yazılım veya uygulamaya kavuştuğu bakım ve destek
+                            aşamasında, MGS Software marka prensipleri doğrultusunda kalıcı kaliteyi hedefler. Hizmet
+                            kapsamı, ürünü veya hizmeti teslim edene kadar değil: anlaşma süreci boyunca bakım ve
+                            desteğinin yerine getirilmesine kadardır. Anlaşma süreci boyunca modül, uygulama veya
+                            yazılımın düzeltmeleri, güncellemeleri ve iyileştirmelerini üstlenir.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-five">
+        <div class="section-header d-flex flex-column justify-content-center align-items-center">
+            <h4 class="text-center mb-3"> Sıkça Sorulan Sorular</h4>
+            <img src="./img/questionmark.png" alt="">
+        </div>
+        <div class="container">
+            <div class="row ssshead mb-5 d-flex justify-content-center">
+                <h4 class="minihead text-center">SSS</h4>
+                <div class="col-10">
+                    <p class="text-center">
+                        Sizlere hızla gelişen bu süreçte, sistemleri daha etkin ve verimli kullanabilmeniz için web
+                        tasarım, yazılım geliştirme, mobil uygulama geliştirme , dijital pazarlama çözümleri ve sosyal
+                        medya yönetim çözümleri sunuyoruz. Neredeyse bütün hizmetlerin dijital dünyaya yelken açmasıyla
+                        birlikte mobil uygulama hizmetinden web geliştirme hizmetine kadar tüm taleplerinizde bireysel
+                        ve kurumsal yazılım çözümleri üretiyoruz.
+                    </p>
+                </div>
+            </div>
+            <div class="row sss">
+                <div class="col-lg-6 sss-right order-lg-2">
+                    <img src="./img/sssrigthquestions.png" alt="">
+                </div>
+                <div class="col-lg-6 sss-left order-lg-1">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Hangi Şirketler İnternet Sitesi Kurmak Zorunda?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    TÜRK TİCARET KANUNU değişikliklerine göre şirketlere 14 ŞUBAT 2011 tarihli: 27846
+                                    sayılı ve 6102 sayılı Resmî Gazete de web sitesi zorunluluğu getirilmiştir. İlgili
+                                    kanunun yürürlüğe girmesiyle birlikte, belirli nitelikleri sağlayan anonim
+                                    şirketlerin bağımsız kurum ve kuruluşlarca denetlenmesini öngören ve bu denetime
+                                    tabi şirketlere internet sitesi açması zorunlu olarak kabul edilmiştir.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
+                                    Mobil Uyumlu Web Sitesi Yapıyor Musunuz?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Teknolojinin olanaklarını düzenli olarak takip eder: dolayısıyla yaptığı projelerde
+                                    geleceğe dönük düzenlemeler içerir. Bu bağlamda projesi yürütülen her web sitesinin
+                                    mobil uyumluluğu (Responsive) bulunur.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                    aria-controls="flush-collapseThree">
+                                    Özel Yazılım Geliştirme Nedir?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Bir markanın iş süreçlerine kolayca entegre olabilecek özel yazılımlar ile firmanın
+                                    hedef ve ihtiyaçlarını en kısa yoldan ve en kaliteli şekilde karşılamayı hedefler.
+                                    Özel yazılımlar doğrudan markanın ihtiyaç ve amaçlarına göre tasarlanır.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                    aria-controls="flush-collapseFour">
+                                    Özel Yazılım Geliştirmenin Fiyatları Nelerdir?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Özel yazılım geliştirmek, yanlış bilinenin aksine, tamamen markanın hedef ve
+                                    ihtiyaçlarına uygun bir şekilde özel olarak geliştirilir. Ürünün geliştirme süreci
+                                    de göz önüne alındığında ara yüz tasarlanması ve komplike işlemlerin
+                                    komutlandırılması fiyatları değiştirebilmektedir. Her firmanın iş akışı ve iş süreci
+                                    farklılık gösterir ve dolayısıyla özel olarak hazırlanan yazılımlar da değişir. Bu
+                                    noktada MGS Software ile iletişime geçerek markanıza uygun özel yazılımın fiyatları
+                                    ve iş akışı hakkında bilgi alabilirsiniz.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                    aria-controls="flush-collapseFive">
+                                    Proje Sonrası Destek Veriliyor Mu?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Markamızın prensipleri gereği hizmeti kesintisiz sunmayı amaçlar. Dolayısıyla
+                                    anlaşma süresi boyunca projenin bakım ve teknik desteklerini markamız üstlenir:
+                                    bakım ve destek için özel bir departman ataması gerçekleştirir.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                    aria-controls="flush-collapseSix">
+                                    Markanızın Projeleri E-Ticareti Kapsıyor Mu?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Marka, E-Ticaret, kişisel web sitesi, blog sitesi veya özel amaçlarla inşa edilmiş
+                                    tüm web siteleri için hizmet vermektedir. E-Ticaret alanına özel SEM-SEO ve özel
+                                    entegrasyon çalışmaları bulunur: MGS Software projeleri E-Ticaret alanını kapsar.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-contactus">
+        <div class="section-header d-flex flex-column justify-content-center align-items-center">
+            <h4 class="text-center mb-3"> İletişim</h4>
+            <img src="./img/linewhite.png" alt="">
+        </div>
+        <h4 class="minihead my-5 text-center text-white"> Bağlantıda kalın</h4>
+        <div class="container mb-4">
+            <p class="text-center w-responsive mx-auto mb-5 text-white">Sormak istediğiniz bir şey var mı? Lütfen doğrudan bizimle iletişime geçmekten çekinmeyin.</p> 
+
+            <div class="row d-flex align-items-start justify-content-center">
+                <div class="col-md-3 text-center order-md-2 text-white mt-5">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                            <p>Bağcılar/İSTANBUL, Türkiye</p>
+                        </li>
+
+                        <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                            <p>+90 536 407 97 31</p>
+                        </li>
+
+                        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                            <p>ayhandursunsanli@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-9 mb-md-0 mb-5 order-md-1">
+                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <label for="name" class="">İsminiz: </label>
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    <label for="email" class="">Email:</label>
+                                    <input type="text" id="email" name="email" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+                                    <label for="subject" class="">Konu:</label>
+                                    <input type="text" id="subject" name="subject" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="md-form">
+                                    <label for="message">Mesajınız:</label>
+                                    <textarea type="text" id="message" name="message" rows="5" class="form-control md-textarea" required></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <button class="learn-more mybtn mt-5">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Gönder</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-six">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-10">
+                    <h4 class="text-center">Yazılım Firması Nedir?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore accusantium dicta, vitae unde
+                        quaerat incidunt quas dolore soluta eveniet ea? Odio maiores aspernatur unde ducimus numquam et
+                        id minus illum, atque voluptatem fugit autem molestias ad nam repellendus enim fugiat ex,
+                        delectus incidunt corporis neque rerum saepe! Repellat laudantium hic corporis dolorum et
+                        necessitatibus enim cumque quasi. Impedit eaque magnam ad. Harum dolor sit laborum tenetur,
+                        temporibus ea sint obcaecati vitae soluta animi nostrum eaque repudiandae consequuntur
+                        voluptatem exercitationem nesciunt excepturi asperiores incidunt qui suscipit iusto quaerat non
+                        in voluptas? Facere, voluptate repellat! Ducimus voluptates ex nihil dignissimos repellat,
+                        magnam, a illo in quisquam accusamus aspernatur illum est beatae quam sequi! Soluta laudantium
+                        voluptatum perferendis ullam assumenda optio necessitatibus. Beatae, similique commodi. Neque
+                        minus alias ratione molestias, blanditiis voluptas nostrum laboriosam quas rerum odio similique
+                        fugit itaque, aspernatur odit nesciunt accusantium voluptate amet eum perspiciatis quasi libero
+                        explicabo impedit quisquam.</p>
+                    <h4 class="text-center">Yazılım Firması Nedir?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore accusantium dicta, vitae unde
+                        quaerat incidunt quas dolore soluta eveniet ea? Odio maiores aspernatur unde ducimus numquam et
+                        id minus illum, atque voluptatem fugit autem molestias ad nam repellendus enim fugiat ex,
+                        delectus incidunt corporis neque rerum saepe! Repellat laudantium hic corporis dolorum et
+                        necessitatibus enim cumque quasi. Impedit eaque magnam ad. Harum dolor sit laborum tenetur,
+                        temporibus ea sint obcaecati vitae soluta animi nostrum eaque repudiandae consequuntur
+                        voluptatem exercitationem nesciunt excepturi asperiores incidunt qui suscipit iusto quaerat non
+                        in voluptas? Facere, voluptate repellat! Ducimus voluptates ex nihil dignissimos repellat,
+                        magnam, a illo in quisquam accusamus aspernatur illum est beatae quam sequi! Soluta laudantium
+                        voluptatum perferendis ullam assumenda optio necessitatibus. Beatae, similique commodi. Neque
+                        minus alias ratione molestias, blanditiis voluptas nostrum laboriosam quas rerum odio similique
+                        fugit itaque, aspernatur odit nesciunt accusantium voluptate amet eum perspiciatis quasi libero
+                        explicabo impedit quisquam.</p>
+                    <h4 class="text-center">Yazılım Firması Nedir?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore accusantium dicta, vitae unde
+                        quaerat incidunt quas dolore soluta eveniet ea? Odio maiores aspernatur unde ducimus numquam et
+                        id minus illum, atque voluptatem fugit autem molestias ad nam repellendus enim fugiat ex,
+                        delectus incidunt corporis neque rerum saepe! Repellat laudantium hic corporis dolorum et
+                        necessitatibus enim cumque quasi. Impedit eaque magnam ad. Harum dolor sit laborum tenetur,
+                        temporibus ea sint obcaecati vitae soluta animi nostrum eaque repudiandae consequuntur
+                        voluptatem exercitationem nesciunt excepturi asperiores incidunt qui suscipit iusto quaerat non
+                        in voluptas? Facere, voluptate repellat! Ducimus voluptates ex nihil dignissimos repellat,
+                        magnam, a illo in quisquam accusamus aspernatur illum est beatae quam sequi! Soluta laudantium
+                        voluptatum perferendis ullam assumenda optio necessitatibus. Beatae, similique commodi. Neque
+                        minus alias ratione molestias, blanditiis voluptas nostrum laboriosam quas rerum odio similique
+                        fugit itaque, aspernatur odit nesciunt accusantium voluptate amet eum perspiciatis quasi libero
+                        explicabo impedit quisquam.</p>
+                    <h4 class="text-center">Yazılım Firması Nedir?</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore accusantium dicta, vitae unde
+                        quaerat incidunt quas dolore soluta eveniet ea? Odio maiores aspernatur unde ducimus numquam et
+                        id minus illum, atque voluptatem fugit autem molestias ad nam repellendus enim fugiat ex,
+                        delectus incidunt corporis neque rerum saepe! Repellat laudantium hic corporis dolorum et
+                        necessitatibus enim cumque quasi. Impedit eaque magnam ad. Harum dolor sit laborum tenetur,
+                        temporibus ea sint obcaecati vitae soluta animi nostrum eaque repudiandae consequuntur
+                        voluptatem exercitationem nesciunt excepturi asperiores incidunt qui suscipit iusto quaerat non
+                        in voluptas? Facere, voluptate repellat! Ducimus voluptates ex nihil dignissimos repellat,
+                        magnam, a illo in quisquam accusamus aspernatur illum est beatae quam sequi! Soluta laudantium
+                        voluptatum perferendis ullam assumenda optio necessitatibus. Beatae, similique commodi. Neque
+                        minus alias ratione molestias, blanditiis voluptas nostrum laboriosam quas rerum odio similique
+                        fugit itaque, aspernatur odit nesciunt accusantium voluptate amet eum perspiciatis quasi libero
+                        explicabo impedit quisquam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="text-center text-lg-start text-white ">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row ">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="mb-4 " style="font-family: 'Dancing Script', cursive; font-size: 18px;">
+                            Ayhan D. Şanlı
+                        </h6>
+
+                        <p>
+                            Here you can use rows and columns to organize your footer
+                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+
+                        <p>
+                            <a href="" class="text-white">MDBootstrap</a>
+                        </p>
+
+                        <p>
+                            <a href="" class="text-white">MDWordPress</a>
+                        </p>
+
+                        <p>
+                            <a href="" class="text-white">BrandFlow</a>
+                        </p>
+
+                        <p>
+                            <a href="" class="text-white">Bootstrap Angular</a>
+                        </p>
+                        
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">İletişim</h6>
+
+                        <p><i class="fas fa-home mr-3"></i> Bağcılar/İSTANBUL</p>
+                        <p><i class="fas fa-envelope mr-3"></i> ayhandursunsanli@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 90 536 407 97 31</p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Takip Et</h6>
+
+
+
+                        <!-- Github -->
+                        <a class="btn btn-primary " style="background-color: #333333" href="#!" role="button"><i
+                                class="fab fa-github"></i></a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!"
+                            role="button"><i class="fab fa-linkedin-in"></i></a>
+
+                        <div class="row mt-4 d-flex justify-content-center">
+                            <div class="col-8 d-flex justify-content-center align-items-center">
+                                <img src="./img/lineblue.png" alt="" style="width: 100%;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12">
+                    <div class="text-center p-3 footer-bottom">
+                        <span class="text-white">© 2023 Designed by:</span>
+                        <a class="text-white">Ayhan D. Şanlı</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- bs js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- fontawesome js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+    <!-- intro js -->
+    <!-- <script src="./js/intro.js"></script> -->
+    <script src="{% static 'js/intro.js' %}"></script>
+
+
+    <!-- jquerry js -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <!-- owl carousel js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- owlapp js -->
+    <!-- <script src="./js/owl.js"></script> -->
+    <script src="{% static 'js/owl.js' %}"></script>
+
+    <!-- app js -->
+    <!-- <script src="./js/app.js"></script> -->
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ayhan D. Şanlı | Blog</title>
+
+    <!-- style-css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- bs -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- dancing font familiy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <!-- mulish font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="common-header-nav">
+        <nav class="navbar navbar-expand-md bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Ayhan D. Şanlı</a>
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+
+                <!-- respoensive left menu button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav d-none d-md-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Projelerim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hakkımda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- responsive-socialmedia -->
+                <div class="d-none d-md-flex  d-xl-none justify-content-evenly align-items-center"
+                    style="font-size: 18px; width: 100px; ">
+                    <i class="fa-brands fa-github text-black"></i>
+                    <i class="fa-brands fa-linkedin text-black"></i>
+                </div>
+
+                <div class="navbar-contacts d-none d-xl-block">
+                    <div class="row">
+                        <div class="col-8 d-flex contacts-left">
+                            <ul class="">
+                                <li><i class="fa-regular fa-envelope"></i> ayhandursunsanli@gmail.com</li>
+                                <li><i class="fa-solid fa-phone"></i> +90 536 407 97 31</li>
+                                <li class="text-animation m-0 p-0"></li>
+                            </ul>
+                        </div>
+                        <div class="col-4 contacts-right d-flex justify-content-evenly align-items-center">
+                            <i class="fa-brands fa-github text-black"></i>
+                            <i class="fa-brands fa-linkedin text-black"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="breadcrumb">
+            <ul class="breadcrumbalt d-flex justify-content-between">
+                <li class="breadcrumb-item itemone"><a href="#">Anasayfa</a></li>
+                <li class="breadcrumb-item itemtwo active" aria-current="page">Blog</li>
+            </ul>
+        </div>
+
+        <div class="inner-header flex">
+            
+        </div>
+
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use class="use" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use class="use" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use class="use" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <!-- <use class="use" xlink:href="#gentle-wave" x="48" y="7" fill="#fff" /> -->
+                </g>
+            </svg>
+        </div>
+        <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
+            <h4 class="text-center mb-3"> Blog</h4>
+            <!-- <img src="./img/lineblack.png" alt=""> -->
+        </div>
+    </div>
+
+    <!-- responsive left menu -->
+    <div class="offcanvas offcanvas-start left-offcanvas-menu" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title" id="offcanvasExampleLabel">Ayhan D. Şanlı</h4>
+            <a href="">
+                <i class="fa-brands fa-github text-black text-white" style="font-size: 24px;"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-linkedin text-black text-white" style="font-size: 24px;"></i>
+            </a>
+            <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <!-- <div class="offcanvas-line">
+            <img src="./img/line.png" alt="">
+        </div> -->
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projelerim</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hakkımda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">İletişim</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave2"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use class="use" xlink:href="#gentle-wave2" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use class="use" xlink:href="#gentle-wave2" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use class="use" xlink:href="#gentle-wave2" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use class="use" xlink:href="#gentle-wave2" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+    </div>
+    <!-- responsive left menu finish -->
+
+    <div class="blog-section-one">
+        <h4 class="minihead mb-4 text-center">İlgi alanlarım hakkında yazıyorum...</h4>
+        <div class="container">
+            <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-10">
+                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsa illo aperiam ipsam perspiciatis inventore nobis nihil voluptatum, asperiores consectetur nisi minima quia beatae tempora excepturi similique! Numquam laudantium possimus animi autem doloremque, corporis quisquam quis iste omnis totam reprehenderit laborum eum excepturi tempore beatae repellat voluptate officiis. Dolorum, quasi!</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row mt-4 d-flex justify-content-center align-items-center position-relative">
+                <div class="col-12 category-col d-flex justify-content-around align-items-center">
+                    <div id="myBtnContainer">
+                        <button class="btn" onclick="filterSelection('all')">Tümünü Göster</button>
+                        <button class="btn" onclick="filterSelection('uzay')"><span>#</span> Uzay</button>
+                        <button class="btn" onclick="filterSelection('bilim')"><span>#</span> Bilim</button>
+                        <button class="btn" onclick="filterSelection('spor')"><span>#</span> Spor</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row blog-item filterDiv uzay">
+                <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                            <div class="blog-category d-flex flex-column align-items-center justify-content-center ">
+                                <i class="fa-solid fa-rocket"></i>
+                                <p class="mb-0">Uzay</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 d-flex justify-content-center align-content-center py-5 py-xl-0">
+                            <div class="blog-imgbox">
+                                <img src="./img/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Jüpiterin çevresinde yaşanılabilecek uyduları olduğu ortyaya çıktı</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="overflow-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, quas saepe perferendis, dolorum, quam odit sint sapiente quos molestiae deleniti et cupiditate similique voluptatum maxime fuga architecto quasi qui accusantium ducimus dolor! Amet repellendus natus exercitationem minus qui deleniti laboriosam consequuntur commodi reprehenderit repellat aperiam ex sequi facilis, et, repudiandae temporibus! Excepturi exercitationem, dolore deserunt nobis quidem sed eum voluptate eos illum quaerat veritatis recusandae minima ad ipsa molestias autem ab soluta, necessitatibus a quibusdam ipsam optio! Laborum vitae suscipit esse qui nulla accusantium dicta, sunt sed quo rerum fuga molestias libero placeat. Omnis voluptate, ratione iusto deleniti molestias quisquam?</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center flex-column align-items-start">
+                            <h6>Yazar: <span class="text-muted fw-light">Ayhan Dursun Şanlı</span></h6>
+                            <p class="mb-0 text-muted fw-light">23.11.2023</p>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <button class="learn-more mybtn mt-5">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">Devamını Oku</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+        
+            <div class="row blog-item filterDiv bilim">
+                <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                            <div class="blog-category d-flex flex-column align-items-center justify-content-center ">
+                                <i class="fa-solid fa-flask"></i>
+                                <p class="mb-0">Bilim</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 d-flex justify-content-center align-content-center py-5 py-xl-0">
+                            <div class="blog-imgbox">
+                                <img src="./img/john-schnobrich-FlPc9_VocJ4-unsplash.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Aşıların yan etkileri ortaya çıkmaya başladı</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="overflow-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, quas saepe perferendis, dolorum, quam odit sint sapiente quos molestiae deleniti et cupiditate similique voluptatum maxime fuga architecto quasi qui accusantium ducimus dolor! Amet repellendus natus exercitationem minus qui deleniti laboriosam consequuntur commodi reprehenderit repellat aperiam ex sequi facilis, et, repudiandae temporibus! Excepturi exercitationem, dolore deserunt nobis quidem sed eum voluptate eos illum quaerat veritatis recusandae minima ad ipsa molestias autem ab soluta, necessitatibus a quibusdam ipsam optio! Laborum vitae suscipit esse qui nulla accusantium dicta, sunt sed quo rerum fuga molestias libero placeat. Omnis voluptate, ratione iusto deleniti molestias quisquam?</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center flex-column align-items-start">
+                            <h6>Yazar: <span class="text-muted fw-light">Ayhan Dursun Şanlı</span></h6>
+                            <p class="mb-0 text-muted fw-light">23.11.2023</p>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <button class="learn-more mybtn mt-5">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">Devamını Oku</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+            <div class="row blog-item filterDiv spor">
+                <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                            <div class="blog-category d-flex flex-column align-items-center justify-content-center ">
+                                <i class="fa-regular fa-futbol"></i>
+                                <p class="mb-0">Spor</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 d-flex justify-content-center align-content-center py-5 py-xl-0">
+                            <div class="blog-imgbox">
+                                <img src="./img/lukas-blazek-mcSDtbWXUZU-unsplash.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Milli takım Avrupa Şampiyonasında...</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="overflow-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, quas saepe perferendis, dolorum, quam odit sint sapiente quos molestiae deleniti et cupiditate similique voluptatum maxime fuga architecto quasi qui accusantium ducimus dolor! Amet repellendus natus exercitationem minus qui deleniti laboriosam consequuntur commodi reprehenderit repellat aperiam ex sequi facilis, et, repudiandae temporibus! Excepturi exercitationem, dolore deserunt nobis quidem sed eum voluptate eos illum quaerat veritatis recusandae minima ad ipsa molestias autem ab soluta, necessitatibus a quibusdam ipsam optio! Laborum vitae suscipit esse qui nulla accusantium dicta, sunt sed quo rerum fuga molestias libero placeat. Omnis voluptate, ratione iusto deleniti molestias quisquam?</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center flex-column align-items-start">
+                            <h6>Yazar: <span class="text-muted fw-light">Ayhan Dursun Şanlı</span></h6>
+                            <p class="mb-0 text-muted fw-light">23.11.2023</p>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <button class="learn-more mybtn mt-5">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">Devamını Oku</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <footer class="text-center text-lg-start text-white mt-5">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row ">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="mb-4 " style="font-family: 'Dancing Script', cursive; font-size: 18px;">
+                            Ayhan D. Şanlı
+                        </h6>
+
+                        <p>
+                            Here you can use rows and columns to organize your footer
+                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+
+                        <p>
+                            <a href="" class="text-white">MDBootstrap</a>
+                        </p>
+                        <p>
+                            <a href="" class="text-white">MDWordPress</a>
+                        </p>
+                        <p>
+                            <a href="" class="text-white">BrandFlow</a>
+                        </p>
+                        <p>
+                            <a href="" class="text-white">Bootstrap Angular</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="w-100 clearfix d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">İletişim</h6>
+
+                        <p><i class="fas fa-home mr-3"></i> Bağcılar/İSTANBUL</p>
+                        <p><i class="fas fa-envelope mr-3"></i> ayhandursunsanli@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 90 536 407 97 31</p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Takip Et</h6>
+
+
+
+                        <!-- Github -->
+                        <a class="btn btn-primary " style="background-color: #333333" href="#!" role="button"><i
+                                class="fab fa-github"></i></a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!"
+                            role="button"><i class="fab fa-linkedin-in"></i></a>
+
+                        <div class="row mt-4 d-flex justify-content-center">
+                            <div class="col-8 d-flex justify-content-center align-items-center">
+                                <img src="./img/lineblue.png" alt="" style="width: 100%;">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12">
+                    <div class="text-center p-3 footer-bottom">
+                        <span class="text-white">© 2023 Designed by:</span>
+                        <a class="text-white">Ayhan D. Şanlı</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- bs js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- fontawesome js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+    <!-- intro js -->
+    <script src="./js/intro.js"></script>
+
+
+    <!-- jquerry js -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <!-- owl carousel js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- owlapp js -->
+    <script src="./js/owl.js"></script>
+
+    <!-- filtercategory.js -->
+    <script src="./js/filtercategoty.js"></script>
+
+    <!-- app js -->
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
