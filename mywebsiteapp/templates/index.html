@@ -63,42 +63,42 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav d-none d-md-flex">
+
+                    {% for navbar in navbar  %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">Anasayfa</a>
+                            <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'project' %}">Projelerim</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'about' %}">Hakkımda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">İletişim</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-                        </li>
+                    {% endfor %}
+                            
                     </ul>
                 </div>
                 <!-- responsive-socialmedia -->
                 <div class="d-none d-md-flex  d-xl-none justify-content-evenly align-items-center"
                     style="font-size: 18px; width: 100px; ">
-                    <i class="fa-brands fa-github text-black"></i>
-                    <i class="fa-brands fa-linkedin text-black"></i>
+                    {% for navbarrighmedia in navbarrighmedia  %}
+                        <a href="{{ navbarrighmedia.link }}">
+                            <i class="{{ navbarrighmedia.platform }} text-black"></i>
+                        </a>
+                    {% endfor %}
                 </div>
 
                 <div class="navbar-contacts d-none d-xl-block">
                     <div class="row">
                         <div class="col-8 d-flex contacts-left">
                             <ul class="">
-                                <li><i class="fa-regular fa-envelope"></i> ayhandursunsanli@gmail.com</li>
-                                <li><i class="fa-solid fa-phone"></i> +90 536 407 97 31</li>
+                                <li><i class="fa-regular fa-envelope"></i> {{ navbarrightcontact.email }}</li>
+                                <li><i class="fa-solid fa-phone"></i> {{ navbarrightcontact.phone }}</li>
                                 <li class="text-animation m-0 p-0"></li>
                             </ul>
                         </div>
                         <div class="col-4 contacts-right d-flex justify-content-evenly align-items-center">
-                            <i class="fa-brands fa-github text-black"></i>
-                            <i class="fa-brands fa-linkedin text-black"></i>
+                            
+                        {% for navbarrighmedia in navbarrighmedia  %}
+                        <a href="{{ navbarrighmedia.link }}">
+                            <i class="{{ navbarrighmedia.platform }} text-black"></i>
+                        </a>
+                        {% endfor %}
+
                         </div>
                     </div>
                 </div>
@@ -107,35 +107,23 @@
         <div class="inner-header flex">
             <div class="container">
                 <div class="owl-carousel owl-theme headerowl">
+                    
+                {% for headercarousel in headercarousel  %}
                     <div class="item">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="img-box">
-                                    <img src="./img/headerwebphoto.png" alt="">
+                                    <img src="{{ headercarousel.image.url }}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6 item-right d-flex flex-column justify-content-center align-items-center mt-5 mt-lg-0">
-                                <h4>Kullanıcı Dostu Web Siteleri</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Consequuntur libero accusamus quia in fugit. Aut.</p>
+                                <h4>{{ headercarousel.title }}</h4>
+                                <p>{{ headercarousel.about }}</p>
                             </div>
                         </div>
-                        <img class="headerarrow d-none d-lg-block" src="./img/arrowleft.png" alt="">
+                        <img class="headerarrow d-none d-lg-block" src=" {% static 'img/arrowleft.png' %}" alt="">
                     </div>
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="img-box pb-2">
-                                    <img src="./img/headerwebphoto2.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 item-right d-flex flex-column justify-content-center align-items-center mt-5 mt-lg-0">
-                                <h4>Kullanıcı Dostu Web Siteleri</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Consequuntur libero accusamus quia in fugit. Aut.</p>
-                            </div>
-                        </div>
-                    </div>
+                {% endfor %}
                 </div>
             </div>
         </div>
@@ -163,32 +151,25 @@
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
             <h4 class="offcanvas-title" id="offcanvasExampleLabel">Ayhan D. Şanlı</h4>
-            <a href="{% url 'index' %}">
-                <i class="fa-brands fa-github text-black text-white" style="font-size: 24px;"></i>
+
+        {% for navbarrighmedia in navbarrighmedia  %}
+            <a href="{{ navbarrighmedia.link }}">
+                <i class="{{ navbarrighmedia.platform }} text-white" style="font-size: 24px;" ></i>
             </a>
-            <a href="">
-                <i class="fa-brands fa-linkedin text-black text-white" style="font-size: 24px;"></i>
-            </a>
+        {% endfor %}
+
             <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
         <div class="offcanvas-body">
             <ul class="navbar-nav">
+
+            {% for navbar in navbar  %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}">Anasayfa</a>
+                    <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'project' %}">Projelerim</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">Hakkımda</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">İletişim</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'blog' %}">Blog</a>
-                </li>
+            {% endfor %}
+
             </ul>
         </div>
 
@@ -209,28 +190,40 @@
         </div>
     </div>
     <!-- responsive left menu finish -->
-
+    {% for section in index_section_one_data %}
     <section class="my-5 section-one">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> Kullanıcı Dostu Web Siteleri</h4>
-            <img src="./img/lineblack.png" alt="">
+            <h4 class="text-center mb-3"> {{ section.title }}</h4>
+            <img src="{% static 'img/lineblack.png' %}" alt="">
         </div>
 
         <div class="container py-5" style="overflow: hidden;">
+            {% for first_subsection in section.firstsubsection_set.all %}
             <div class="row">
                 <div class="col-lg-6">
                     <div class="laptop">
                         <div class="laptop__screen">
                             <div class="owl-carousel owl-theme myowl">
+                                {% if first_subsection.carousel_image_1 %}
                                 <div class="item">
-                                    <img src="./img/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" alt="">
+                                    <img src="{{ first_subsection.carousel_image_1.url }}" alt="">
                                 </div>
+                            {% endif %}
+                            {% if first_subsection.carousel_image_2 %}
                                 <div class="item">
-                                    <img src="./img/john-schnobrich-FlPc9_VocJ4-unsplash.jpg" alt="">
+                                    <img src="{{ first_subsection.carousel_image_2.url }}" alt="">
                                 </div>
+                            {% endif %}
+                            {% if first_subsection.carousel_image_ %}
                                 <div class="item">
-                                    <img src="./img/lukas-blazek-mcSDtbWXUZU-unsplash.jpg" alt="">
+                                    <img src="{{ first_subsection.carousel_image_3.url }}" alt="">
                                 </div>
+                            {% endif %}
+                            {% if first_subsection.carousel_image_4 %}
+                                <div class="item">
+                                    <img src="{{ first_subsection.carousel_image_4.url }}" alt="">
+                                </div>
+                            {% endif %}
                             </div>
 
                         </div>
@@ -241,56 +234,36 @@
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center mt-5 pt-5 pt-lg-0 mt-lg-0">
-                    <h4 class="minihead mb-4">Size Özgün Tasarımlar...</h4>
-                    <ul>
-                        <li> <b>Kullanıcı Odaklı Tasarım:</b> Kullanıcıların ihtiyaçlarına uygun olarak planlanmış bir
-                            arayüz, kolay gezinme ve anlaşılır bir yapı.</li>
-                        <li> <b>Hızlı Yükleme Süresi:</b> Hızlı yükleme, kullanıcıların siteyi terk etmeden içeriği
-                            görüntülemelerini sağlar.</li>
-                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
-                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
-                        <li> <b>Kolay Kullanılabilirlik:</b> Menülerin, düğmelerin ve diğer işlevlerin kullanımı kolay
-                            olmalıdır. Kullanıcıların istedikleri şeylere kolayca erişebilmeleri önemlidir.</li>
-                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
-                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
-                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
-                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
-                    </ul>
-
-                </div>
-            </div>
-            <div class="container">
-                <div class="row my-5">
-                    <div class="col-12 d-flex justify-content-center">
-                        <img src="./img/lineblack2.png" alt="" width="200">
+                    <h4 class="minihead mb-4">{{ first_subsection.sub_title }}</h4>
+                    <div>
+                        {{ first_subsection.description | safe }}
                     </div>
                 </div>
             </div>
-            <div class="row my-5 ">
-                <div class="col-lg-6 order-lg-2 sec-responsive">
-                    
-                    <img src="./img/iphone2res.png" alt="">
-                </div>
-                <div class="col-lg-6 mt-5 mt-lg-0 d-flex flex-column align-items-center justify-content-center order-lg-1">
-                    <h4 class="minihead mb-4 text-center">Mobil Cihazlara Uyumlu...</h4>
-                    <ul>
-                        <li> <b>Kullanıcı Odaklı Tasarım:</b> Kullanıcıların ihtiyaçlarına uygun olarak planlanmış bir
-                            arayüz, kolay gezinme ve anlaşılır bir yapı.</li>
-                        <li> <b>Hızlı Yükleme Süresi:</b> Hızlı yükleme, kullanıcıların siteyi terk etmeden içeriği
-                            görüntülemelerini sağlar.</li>
-                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
-                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
-                        <li> <b>Kolay Kullanılabilirlik:</b> Menülerin, düğmelerin ve diğer işlevlerin kullanımı kolay
-                            olmalıdır. Kullanıcıların istedikleri şeylere kolayca erişebilmeleri önemlidir.</li>
-                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
-                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
-                        <li> <b>Temiz ve Etkili İçerik:</b> Anlaşılır, ilgi çekici ve kullanıcıyı yönlendiren içerikler,
-                            kullanıcıların istedikleri bilgiye hızlıca erişmelerini sağlar.</li>
-                    </ul>
+            {% endfor %}
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-12 d-flex justify-content-center">
+                        <img src="{% static 'img/lineblack2.png' %}" alt="" width="200">
+                    </div>
                 </div>
             </div>
+            {% for second_subsection in section.secondsubsection_set.all %}
+            <div class="row my-5 ">
+                <div class="col-lg-6 order-lg-2 sec-responsive">  
+                    <img src="{{ second_subsection.image.url }}" alt="">
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 d-flex flex-column align-items-center justify-content-center order-lg-1">
+                    <h4 class="minihead mb-4 text-center">{{ second_subsection.sub_title }}</h4>
+                    <div>
+                        {{ second_subsection.description | safe }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </section>
+    {% endfor %}
 
     <section class="section-three">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">

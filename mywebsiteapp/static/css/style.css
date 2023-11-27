@@ -232,6 +232,7 @@ footer .btn-primary {
   position: relative;
 }
 .header .inner-header .headerowl .item .img-box {
+  padding-bottom: 1rem;
   transition: 0.8s all;
   animation: upDown 5s infinite;
   transform: scale(1.05);
@@ -327,12 +328,6 @@ footer .btn-primary {
   }
   100% {
     transform: translate3d(85px, 0, 0);
-  }
-}
-@media (max-width: 768px) {
-  .header .waves {
-    height: 40px;
-    min-height: 40px;
   }
 }
 .header nav {
