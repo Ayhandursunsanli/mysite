@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mywebsiteapp.views import *
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +28,4 @@ urlpatterns = [
     path('blog-detail/', blog_detail, name= "blog-detail"),
     path('project/', project, name= "project")
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
