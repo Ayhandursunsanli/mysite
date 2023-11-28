@@ -78,3 +78,17 @@ admin.site.register(Indexsectionsix)
 
 
 
+
+class FooterSubSectionInline(admin.StackedInline):
+    model = FooterSubSection
+    # max_num = 1  # Yalnızca bir örnek olacak
+
+class FooterSupSectionInline(admin.StackedInline):
+    model = FooterSupSection
+
+@admin.register(Footer)
+class FooterSubSectionAdmin(admin.ModelAdmin):
+    list_display = ('description',)
+    inlines = [FooterSubSectionInline, FooterSupSectionInline]
+
+

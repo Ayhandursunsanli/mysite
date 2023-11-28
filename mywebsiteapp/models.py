@@ -131,3 +131,29 @@ class Indexsectionsix(models.Model):
     class Meta:
         verbose_name = "Anasayfa - Section-6 (Seo Alanı)"
         verbose_name_plural = "Anasayfa - Section-6 (Seo Alanı)"
+
+
+
+
+
+class Footer(models.Model):
+    description = RichTextField()
+    image = models.ImageField(upload_to='footer_images/', null=True, blank=True)
+    adress = models.TextField(max_length=250, null=True)
+    email = models.EmailField(max_length=250, null=True)
+    phone = models.CharField(max_length=250, null=True)
+
+    class Meta:
+        verbose_name = "Footer"
+        verbose_name_plural = "Footer"
+
+class FooterSubSection(models.Model):
+    section = models.ForeignKey(Footer, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100, verbose_name= 'Menü İtemi', null=True)
+    url = models.CharField(max_length=500, verbose_name= 'Menü İtemi Linki', null=True)
+
+
+class FooterSupSection(models.Model):
+    section = models.ForeignKey(Footer, on_delete=models.CASCADE)
+    socialmedia = models.CharField(max_length=50, verbose_name= 'Sosyal Medya İcon Uzantısı (Örn: fa fa-github)', null=True)
+    socialmedia_link = models.URLField(verbose_name= 'Sosyal Medya İtemi Linki', null=True)
