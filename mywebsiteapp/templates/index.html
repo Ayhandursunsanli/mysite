@@ -69,14 +69,16 @@
                             <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
                         </li>
                     {% endfor %}
-                            
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}#sectioncontact-us">İletişim</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- responsive-socialmedia -->
                 <div class="d-none d-md-flex  d-xl-none justify-content-evenly align-items-center"
                     style="font-size: 18px; width: 100px; ">
                     {% for navbarrighmedia in navbarrighmedia  %}
-                        <a href="{{ navbarrighmedia.link }}">
+                        <a target="_blank" href="{{ navbarrighmedia.link }}">
                             <i class="{{ navbarrighmedia.platform }} text-black"></i>
                         </a>
                     {% endfor %}
@@ -94,7 +96,7 @@
                         <div class="col-4 contacts-right d-flex justify-content-evenly align-items-center">
                             
                         {% for navbarrighmedia in navbarrighmedia  %}
-                        <a href="{{ navbarrighmedia.link }}">
+                        <a target="_blank" href="{{ navbarrighmedia.link }}">
                             <i class="{{ navbarrighmedia.platform }} text-black"></i>
                         </a>
                         {% endfor %}
@@ -169,6 +171,9 @@
                     <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
                 </li>
             {% endfor %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}#sectioncontact-us">İletişim</a>
+                </li>
 
             </ul>
         </div>
@@ -265,36 +270,32 @@
     </section>
     {% endfor %}
 
+    {% for sectionthree in index_section_three_data %}
     <section class="section-three">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> Kullanıcı Dostu Web Siteleri</h4>
-            <img src="./img/linewhite.png" alt="">
+            <h4 class="text-center mb-3"> {{ sectionthree.title }}</h4>
+            <img src="{% static 'img/linewhite.png' %}" alt="">
         </div>
         <div class="container py-5">
             <div class="row d-flex justify-content-center">
                 <div class="col-12 d-flex justify-content-center ">
                     <div class="owl-carousel owl-theme myowlone">
+                        {% for first_subsectionthree in sectionthree.firstsubsectionthree_set.all %}
                         <div class="item">
-                            <h4 class="minihead mb-4 text-center">E-Ticaret</h4>
+                            <h4 class="minihead mb-4 text-center">{{ first_subsectionthree.sub_title }}</h4>
                             <div class="row d-flex justify-content-center mt-5">
                                 <div class="col-lg-6 d-flex justify-content-center">
                                     <div class="section-three-img-box">
-                                        <img class="border" src="./img/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" alt="">
+                                        <img class="border" src="{{ first_subsectionthree.carousel_image.url }}" alt="">
                                     </div>
                                 </div>
-                                <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center">
-                                    <p class="text-white">E-ticaret sitesi oluştururken, işletmelerin ve müşterilerin
-                                        ihtiyaçlarını dikkate alarak kullanıcı dostu bir platform tasarlamaya
-                                        odaklandım. Ürünleri açık ve çekici bir şekilde sunmak, alışveriş sürecini basit
-                                        ve güvenli hale getirmek benim için temel hedeflerden biriydi. <br> <br>Bununla
-                                        birlikte, ödeme sistemlerinin entegrasyonu ve lojistik süreçlerin optimize
-                                        edilmesi gibi teknik detaylara da büyük önem verdim. Müşterilerin satın alma
-                                        işlemlerini sorunsuz bir şekilde tamamlamalarını sağlamak, başarılı bir
-                                        e-ticaret sitesi için olmazsa olmazlardan biriydi.</p>
+                                <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center text-white text-center">
+                                    {{ first_subsectionthree.description | safe }}
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
+                        {% endfor %}
+                        <!-- <div class="item">
                             <h4 class="minihead mb-4 text-center">Kurumsal</h4>
                             <div class="row d-flex justify-content-center mt-5">
                                 <div class="col-lg-6 d-flex justify-content-center">
@@ -333,7 +334,7 @@
                                         e-ticaret sitesi için olmazsa olmazlardan biriydi.</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <button class="learn-more mybtn mt-5">
@@ -345,26 +346,22 @@
             </div>
         </div>    
     </section>
+    {% endfor %}
 
+
+    {% for sectionfour in index_section_four_data %}
     <section class="section-four">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> Süreçlerimiz</h4>
-            <img src="./img/lineblack.png" alt="">
+            <h4 class="text-center mb-3"> {{ sectionfour.title }}</h4>
+            <img src="{% static 'img/lineblack.png' %}" alt="">
         </div>
-        <h4 class="minihead my-5 text-center"> İhtiyaçlar Hiyerarşisi ile Vizyonunuzu Hayata Geçiriyor!</h4>
+        {% for first_subsectionfour in sectionfour.firstsubsectionfour_set.all %}
+        <h4 class="minihead my-5 text-center"> {{ first_subsectionfour.sub_title }}</h4>
+        
         <div class="container">
-            <p class="text-center">
-                Yazılım Firması olarak, kurumsal ve organizasyonel gelişim, büyüme ve markanın ihtiyaç duyabileceği
-                diğer destek faaliyetleri için ürün ve hizmet desteğinde bulunur. Süreç, en başından sonuna kadar
-                markaya özgü olsa da düzenli, programlı ve başarılı bir iskelet yapı kullanılır. İskelet yapı ise
-                markanın hedef ve ihtiyaçlarına dönük olarak ihtiyaçlar hiyerarşisinin tespiti ile başlar ve kalıcı
-                kalite prensibi nedeniyle sona ermez. Hizmet tesliminden bakım ve destek ünitesi ile projenin
-                beslenmesine dikkat edilir ve bakımları periyodik olarak yapılır.
-                Deneyimli ve başarılı ekiplerinin Web Yazılım ve uygulama odaklı ihtiyaçlar hiyerarşisini oluşturması
-                ile proje başlar. Her bir aşama, farklı departmanların kusursuz iletişimi ve işbirliği ile hazırlanır ve
-                marka sahibine teslim edilir.
-            </p>
-
+            <div class="text-center">
+            {{ first_subsectionfour.description | safe }}
+            </div>
             <div class="row my-5">
                 <div class="col-12 plan-head">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -418,7 +415,7 @@
                         </li>
                     </ul>
                     <div class="plan-imgbox">
-                        <img src="./img/dashedline.png" alt="">
+                        <img src="{% static 'img/dashedline.png' %}" alt="">
                     </div>
                 </div>
             </div>
@@ -428,102 +425,75 @@
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-talep" role="tabpanel"
                             aria-labelledby="pills-talep-tab" tabindex="0">
-                            Markanın hedefleri ve ihtiyaçlarının alınması ile proje süreci başlar: iletişime önem veren
-                            MGS Software marka taleplerini dinleyerek kreatif çözümler üretir. Proje başlangıcı;
-                            gelişmesi, geliştirmesi ve markaya entegre edilmesi kadar önemlidir. Bu nedenle güçlü
-                            iletişim ağına sahip MGS Software ile yeni dijital dünyaya güçlü bir dijital destek ile kapı
-                            açılır.
+                            {{ first_subsectionfour.sue | safe }}
                         </div>
                         <div class="tab-pane fade" id="pills-analiz" role="tabpanel" aria-labelledby="pills-analiz-tab"
                             tabindex="0">
-                            Markanın hedef ve ihtiyaçlarının oluşturduğu taleplerinin alınmasının ardından proje analiz
-                            süreci başlar. Bu noktada MGS Software markaya maksimum fayda sağlayabilecek bir proje
-                            tasarısı hazırlar: iş akış diyagramları ve analiz dokümanları oluşturulur. Projenin
-                            başlaması için gerekli analizler, marka sahibine iletilir: marka sahibinin onayı ile tasarım
-                            süreci başlar.
+                            {{ first_subsectionfour.analysis | safe }}
                         </div>
                         <div class="tab-pane fade" id="pills-tasarim" role="tabpanel"
                             aria-labelledby="pills-tasarim-tab" tabindex="0">
-                            Taleplerin ve taleplere dönük analizlerin yapılmasıyla birlikte projenin olgunlaşma safhası
-                            olan tasarım alanına geçilir. Tasarım alanında markanın projesine özgü olarak Wireframe ve
-                            mockup gibi çalışmaların oluşturulmasına başlanır. Süreç içerisinde marka ile kesintisiz
-                            iletişimde olan MGS Software, onay alması halinde arka plan çalışmalarına yani kodlama
-                            kısmına geçer.
+                            {{ first_subsectionfour.design | safe }}
                         </div>
                         <div class="tab-pane fade" id="pills-kodlama" role="tabpanel"
                             aria-labelledby="pills-kodlama-tab" tabindex="0">
-                            MGS Software: insan kaynakları, tasarım ve analiz departmanlarından aldığı bilgilere
-                            dayanarak projenin kodlama kısmına geçer. Oluşturulan projenin sağlıklı ve stabil çalışması
-                            için uygulamaya dönük son teknoloji ile komutlar entegre edilir. Her uygulama ve tasarım
-                            için uygun teknolojiler ve alt yapılar kullanılır: teste hazır hale getirilir.
+                            {{ first_subsectionfour.coding | safe }}
                         </div>
                         <div class="tab-pane fade" id="pills-test" role="tabpanel" aria-labelledby="pills-test-tab"
                             tabindex="0">
-                            Projenin tamamlanma aşaması olan test bölümünde, kodlama sırasında oluşturulan projenin
-                            stabilitesi test edilir. Marka sahibinden son kullanıcıya kadar ulaşan kullanıcı zinciri
-                            arasında boşlukların veya sorunların olup olmadığı gerek somut verilerle gerekse de
-                            kullanıcı deneyimi ile ortaya koyulur. Geniş bir departmana sahip MGS Software çatısı
-                            altında tüm gerekli testler detaylı bir şekilde yapılır ve nihai olarak canlı ortamda yayına
-                            alınır.
+                            {{ first_subsectionfour.testing_release | safe }}
                         </div>
                         <div class="tab-pane fade" id="pills-bakim" role="tabpanel" aria-labelledby="pills-bakim-tab"
                             tabindex="0">
-                            Marka sahibi, vizyonundaki modül, yazılım veya uygulamaya kavuştuğu bakım ve destek
-                            aşamasında, MGS Software marka prensipleri doğrultusunda kalıcı kaliteyi hedefler. Hizmet
-                            kapsamı, ürünü veya hizmeti teslim edene kadar değil: anlaşma süreci boyunca bakım ve
-                            desteğinin yerine getirilmesine kadardır. Anlaşma süreci boyunca modül, uygulama veya
-                            yazılımın düzeltmeleri, güncellemeleri ve iyileştirmelerini üstlenir.
+                            {{ first_subsectionfour.maintenance_support | safe }}
                         </div>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </section>
+    {% endfor %}
 
+
+    {% for sectionfive in index_section_five_data %}
     <section class="section-five">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> Sıkça Sorulan Sorular</h4>
-            <img src="./img/questionmark.png" alt="">
+            <h4 class="text-center mb-3"> {{ sectionfive.title }}</h4>
+            <img src="{% static 'img/questionmark.png' %}" alt="">
         </div>
         <div class="container">
             <div class="row ssshead mb-5 d-flex justify-content-center">
-                <h4 class="minihead text-center">SSS</h4>
+                <h4 class="minihead text-center">{{ sectionfive.sub_title }}</h4>
                 <div class="col-10">
-                    <p class="text-center">
-                        Sizlere hızla gelişen bu süreçte, sistemleri daha etkin ve verimli kullanabilmeniz için web
-                        tasarım, yazılım geliştirme, mobil uygulama geliştirme , dijital pazarlama çözümleri ve sosyal
-                        medya yönetim çözümleri sunuyoruz. Neredeyse bütün hizmetlerin dijital dünyaya yelken açmasıyla
-                        birlikte mobil uygulama hizmetinden web geliştirme hizmetine kadar tüm taleplerinizde bireysel
-                        ve kurumsal yazılım çözümleri üretiyoruz.
-                    </p>
+                    <div class="text-center">
+                        {{ sectionfive.description |safe }}
+                    </div>
                 </div>
             </div>
             <div class="row sss">
                 <div class="col-lg-6 sss-right order-lg-2">
-                    <img src="./img/sssrigthquestions.png" alt="">
+                    <img src="{{ sectionfive.image.url }}" alt="">
                 </div>
                 <div class="col-lg-6 sss-left order-lg-1">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
+                        {% for first_subsectionfive in sectionfive.firstsubsectionfive_set.all %}
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                    Hangi Şirketler İnternet Sitesi Kurmak Zorunda?
+                                    data-bs-target="#flush-{{ first_subsectionfive.id }}" aria-expanded="false"
+                                    aria-controls="flush-{{ first_subsectionfive.id }}">
+                                    {{ first_subsectionfive.question | safe }}
                                 </button>
                             </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            <div id="flush-{{ first_subsectionfive.id }}" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    TÜRK TİCARET KANUNU değişikliklerine göre şirketlere 14 ŞUBAT 2011 tarihli: 27846
-                                    sayılı ve 6102 sayılı Resmî Gazete de web sitesi zorunluluğu getirilmiştir. İlgili
-                                    kanunun yürürlüğe girmesiyle birlikte, belirli nitelikleri sağlayan anonim
-                                    şirketlerin bağımsız kurum ve kuruluşlarca denetlenmesini öngören ve bu denetime
-                                    tabi şirketlere internet sitesi açması zorunlu olarak kabul edilmiştir.
+                                    {{ first_subsectionfive.answer | safe }}
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item">
+                        <!-- <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
@@ -611,19 +581,21 @@
                                     entegrasyon çalışmaları bulunur: MGS Software projeleri E-Ticaret alanını kapsar.
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    {% endfor %}
 
     <section class="section-contactus">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
             <h4 class="text-center mb-3"> İletişim</h4>
             <img src="./img/linewhite.png" alt="">
         </div>
-        <h4 class="minihead my-5 text-center text-white"> Bağlantıda kalın</h4>
+        <h4 id="sectioncontact-us" class="minihead my-5 text-center text-white"> Bağlantıda kalın</h4>
         <div class="container mb-4">
             <p class="text-center w-responsive mx-auto mb-5 text-white">Sormak istediğiniz bir şey var mı? Lütfen doğrudan bizimle iletişime geçmekten çekinmeyin.</p> 
 
@@ -693,62 +665,12 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-10">
-                    <h4 class="text-center">Yazılım Firması Nedir?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore accusantium dicta, vitae unde
-                        quaerat incidunt quas dolore soluta eveniet ea? Odio maiores aspernatur unde ducimus numquam et
-                        id minus illum, atque voluptatem fugit autem molestias ad nam repellendus enim fugiat ex,
-                        delectus incidunt corporis neque rerum saepe! Repellat laudantium hic corporis dolorum et
-                        necessitatibus enim cumque quasi. Impedit eaque magnam ad. Harum dolor sit laborum tenetur,
-                        temporibus ea sint obcaecati vitae soluta animi nostrum eaque repudiandae consequuntur
-                        voluptatem exercitationem nesciunt excepturi asperiores incidunt qui suscipit iusto quaerat non
-                        in voluptas? Facere, voluptate repellat! Ducimus voluptates ex nihil dignissimos repellat,
-                        magnam, a illo in quisquam accusamus aspernatur illum est beatae quam sequi! Soluta laudantium
-                        voluptatum perferendis ullam assumenda optio necessitatibus. Beatae, similique commodi. Neque
-                        minus alias ratione molestias, blanditiis voluptas nostrum laboriosam quas rerum odio similique
-                        fugit itaque, aspernatur odit nesciunt accusantium voluptate amet eum perspiciatis quasi libero
-                        explicabo impedit quisquam.</p>
-                    <h4 class="text-center">Yazılım Firması Nedir?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore accusantium dicta, vitae unde
-                        quaerat incidunt quas dolore soluta eveniet ea? Odio maiores aspernatur unde ducimus numquam et
-                        id minus illum, atque voluptatem fugit autem molestias ad nam repellendus enim fugiat ex,
-                        delectus incidunt corporis neque rerum saepe! Repellat laudantium hic corporis dolorum et
-                        necessitatibus enim cumque quasi. Impedit eaque magnam ad. Harum dolor sit laborum tenetur,
-                        temporibus ea sint obcaecati vitae soluta animi nostrum eaque repudiandae consequuntur
-                        voluptatem exercitationem nesciunt excepturi asperiores incidunt qui suscipit iusto quaerat non
-                        in voluptas? Facere, voluptate repellat! Ducimus voluptates ex nihil dignissimos repellat,
-                        magnam, a illo in quisquam accusamus aspernatur illum est beatae quam sequi! Soluta laudantium
-                        voluptatum perferendis ullam assumenda optio necessitatibus. Beatae, similique commodi. Neque
-                        minus alias ratione molestias, blanditiis voluptas nostrum laboriosam quas rerum odio similique
-                        fugit itaque, aspernatur odit nesciunt accusantium voluptate amet eum perspiciatis quasi libero
-                        explicabo impedit quisquam.</p>
-                    <h4 class="text-center">Yazılım Firması Nedir?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore accusantium dicta, vitae unde
-                        quaerat incidunt quas dolore soluta eveniet ea? Odio maiores aspernatur unde ducimus numquam et
-                        id minus illum, atque voluptatem fugit autem molestias ad nam repellendus enim fugiat ex,
-                        delectus incidunt corporis neque rerum saepe! Repellat laudantium hic corporis dolorum et
-                        necessitatibus enim cumque quasi. Impedit eaque magnam ad. Harum dolor sit laborum tenetur,
-                        temporibus ea sint obcaecati vitae soluta animi nostrum eaque repudiandae consequuntur
-                        voluptatem exercitationem nesciunt excepturi asperiores incidunt qui suscipit iusto quaerat non
-                        in voluptas? Facere, voluptate repellat! Ducimus voluptates ex nihil dignissimos repellat,
-                        magnam, a illo in quisquam accusamus aspernatur illum est beatae quam sequi! Soluta laudantium
-                        voluptatum perferendis ullam assumenda optio necessitatibus. Beatae, similique commodi. Neque
-                        minus alias ratione molestias, blanditiis voluptas nostrum laboriosam quas rerum odio similique
-                        fugit itaque, aspernatur odit nesciunt accusantium voluptate amet eum perspiciatis quasi libero
-                        explicabo impedit quisquam.</p>
-                    <h4 class="text-center">Yazılım Firması Nedir?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore accusantium dicta, vitae unde
-                        quaerat incidunt quas dolore soluta eveniet ea? Odio maiores aspernatur unde ducimus numquam et
-                        id minus illum, atque voluptatem fugit autem molestias ad nam repellendus enim fugiat ex,
-                        delectus incidunt corporis neque rerum saepe! Repellat laudantium hic corporis dolorum et
-                        necessitatibus enim cumque quasi. Impedit eaque magnam ad. Harum dolor sit laborum tenetur,
-                        temporibus ea sint obcaecati vitae soluta animi nostrum eaque repudiandae consequuntur
-                        voluptatem exercitationem nesciunt excepturi asperiores incidunt qui suscipit iusto quaerat non
-                        in voluptas? Facere, voluptate repellat! Ducimus voluptates ex nihil dignissimos repellat,
-                        magnam, a illo in quisquam accusamus aspernatur illum est beatae quam sequi! Soluta laudantium
-                        voluptatum perferendis ullam assumenda optio necessitatibus. Beatae, similique commodi. Neque
-                        minus alias ratione molestias, blanditiis voluptas nostrum laboriosam quas rerum odio similique
-                        fugit itaque, aspernatur odit nesciunt accusantium voluptate amet eum perspiciatis quasi libero
-                        explicabo impedit quisquam.</p>
+                {% for item in index_section_six_data %}
+                <div>
+                    {{ item.description |safe }}
+                </div>
+                {% endfor %}
+                    
                 </div>
             </div>
         </div>

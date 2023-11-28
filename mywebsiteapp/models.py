@@ -72,3 +72,62 @@ class SecondSubSection(models.Model):
     sub_title = models.CharField(max_length=250)
     description = RichTextField()
 
+
+class Indexsectionthree(models.Model):
+    title = models.CharField(max_length=250)
+
+    class Meta:
+        verbose_name = "Anasayfa - Section-3"
+        verbose_name_plural = "Anasayfa Section-3"
+
+class FirstSubSectionThree(models.Model):
+    section = models.ForeignKey(Indexsectionthree, on_delete=models.CASCADE)
+    carousel_image = models.ImageField(upload_to='indexsectionthreecarousel_images/', null=True)
+    sub_title = models.CharField(max_length=250)
+    description = RichTextField()
+
+
+class Indexsectionfour(models.Model):
+    title = models.CharField(max_length=250)
+
+    class Meta:
+        verbose_name = "Anasayfa - Section-4"
+        verbose_name_plural = "Anasayfa Section-4"
+
+class FirstSubSectionFour(models.Model):
+    section = models.ForeignKey(Indexsectionfour, on_delete=models.CASCADE)
+    sub_title = models.CharField(max_length=250)
+    description = RichTextField()
+    sue = RichTextField()
+    analysis = RichTextField()
+    design = RichTextField()
+    coding = RichTextField()
+    testing_release = RichTextField()
+    maintenance_support = RichTextField()
+
+
+
+
+
+class Indexsectionfive(models.Model):
+    title = models.CharField(max_length=250)
+    sub_title = models.CharField(max_length=250)
+    description = RichTextField()
+    image = models.ImageField(upload_to='indexsectionfive_images/')
+
+    class Meta:
+        verbose_name = "Anasayfa - Section-5"
+        verbose_name_plural = "Anasayfa Section-5"
+
+class FirstSubSectionFive(models.Model):
+    section = models.ForeignKey(Indexsectionfive, on_delete=models.CASCADE)
+    question = RichTextField()
+    answer = RichTextField()
+    
+
+class Indexsectionsix(models.Model):
+    description = RichTextField()
+
+    class Meta:
+        verbose_name = "Anasayfa - Section-6 (Seo Alanı)"
+        verbose_name_plural = "Anasayfa - Section-6 (Seo Alanı)"

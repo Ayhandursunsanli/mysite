@@ -41,11 +41,40 @@ class IndexSectionOneAdmin(admin.ModelAdmin):
     inlines = [FirstSubSectionInline, SecondSubSectionInline]
 
 
+class FirstSubSectionThreeInline(admin.StackedInline):
+    model = FirstSubSectionThree
+    # max_num = 1  # Yalnızca bir örnek olacak
+
+@admin.register(Indexsectionthree)
+class IndexSectionThreeAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    inlines = [FirstSubSectionThreeInline]
+
+
+class FirstSubSectionFourInline(admin.StackedInline):
+    model = FirstSubSectionFour
+    max_num = 1  # Yalnızca bir örnek olacak
+
+@admin.register(Indexsectionfour)
+class IndexSectionFourAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    inlines = [FirstSubSectionFourInline]
 
 
 
 
+class FirstSubSectionFiveInline(admin.StackedInline):
+    model = FirstSubSectionFive
+    # max_num = 1  # Yalnızca bir örnek olacak
 
+@admin.register(Indexsectionfive)
+class IndexSectionFiveAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    inlines = [FirstSubSectionFiveInline]
+
+
+
+admin.site.register(Indexsectionsix)
 
 
 

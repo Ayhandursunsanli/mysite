@@ -710,6 +710,7 @@ footer
     font-family: 'Mulish', sans-serif
     position: relative
     margin-top: 10rem
+    padding-bottom: 5rem
     background-color: #F8F9FA
     .section-header
         position: absolute
@@ -740,6 +741,7 @@ footer
                 .accordion-item
                     .accordion-header
                         .accordion-button
+                            height: 80px
                             background-color: #F8F9FA
                             &:focus
                                 box-shadow: none
@@ -753,11 +755,16 @@ footer
                                 background-repeat: no-repeat
                                 background-size: var(--bs-accordion-btn-icon-width)
                                 transition: var(--bs-accordion-btn-icon-transition)
+                            p
+                                margin-bottom: 0
                     .accordion-collapse
                         .accordion-body
                             border: 1px solid #e3e3e3
                             background-color: #F8F9FA
                             font-size: 14px
+                            p
+                                margin-bottom: 0
+                            
 
 
         .sss-right
@@ -878,9 +885,13 @@ footer
     font-family: 'Mulish', sans-serif
     padding-top: 5rem
     padding-bottom: 5rem
+    h1,h2,h3
+        font-size: 20px
+        
 
     @media (max-width: 992px)
-        p
+
+        p,h1,h2,h3
             text-align: center
 
 

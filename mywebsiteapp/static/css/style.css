@@ -750,6 +750,7 @@ footer .btn-primary {
   font-family: "Mulish", sans-serif;
   position: relative;
   margin-top: 10rem;
+  padding-bottom: 5rem;
   background-color: #F8F9FA;
 }
 .section-five .section-header {
@@ -786,6 +787,7 @@ footer .btn-primary {
   width: 90%;
 }
 .section-five .sss .sss-left .accordion .accordion-item .accordion-header .accordion-button {
+  height: 80px;
   background-color: #F8F9FA;
 }
 .section-five .sss .sss-left .accordion .accordion-item .accordion-header .accordion-button:focus {
@@ -802,10 +804,16 @@ footer .btn-primary {
   background-size: var(--bs-accordion-btn-icon-width);
   transition: var(--bs-accordion-btn-icon-transition);
 }
+.section-five .sss .sss-left .accordion .accordion-item .accordion-header .accordion-button p {
+  margin-bottom: 0;
+}
 .section-five .sss .sss-left .accordion .accordion-item .accordion-collapse .accordion-body {
   border: 1px solid #e3e3e3;
   background-color: #F8F9FA;
   font-size: 14px;
+}
+.section-five .sss .sss-left .accordion .accordion-item .accordion-collapse .accordion-body p {
+  margin-bottom: 0;
 }
 .section-five .sss .sss-right {
   display: flex;
@@ -939,8 +947,11 @@ footer .btn-primary {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+.section-six h1, .section-six h2, .section-six h3 {
+  font-size: 20px;
+}
 @media (max-width: 992px) {
-  .section-six p {
+  .section-six p, .section-six h1, .section-six h2, .section-six h3 {
     text-align: center;
   }
 }

@@ -15,13 +15,21 @@ def index(request):
     navbarrightcontact = Navbarrightcontact.objects.first()
     headercarousel = Headercarousel.objects.all()
     index_section_one_data = Indexsectionone.objects.all()
+    index_section_three_data = Indexsectionthree.objects.all()
+    index_section_four_data = Indexsectionfour.objects.all()
+    index_section_five_data = Indexsectionfive.objects.all()
+    index_section_six_data = Indexsectionsix.objects.all()
 
     context= {
         'navbar': navbar,
         'navbarrightcontact': navbarrightcontact,
         'navbarrighmedia' : navbarrighmedia,
         'headercarousel': headercarousel,
-        'index_section_one_data': index_section_one_data
+        'index_section_one_data': index_section_one_data,
+        'index_section_three_data': index_section_three_data,
+        'index_section_four_data': index_section_four_data,
+        'index_section_five_data': index_section_five_data,
+        'index_section_six_data': index_section_six_data
     }
 
     return render(request, 'index.html', context)
