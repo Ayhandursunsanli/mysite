@@ -82,7 +82,7 @@
                     
                 </div>
                 <div class="col-md-9 mb-md-0 mb-5 order-md-1">
-                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                    <!-- <form id="contact-form" name="contact-form" action="mail.php" method="POST">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
@@ -121,7 +121,45 @@
                             </span>
                             <span class="button-text">Gönder</span>
                         </button>
+                    </form>  -->
+
+
+                    <!-- <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Gönder</button>
+                    </form> -->
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-field d-flex flex-column">
+                            {{ form.name.label_tag }}
+                            {{ form.name }}
+                        </div>
+                        <div class="form-field d-flex flex-column">
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <small class="error text-danger fw-bold">{{ form.email.errors }}</small>
+                            {% endif %}
+                        </div>
+                        <div class="form-field d-flex flex-column">
+                            {{ form.subject.label_tag }}
+                            {{ form.subject }}
+                        </div>
+                        <div class="form-field d-flex flex-column">
+                            {{ form.message.label_tag }}
+                            {{ form.message }}
+                        </div>
+                        <button type="submit" class="learn-more mybtn mt-5">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Gönder</span>
+                        </button>
                     </form>
+                    
+
                 </div>
             </div>
         </div>
