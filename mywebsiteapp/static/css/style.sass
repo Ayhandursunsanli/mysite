@@ -11,6 +11,8 @@ $aboutbg1: '../img/aboutbg1.png'
 $boeing: '../img/boeing.png'
 $bgabout: '../img/bg-about.png'
 $world: '../img/world4.png'
+$world2: '../img/wworld.png'
+
 
 // Tüm Sayfalar Ortak Classlar
 
@@ -775,113 +777,6 @@ footer
             img
                 width: 100%
 
-.section-contactus
-    font-family: 'Mulish', sans-serif
-    padding-top: 8rem
-    padding-bottom: 8rem
-    position: relative
-    background: linear-gradient(180deg, rgb(7, 28, 77) 9%, rgb(33, 79, 133) 100%)
-    p
-        font-size: 14px
-    .headhr
-        border: 1px solid black
-        border-top-left-radius: 30px
-        border-bottom-right-radius: 30px
-        height: 3px
-        background-color: gray
-        width: 100px
-        margin: auto
-        margin-bottom: 2rem
-    .section-header
-        position: absolute
-        padding: 2rem
-        left: 50%
-        transform: translateX(-50%)
-        top: -50px
-        background-color: #071c4d
-        color: white
-        border-top-left-radius: 20px
-        border-top-right-radius: 20px
-    form
-        color: white
-        label
-            margin-top: 1rem
-        input, textarea
-            &:focus
-                box-shadow: none
-        
-        .mybtn
-            position: relative
-            display: inline-block
-            cursor: pointer
-            outline: none
-            border: 0
-            vertical-align: middle
-            text-decoration: none
-            background: transparent
-            padding: 0
-            font-size: inherit
-            font-family: inherit
-            &.learn-more
-                width: 12rem
-                height: auto
-                .circle
-                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
-                    position: relative
-                    display: block
-                    margin: 0
-                    width: 3rem
-                    height: 3rem
-                    background: white
-                    border-radius: 1.625rem
-                    .icon
-                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
-                        position: absolute
-                        top: 0
-                        bottom: 0
-                        margin: auto
-                        background: #fff
-
-                        &.arrow
-                            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
-                            left: 0.625rem
-                            width: 1.125rem
-                            height: 0.125rem
-                            background: none
-                            &::before
-                                position: absolute
-                                content: ""
-                                top: -0.29rem
-                                right: 0.0625rem
-                                width: 0.625rem
-                                height: 0.625rem
-                                border-top: 0.125rem solid #071c4d
-                                border-right: 0.125rem solid #071c4d
-                                transform: rotate(45deg)
-                .button-text
-                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
-                    position: absolute
-                    top: 0
-                    left: 0
-                    right: 0
-                    bottom: 0
-                    padding: 0.75rem 0
-                    margin: 0 0 0 1.85rem
-                    color: white
-                    font-weight: 700
-                    line-height: 1.6
-                    text-align: center
-            &:hover
-                .circle
-                    width: 100%
-                    .icon
-                        &.arrow
-                            background: #071c4d
-                            transform: translate(1rem, 0)
-                .button-text
-                    color: #071c4d
-
-
 .section-six
     font-family: 'Mulish', sans-serif
     padding-top: 5rem
@@ -1470,4 +1365,108 @@ footer
             width: 90%
             height: 100%
     .blog-detail-text
+
+
+    
+    
+// contact-us.html
+
+.section-contactus
+    font-family: 'Mulish', sans-serif
+    padding-top: 4rem
+    padding-bottom: 4rem
+    position: relative
+    // background: linear-gradient(180deg, rgb(7, 28, 77) 9%, rgb(33, 79, 133) 100%)
+    p
+        font-size: 14px
+
+    .contact-container
+        padding-top: 3rem
+        padding-bottom: 3rem
+        // border: 1px solid #e2e2e2
+        border-radius: 10px
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px
+        background: url($world2), linear-gradient(180deg, rgba(7,28,77,1) 9%, rgba(33,79,133,1) 100%)
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+
+    form
+        color: white
+        label
+            margin-top: 1rem
+        input, textarea
+            &:focus
+                box-shadow: none
+        
+        .mybtn
+            position: relative
+            display: inline-block
+            cursor: pointer
+            outline: none
+            border: 0
+            vertical-align: middle
+            text-decoration: none
+            background: transparent
+            padding: 0
+            font-size: inherit
+            font-family: inherit
+            &.learn-more
+                width: 12rem
+                height: auto
+                .circle
+                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+                    position: relative
+                    display: block
+                    margin: 0
+                    width: 3rem
+                    height: 3rem
+                    background: #fff
+                    border-radius: 1.625rem
+                    .icon
+                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+                        position: absolute
+                        top: 0
+                        bottom: 0
+                        margin: auto
+                        background: #071c4d
+
+                        &.arrow
+                            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+                            left: 0.625rem
+                            width: 1.125rem
+                            height: 0.125rem
+                            background: none
+                            &::before
+                                position: absolute
+                                content: ""
+                                top: -0.29rem
+                                right: 0.0625rem
+                                width: 0.625rem
+                                height: 0.625rem
+                                border-top: 0.125rem solid #071c4d
+                                border-right: 0.125rem solid #071c4d
+                                transform: rotate(45deg)
+                .button-text
+                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+                    position: absolute
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    padding: 0.75rem 0
+                    margin: 0 0 0 1.85rem
+                    color: #fff
+                    font-weight: 700
+                    line-height: 1.6
+                    text-align: center
+            &:hover
+                .circle
+                    width: 100%
+                    .icon
+                        &.arrow
+                            background: #071c4d
+                            transform: translate(1rem, 0)
+                .button-text
+                    color: #071c4d
 

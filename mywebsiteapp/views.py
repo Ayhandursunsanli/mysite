@@ -91,3 +91,18 @@ def project(request):
         'projectssheet' : projectssheet
     }
     return render(request, 'projects.html', context)
+
+
+def contact_us(request):
+    navbar = Navbar.objects.all()
+    navbarrighmedia = Navbarrighmedia.objects.all()
+    navbarrightcontact = Navbarrightcontact.objects.first()
+    footer = Footer.objects.all()
+
+    context= {
+        'navbar': navbar,
+        'navbarrightcontact': navbarrightcontact,
+        'navbarrighmedia' : navbarrighmedia,
+        'footer' : footer
+    }
+    return render(request, 'contact-us.html', context)
