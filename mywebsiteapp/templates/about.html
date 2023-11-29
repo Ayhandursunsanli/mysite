@@ -10,6 +10,7 @@
     
 
     {% block content %}
+    
         <div class="common-header-nav">
             {% include 'includes/_navbar.html' %}
         
@@ -45,30 +46,41 @@
                 <h4 class="text-center mb-3"> Hakkımda</h4>
             </div>
         </div>
+
+        
+    {% for about in aboutsheet  %}
+            
         <div class="about-section-one">
-            <h4 class="minihead mb-4 text-center">Hikayem ve Vizyonum...</h4>
+            <h4 class="minihead mb-4 text-center">{{ about.title }}</h4>
             <div class="container about-one">
                 <div class="row aboutonesec d-flex justify-content-center">
-                    <img class="aboutone-img" src="./img/bg-about.png" alt="">
+                    <img class="aboutone-img" src="{% static 'img/bg-about.png' %}" alt="">
                     <div class="col-lg-4 mt-5">
                         <div class="about-imgbox">
-                            <img class="framed" src="./img/DENEME-6.png" alt="">
+                            <img class="framed" src="{{ about.img.url }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-4 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
                         <div class="about-text">
-                            <h5>Merhaba, ben Ayhan</h5>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure fugiat enim repudiandae praesentium quidem deleniti, atque delectus consequuntur hic vel! Eligendi voluptatum culpa totam sed quia! Aperiam ullam atque delectus est ipsum explicabo impedit corrupti, modi possimus corporis illo reprehenderit, deserunt, vero a libero beatae facilis laborum! Earum est tempora, vel natus voluptatem quidem, fuga ut id ab eligendi, quae iusto autem fugiat ratione aspernatur! Voluptate pariatur sint neque harum voluptates! Omnis blanditiis odio quo aperiam! Incidunt eveniet quibusdam sequi aspernatur, autem repudiandae commodi distinctio nobis ullam, totam eos! Odit fugiat atque maiores vero adipisci in fugit sequi molestias veniam.</p>
+                            <div class="text-center">
+                                {{ about.about | safe}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            {% for cer in about.certificate_set.all %}
+
             <div class="container-fluid about-two" id="myElement">
                 <div class="row">
-                    <h4 class="minihead mb-4 text-center mt-5">Sertifikalarım...</h4>
+                    <h4 class="minihead mb-4 text-center mt-5">{{cer.cert_title}}</h4>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-8">
-                            <p class="text-center">Üzerinde çalıştığım ve uzmanlık seviyesine ulaştığım üç farklı yazılım uzmanlığı sertifikasına sahibim. Bu sertifikalar, [Sertifika 1], [Sertifika 2] ve [Sertifika 3] programlarına odaklanarak, yazılım geliştirme süreçleri, uygulama tasarımı ve kodlama üzerine derinlemesine bilgi ve deneyim kazandığımı gösteriyor. Her bir sertifika, [belirli bir alandaki veya belirli bir teknolojiye odaklanan] becerilerimi ve bilgi birikimimi somut bir şekilde temsil ediyor. Bu sertifikalar, yazılım geliştirme alanındaki sürekli öğrenmeye ve profesyonel gelişime verdiğim değeri yansıtıyor.</p>
+                            <div class="text-center">
+                                {{cer.cert_about |safe}}
+                            </div>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
@@ -76,17 +88,17 @@
                             <div class="row">
                                 <div class="col-md-4 mt-5">
                                     <div class="certificates">
-                                        <img src="./img/neos-sertifika.png" alt="">
+                                        <img src="{{ cer.cert_img1.url }}" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-5">
                                     <div class="certificates">
-                                        <img src="./img/fsm-sertifika.png" alt="">
+                                        <img src="{{ cer.cert_img2.url }}" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-5">
                                     <div class="certificates">
-                                        <img src="./img/mudanya-sertifika.png" alt="">
+                                        <img src="{{ cer.cert_img3.url }}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -94,32 +106,43 @@
                     </div>
                 </div>
             </div>
-            
+            {% endfor %}
+
+
+
+            {% for skl in about.myskills_set.all %}
+
             <div class="container-fluid about-three">
                 <div class="row mt-5">
-                    <h4 class="minihead mb-4 text-center mt-5">Yetkinliklerim...</h4>
+                    <h4 class="minihead mb-4 text-center mt-5">{{ skl.skill_title }}</h4>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-10">
-                            <p class="text-center">
-                                Web geliştirme ve yazılım alanında geniş bir yelpazede deneyim sahibiyim. HTML, CSS ve Bootstrap gibi temel web teknolojileriyle birlikte Sass ile daha etkili CSS oluşturma yeteneklerine sahibim. JavaScript'i kullanarak interaktif ve dinamik web sayfaları oluştururken Python ile genel amaçlı programlama, veri analizi, yapay zeka ve web geliştirme gibi alanlarda çalışıyorum. Ayrıca, Django kullanarak güçlü ve ölçeklenebilir web uygulamaları geliştirme konusunda deneyimim bulunuyor.
-                            </p>
+                            <div class="text-center">
+                                {{ skl.skill_about | safe }}
+                            </div>
                         </div>
                     </div>
                     <div class="row mt-5">
                         <div class="col-12">
                             <div class="competencies-logo">
-                                <img src="./img/html-5.png" alt="">
-                                <img src="./img/css-3.png" alt="">
-                                <img src="./img/bootstrap.png" alt="">
-                                <img src="./img/sass.png" alt="">
-                                <img src="./img/js.png" alt="">
-                                <img src="./img/pythonlogo.png" alt="">
-                                <img src="./img/djangologo.png" alt="">
+                                <img src="{{ skl.skill_img1.url }}" alt="">
+                                <img src="{{ skl.skill_img2.url }}" alt="">
+                                <img src="{{ skl.skill_img3.url }}" alt="">
+                                <img src="{{ skl.skill_img4.url }}" alt="">
+                                <img src="{{ skl.skill_img5.url }}" alt="">
+                                <img src="{{ skl.skill_img6.url }}" alt="">
+                                <img src="{{ skl.skill_img7.url }}" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            {% endfor %}
+
         </div>
+
+    {% endfor %}
+
     {% endblock content %}
 

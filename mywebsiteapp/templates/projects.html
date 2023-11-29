@@ -46,22 +46,28 @@
         </div>
     </div>
 
+    
+    {% for projects in projectssheet  %}
+        
     <div class="projects-section-one">
-        <h4 class="minihead mb-4 text-center">Projelerimi inceleyin...</h4>
+        <h4 class="minihead mb-4 text-center">{{ projects.title }}</h4>
         <div class="container">
             <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-10">
-                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsa illo aperiam ipsam perspiciatis inventore nobis nihil voluptatum, asperiores consectetur nisi minima quia beatae tempora excepturi similique! Numquam laudantium possimus animi autem doloremque, corporis quisquam quis iste omnis totam reprehenderit laborum eum excepturi tempore beatae repellat voluptate officiis. Dolorum, quasi!</p>
+                    <div class="text-center">
+                        {{ projects.about | safe }}
+                    </div>
                 </div>
             </div>
             <div class="row d-flex align-items-center justify-content-center">
+                {% for projectcard in projects.projectcard_set.all %}
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mt-5">
                     <div class="card">
                         <div class="card-imgbox">
-                            <img class="image2" src="./img/neosLogo2.png" alt="">
+                            <img class="image2" src="{{ projectcard.site_img_logo.url }}" alt="">
                             <div class="laptop">
                                 <div class="laptop__screen">
-                                    <img src="./img/neos-resmi-web-site.png" alt="">
+                                    <img src="{{ projectcard.site_img.url }}" alt="">
                                 </div>
                                 <div class="laptop__bottom">
                                     <div class="laptop__under"></div>
@@ -70,69 +76,21 @@
                             </div>
                         </div>
                         <div class="card-header">
-                            <h6>Neos Resmi Web Sitesi</h6>
+                            <h6>{{ projectcard.site_title }}</h6>
                         </div>
-                        <button class="learn-more mybtn m-auto">
+                        <a target="_blank" href="{{projectcard.site_url}}" class="learn-more mybtn m-auto">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
                             </span>
                             <span class="button-text">Siteye Git</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mt-5">
-                    <div class="card">
-                        <div class="card-imgbox">
-                            <img class="image2" src="./img/neosLogo2.png" alt="">
-                            <div class="laptop">
-                                <div class="laptop__screen">
-                                    <img src="./img/neoslogo.png" alt="">
-                                </div>
-                                <div class="laptop__bottom">
-                                    <div class="laptop__under"></div>
-                                </div>
-                                <div class="laptop__shadow"></div>
-                            </div>
-                        </div>
-                        <div class="card-header">
-                            <h6>Neos Admin Paneli</h6>
-                        </div>
-                        <button class="learn-more mybtn m-auto">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">Siteye Git</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mt-5">
-                    <div class="card">
-                        <div class="card-imgbox">
-                            <img class="image2" src="./img/new-house-logo.png" alt="">
-                            <div class="laptop">
-                                <div class="laptop__screen">
-                                    <img src="./img/new-house-medya.png" alt="">
-                                </div>
-                                <div class="laptop__bottom">
-                                    <div class="laptop__under"></div>
-                                </div>
-                                <div class="laptop__shadow"></div>
-                            </div>
-                        </div>
-                        <div class="card-header">
-                            <h6>New House Medya</h6>
-                        </div>
-                        <button class="learn-more mybtn m-auto">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">Siteye Git</span>
-                        </button>
-                    </div>
-                </div>
-                
+                {% endfor %}
             </div>
         </div>
     </div>
+
+    {% endfor %}
 {% endblock content %}
 

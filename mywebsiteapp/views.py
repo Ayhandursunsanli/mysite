@@ -35,12 +35,14 @@ def about(request):
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
     footer = Footer.objects.all()
+    aboutsheet = Aboutsheet.objects.all()
 
     context= {
         'navbar': navbar,
         'navbarrightcontact': navbarrightcontact,
         'navbarrighmedia' : navbarrighmedia,
-        'footer' : footer
+        'footer' : footer,
+        'aboutsheet' : aboutsheet
     }
 
 
@@ -79,11 +81,13 @@ def project(request):
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
     footer = Footer.objects.all()
+    projectssheet = Projectssheet.objects.all()
 
     context= {
         'navbar': navbar,
         'navbarrightcontact': navbarrightcontact,
         'navbarrighmedia' : navbarrighmedia,
-        'footer' : footer
+        'footer' : footer,
+        'projectssheet' : projectssheet
     }
     return render(request, 'projects.html', context)

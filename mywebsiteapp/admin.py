@@ -92,3 +92,43 @@ class FooterSubSectionAdmin(admin.ModelAdmin):
     inlines = [FooterSubSectionInline, FooterSupSectionInline]
 
 
+# Projects.html
+
+class ProjectCardInline(admin.StackedInline):
+    model = ProjectCard
+
+
+@admin.register(Projectssheet)
+class ProjectssheetAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    inlines = [ProjectCardInline,]
+
+
+# About.html
+# class CertificateInline(admin.StackedInline):
+#     model = Certificate
+#     max_num = 1  # Yalnızca bir örnek olacak
+
+# class MyskillsInline(admin.StackedInline):
+#     model = Myskills
+#     max_num = 1  # Yalnızca bir örnek olacak
+
+# admin.register(Aboutsheet)
+# class AboutsheetAdmin(admin.ModelAdmin):
+#     list_display = ('title',)
+#     inlines = [CertificateInline, MyskillsInline]
+
+
+class CertificateInline(admin.StackedInline):
+    model = Certificate
+    max_num = 1
+
+class MyskillsInline(admin.StackedInline):
+    model = Myskills
+    max_num = 1
+
+class AboutsheetAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    inlines = [CertificateInline, MyskillsInline]
+
+admin.site.register(Aboutsheet, AboutsheetAdmin)
