@@ -50,153 +50,72 @@
             </div>
         </div>
         <hr>
+        
+        
         <div class="container">
             <div class="row mt-4 d-flex justify-content-center align-items-center position-relative">
                 <div class="col-12 category-col d-flex justify-content-around align-items-center">
                     <div id="myBtnContainer">
-                        <button class="btn" onclick="filterSelection('all')">Tümünü Göster</button>
-                        <button class="btn" onclick="filterSelection('uzay')"><span>#</span> Uzay</button>
-                        <button class="btn" onclick="filterSelection('bilim')"><span>#</span> Bilim</button>
-                        <button class="btn" onclick="filterSelection('spor')"><span>#</span> Spor</button>
+
+                        <button class="btn" onclick="filterSelection('all')"> Tümünü Göster</button>
+
+                    {% for blog in blogs %}
+                        <button class="btn" onclick="filterSelection('{{ blog.subject }}')"> # {{ blog.subject }}</button>
+                    {% endfor %}
+
                     </div>
                 </div>
             </div>
+
+        {% for blog in blogs %}
+            <div class="row blog-item filterDiv {{ blog.subject }}">
+                <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-xl-4 d-flex justify-content-center align-items-center">
+                            <div class="blog-category d-flex flex-column align-items-center justify-content-center ">
+                                <i class="{{ blog.subject_icon }}"></i>
+                                <p class="mb-0">{{ blog.subject }}</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 d-flex justify-content-center align-content-center py-5 py-xl-0">
+                            <div class="blog-imgbox">
+                                <img src="{{ blog.image.url }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>{{ blog.title }}</h4>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="overflow-text">
+                                {{ blog.text | truncatechars:150 | safe }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center flex-column align-items-start">
+                            <h6>Yazar: <span class="text-muted fw-light">{{ blog.author }}</span></h6>
+                            <p class="mb-0 text-muted fw-light">{{ blog.publish_date }}</p>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center">
+                            <a href="{% url 'blog-detail' blog.id %}" class="learn-more mybtn mt-5">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">Devamını Oku</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
             
-            <div class="row blog-item filterDiv uzay">
-                <div class="col-xl-4 d-flex justify-content-center align-items-center">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-4 d-flex justify-content-center align-items-center">
-                            <div class="blog-category d-flex flex-column align-items-center justify-content-center ">
-                                <i class="fa-solid fa-rocket"></i>
-                                <p class="mb-0">Uzay</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 d-flex justify-content-center align-content-center py-5 py-xl-0">
-                            <div class="blog-imgbox">
-                                <img src="./img/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <h4>Jüpiterin çevresinde yaşanılabilecek uyduları olduğu ortyaya çıktı</h4>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-12">
-                            <p class="overflow-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, quas saepe perferendis, dolorum, quam odit sint sapiente quos molestiae deleniti et cupiditate similique voluptatum maxime fuga architecto quasi qui accusantium ducimus dolor! Amet repellendus natus exercitationem minus qui deleniti laboriosam consequuntur commodi reprehenderit repellat aperiam ex sequi facilis, et, repudiandae temporibus! Excepturi exercitationem, dolore deserunt nobis quidem sed eum voluptate eos illum quaerat veritatis recusandae minima ad ipsa molestias autem ab soluta, necessitatibus a quibusdam ipsam optio! Laborum vitae suscipit esse qui nulla accusantium dicta, sunt sed quo rerum fuga molestias libero placeat. Omnis voluptate, ratione iusto deleniti molestias quisquam?</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 d-flex justify-content-center flex-column align-items-start">
-                            <h6>Yazar: <span class="text-muted fw-light">Ayhan Dursun Şanlı</span></h6>
-                            <p class="mb-0 text-muted fw-light">23.11.2023</p>
-                        </div>
-                        <div class="col-md-6 d-flex justify-content-center align-items-center">
-                            <button class="learn-more mybtn mt-5">
-                                <span class="circle" aria-hidden="true">
-                                    <span class="icon arrow"></span>
-                                </span>
-                                <span class="button-text">Devamını Oku</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="row blog-item filterDiv bilim">
-                <div class="col-xl-4 d-flex justify-content-center align-items-center">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-4 d-flex justify-content-center align-items-center">
-                            <div class="blog-category d-flex flex-column align-items-center justify-content-center ">
-                                <i class="fa-solid fa-flask"></i>
-                                <p class="mb-0">Bilim</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 d-flex justify-content-center align-content-center py-5 py-xl-0">
-                            <div class="blog-imgbox">
-                                <img src="./img/john-schnobrich-FlPc9_VocJ4-unsplash.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <h4>Aşıların yan etkileri ortaya çıkmaya başladı</h4>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-12">
-                            <p class="overflow-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, quas saepe perferendis, dolorum, quam odit sint sapiente quos molestiae deleniti et cupiditate similique voluptatum maxime fuga architecto quasi qui accusantium ducimus dolor! Amet repellendus natus exercitationem minus qui deleniti laboriosam consequuntur commodi reprehenderit repellat aperiam ex sequi facilis, et, repudiandae temporibus! Excepturi exercitationem, dolore deserunt nobis quidem sed eum voluptate eos illum quaerat veritatis recusandae minima ad ipsa molestias autem ab soluta, necessitatibus a quibusdam ipsam optio! Laborum vitae suscipit esse qui nulla accusantium dicta, sunt sed quo rerum fuga molestias libero placeat. Omnis voluptate, ratione iusto deleniti molestias quisquam?</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 d-flex justify-content-center flex-column align-items-start">
-                            <h6>Yazar: <span class="text-muted fw-light">Ayhan Dursun Şanlı</span></h6>
-                            <p class="mb-0 text-muted fw-light">23.11.2023</p>
-                        </div>
-                        <div class="col-md-6 d-flex justify-content-center align-items-center">
-                            <button class="learn-more mybtn mt-5">
-                                <span class="circle" aria-hidden="true">
-                                    <span class="icon arrow"></span>
-                                </span>
-                                <span class="button-text">Devamını Oku</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="row blog-item filterDiv spor">
-                <div class="col-xl-4 d-flex justify-content-center align-items-center">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-4 d-flex justify-content-center align-items-center">
-                            <div class="blog-category d-flex flex-column align-items-center justify-content-center ">
-                                <i class="fa-regular fa-futbol"></i>
-                                <p class="mb-0">Spor</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-8 d-flex justify-content-center align-content-center py-5 py-xl-0">
-                            <div class="blog-imgbox">
-                                <img src="./img/lukas-blazek-mcSDtbWXUZU-unsplash.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="row">
-                        <div class="col-12">
-                            <h4>Milli takım Avrupa Şampiyonasında...</h4>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-12">
-                            <p class="overflow-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, quas saepe perferendis, dolorum, quam odit sint sapiente quos molestiae deleniti et cupiditate similique voluptatum maxime fuga architecto quasi qui accusantium ducimus dolor! Amet repellendus natus exercitationem minus qui deleniti laboriosam consequuntur commodi reprehenderit repellat aperiam ex sequi facilis, et, repudiandae temporibus! Excepturi exercitationem, dolore deserunt nobis quidem sed eum voluptate eos illum quaerat veritatis recusandae minima ad ipsa molestias autem ab soluta, necessitatibus a quibusdam ipsam optio! Laborum vitae suscipit esse qui nulla accusantium dicta, sunt sed quo rerum fuga molestias libero placeat. Omnis voluptate, ratione iusto deleniti molestias quisquam?</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 d-flex justify-content-center flex-column align-items-start">
-                            <h6>Yazar: <span class="text-muted fw-light">Ayhan Dursun Şanlı</span></h6>
-                            <p class="mb-0 text-muted fw-light">23.11.2023</p>
-                        </div>
-                        <div class="col-md-6 d-flex justify-content-center align-items-center">
-                            <button class="learn-more mybtn mt-5">
-                                <span class="circle" aria-hidden="true">
-                                    <span class="icon arrow"></span>
-                                </span>
-                                <span class="button-text">Devamını Oku</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
+        </div>    
     </div>
 {% endblock content %}

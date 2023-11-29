@@ -132,3 +132,9 @@ class AboutsheetAdmin(admin.ModelAdmin):
     inlines = [CertificateInline, MyskillsInline]
 
 admin.site.register(Aboutsheet, AboutsheetAdmin)
+
+
+
+
+# blog
+admin.site.register(Blog)

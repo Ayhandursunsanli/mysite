@@ -214,3 +214,17 @@ class Myskills(models.Model):
     skill_img8 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
     skill_img9 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
     skill_img10 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
+
+
+# blog
+class Blog(models.Model):
+    image = models.ImageField(upload_to='blog_images/')
+    title = models.CharField(max_length=250)
+    text = RichTextField()
+    subject = models.CharField(max_length=250)
+    subject_icon = models.CharField(max_length=250)
+    author = models.CharField(max_length=100)
+    publish_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

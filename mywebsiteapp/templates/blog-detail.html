@@ -45,27 +45,40 @@
         <div class="container">
             <div class="row mt-4 pt-3 mb-4 d-flex justify-content-center">
                 <div class="col-md-8 d-flex justify-content-center">
-                    <h6><span class="date">26.11.2023</span> / <span class="author">Ayhan Dursun Şanlı</span></h6>
+                    <h6><span class="date">{{blog.publish_date}}</span> / <span class="author">{{blog.author}}</span></h6>
                 </div>
             </div>
             <div class="row d-flex justify-content-center my-4">
                 <div class="col-md-8">
-                    <h4 class="blog-detail-head text-center mb-0">Jüpiterin çevresinde yaşanılabilecek uyduları olduğu ortyaya çıktı</h4>
+                    <div class="blog-category d-flex flex-column align-items-center justify-content-center ">
+                        <i class="{{blog.subject_icon}}"></i>
+                        <p class="mb-0">{{blog.subject}}</p>
+                    </div>
+                    <h4 class="blog-detail-head text-center mb-0">
+                        {{blog.title}}
+                    </h4>
                 </div>
             </div>
             <div class="row d-flex justify-content-center mt-4">
                 <div class="col-md-8">
                     <div class="blog-detail-imgbox">
-                        <img class="w-100 object-fit-cover border-1" src="./img/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" alt="">
+                        <img class="w-100 object-fit-cover border-1" src="{{ blog.image.url }}" alt="">
                     </div>
                 </div>
             </div>
             <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-8">
                     <div class="blog-detail-text">
-                        <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste deserunt nostrum, nemo est necessitatibus, ullam quod, vel cumque beatae quos voluptatum? Nam magnam laboriosam neque vitae amet error repellat laudantium explicabo labore itaque corrupti ab distinctio aut, impedit porro quod sit deleniti suscipit minima. <br> <br> Hic aliquam aperiam accusamus dolores fuga deserunt, velit eius doloremque, voluptas, blanditiis ipsam assumenda? Aspernatur eveniet nulla, ipsam, architecto temporibus, delectus odit quo nisi placeat fuga sunt? Suscipit tenetur voluptates dicta fuga excepturi incidunt, itaque debitis quas architecto accusamus quisquam exercitationem veritatis voluptatibus distinctio illo impedit odit inventore?  <br> <br>A qui ipsum voluptatibus officia! Sint quos voluptatibus, sed natus animi porro. Et laborum quod eligendi, temporibus nam suscipit, quos magni odio iste hic qui est voluptatum. Reiciendis laudantium doloribus, labore omnis amet impedit architecto non maiores saepe fugit, nam aut ea optio eveniet veritatis vero autem veniam sint? <br><br>Praesentium debitis distinctio eius vel officiis incidunt impedit quis quisquam molestias eos, inventore, sapiente suscipit amet ratione atque, nihil necessitatibus error voluptate fugit fuga! Provident iste explicabo, quod eius nisi, soluta sit non debitis cumque magnam necessitatibus molestias magni ullam ipsam doloribus aperiam aspernatur hic dolore temporibus voluptas iusto quae vero? Incidunt quos explicabo repellat nobis consequuntur inventore obcaecati architecto aperiam praesentium consectetur? Omnis, quaerat soluta excepturi nemo architecto maxime dignissimos eius minima! Quod fugit nisi ab aperiam amet, blanditiis doloremque, beatae pariatur minus illo incidunt. Sed natus tenetur doloribus ipsum officiis soluta, vel facilis placeat et dicta cum. Eum facere consequatur beatae eveniet quisquam sit, dolores officiis numquam qui omnis eaque modi architecto doloribus alias, veritatis quasi nam! Eos fugiat ut ex fugit laudantium! Ipsa iste odit nihil atque tempora! Consequatur voluptatem iste nesciunt officia accusantium, eaque quas excepturi voluptate ab cupiditate unde aliquam rem repellendus odio temporibus amet explicabo consequuntur eos, atque sequi dolores numquam, porro ipsum!</p>
-                        
+                        {{blog.text | safe}}
                     </div>
+                </div>
+            </div>
+            <div class="row mt-3 d-flex justify-content-center">
+                <div class="col-md-8 d-flex justify-content-center justify-content-sm-start">
+                    <a href="{% url 'blog' %}" class="back-button btn"> 
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Bloglarıma Dön
+                    </a>
                 </div>
             </div>
         </div>

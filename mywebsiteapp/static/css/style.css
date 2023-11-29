@@ -1442,6 +1442,9 @@ footer .btn-primary {
   background: #efefef;
 }
 
+.blog-detail-section-one .blog-detail-head {
+  margin-top: 2rem;
+}
 .blog-detail-section-one .blog-detail-imgbox {
   width: 100%;
   height: 400px;
@@ -1451,6 +1454,27 @@ footer .btn-primary {
   width: 90%;
   height: 100%;
 }
+.blog-detail-section-one .blog-category {
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  color: white;
+  border-radius: 50%;
+  background-color: #071c4d;
+}
+.blog-detail-section-one .blog-category svg {
+  font-size: 14px;
+}
+.blog-detail-section-one .back-button {
+  text-decoration: none;
+  background: #071c4d;
+  color: white;
+  transition: 0.4s;
+}
+.blog-detail-section-one .back-button:hover {
+  background: #061435;
+}
+
 .section-contactus {
   font-family: "Mulish", sans-serif;
   padding-top: 4rem;

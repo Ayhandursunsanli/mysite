@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, get_object_or_404
 from .models import *
 
 # Create your views here.
@@ -53,26 +54,30 @@ def blog(request):
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
     footer = Footer.objects.all()
+    blogs = Blog.objects.all()
 
     context= {
         'navbar': navbar,
         'navbarrightcontact': navbarrightcontact,
         'navbarrighmedia' : navbarrighmedia,
-        'footer' : footer
+        'footer' : footer,
+        'blogs': blogs
     }
     return render(request, 'blog.html', context)
 
-def blog_detail(request):
+def blog_detail(request, blog_id):
     navbar = Navbar.objects.all()
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
     footer = Footer.objects.all()
+    blog = get_object_or_404(Blog, pk=blog_id)
 
     context= {
         'navbar': navbar,
         'navbarrightcontact': navbarrightcontact,
         'navbarrighmedia' : navbarrighmedia,
-        'footer' : footer
+        'footer' : footer,
+        'blog': blog
     }
     return render(request, 'blog-detail.html', context)
     
@@ -106,3 +111,4 @@ def contact_us(request):
         'footer' : footer
     }
     return render(request, 'contact-us.html', context)
+
