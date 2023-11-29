@@ -1,0 +1,48 @@
+{% load static %}
+
+<!-- responsive left menu -->
+<div class="offcanvas offcanvas-start left-offcanvas-menu" tabindex="-1" id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvasExampleLabel">Ayhan D. Şanlı</h4>
+
+    {% for navbarrighmedia in navbarrighmedia  %}
+        <a href="{{ navbarrighmedia.link }}">
+            <i class="{{ navbarrighmedia.platform }} text-white" style="font-size: 24px;" ></i>
+        </a>
+    {% endfor %}
+
+        <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <ul class="navbar-nav">
+
+        {% for navbar in navbar  %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
+            </li>
+        {% endfor %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}#sectioncontact-us">İletişim</a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave2"
+                    d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+            </defs>
+            <g class="parallax">
+                <use class="use" xlink:href="#gentle-wave2" x="48" y="0" fill="rgba(255,255,255,0.7"/>
+                <use class="use" xlink:href="#gentle-wave2" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
+                <use class="use" xlink:href="#gentle-wave2" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
+                <use class="use" xlink:href="#gentle-wave2" x="48" y="7" fill="#fff"/>
+            </g>
+        </svg>
+    </div>
+</div>
+<!-- responsive left menu finish -->

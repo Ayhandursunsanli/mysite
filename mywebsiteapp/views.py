@@ -4,12 +4,6 @@ from .models import *
 # Create your views here.
 
 def index(request):
-    # deneme = Deneme.objects.all()
-
-    # context = { 
-    #     'deneme': deneme
-    # }
-
     navbar = Navbar.objects.all()
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
@@ -37,13 +31,59 @@ def index(request):
     return render(request, 'index.html', context)
 
 def about(request):
-    return render(request, 'about.html')
+    navbar = Navbar.objects.all()
+    navbarrighmedia = Navbarrighmedia.objects.all()
+    navbarrightcontact = Navbarrightcontact.objects.first()
+    footer = Footer.objects.all()
+
+    context= {
+        'navbar': navbar,
+        'navbarrightcontact': navbarrightcontact,
+        'navbarrighmedia' : navbarrighmedia,
+        'footer' : footer
+    }
+
+
+    return render(request, 'about.html', context)
 
 def blog(request):
-    return render(request, 'blog.html')
+    navbar = Navbar.objects.all()
+    navbarrighmedia = Navbarrighmedia.objects.all()
+    navbarrightcontact = Navbarrightcontact.objects.first()
+    footer = Footer.objects.all()
+
+    context= {
+        'navbar': navbar,
+        'navbarrightcontact': navbarrightcontact,
+        'navbarrighmedia' : navbarrighmedia,
+        'footer' : footer
+    }
+    return render(request, 'blog.html', context)
 
 def blog_detail(request):
-    return render(request, 'blog-detail.html')
+    navbar = Navbar.objects.all()
+    navbarrighmedia = Navbarrighmedia.objects.all()
+    navbarrightcontact = Navbarrightcontact.objects.first()
+    footer = Footer.objects.all()
+
+    context= {
+        'navbar': navbar,
+        'navbarrightcontact': navbarrightcontact,
+        'navbarrighmedia' : navbarrighmedia,
+        'footer' : footer
+    }
+    return render(request, 'blog-detail.html', context)
     
 def project(request):
-    return render(request, 'projects.html')
+    navbar = Navbar.objects.all()
+    navbarrighmedia = Navbarrighmedia.objects.all()
+    navbarrightcontact = Navbarrightcontact.objects.first()
+    footer = Footer.objects.all()
+
+    context= {
+        'navbar': navbar,
+        'navbarrightcontact': navbarrightcontact,
+        'navbarrighmedia' : navbarrighmedia,
+        'footer' : footer
+    }
+    return render(request, 'projects.html', context)

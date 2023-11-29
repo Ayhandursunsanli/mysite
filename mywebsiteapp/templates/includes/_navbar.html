@@ -1,0 +1,57 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-md bg-white">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">Ayhan D. Şanlı</a>
+
+        <!-- respoensive left menu button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav d-none d-md-flex">
+
+            {% for navbar in navbar  %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
+                </li>
+            {% endfor %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}#sectioncontact-us">İletişim</a>
+                </li>
+            </ul>
+        </div>
+        <!-- responsive-socialmedia -->
+        <div class="d-none d-md-flex  d-xl-none justify-content-evenly align-items-center"
+            style="font-size: 18px; width: 100px; ">
+            {% for navbarrighmedia in navbarrighmedia  %}
+                <a target="_blank" href="{{ navbarrighmedia.link }}">
+                    <i class="{{ navbarrighmedia.platform }} text-black"></i>
+                </a>
+            {% endfor %}
+        </div>
+
+        <div class="navbar-contacts d-none d-xl-block">
+            <div class="row">
+                <div class="col-8 d-flex contacts-left">
+                    <ul class="">
+                        <li><i class="fa-regular fa-envelope"></i> {{ navbarrightcontact.email }}</li>
+                        <li><i class="fa-solid fa-phone"></i> {{ navbarrightcontact.phone }}</li>
+                        <li class="text-animation m-0 p-0"></li>
+                    </ul>
+                </div>
+                <div class="col-4 contacts-right d-flex justify-content-evenly align-items-center">
+                    
+                {% for navbarrighmedia in navbarrighmedia  %}
+                <a target="_blank" href="{{ navbarrighmedia.link }}">
+                    <i class="{{ navbarrighmedia.platform }} text-black"></i>
+                </a>
+                {% endfor %}
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

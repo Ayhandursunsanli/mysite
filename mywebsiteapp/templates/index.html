@@ -6,7 +6,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ayhan D. Şanlı | Anasayfa</title>
+    <title>
+        {% block title %}
+        Ayhan D. Şanlı | Anasayfa
+        {% endblock title %}
+    </title>
     
     <!-- owl carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
@@ -41,70 +45,19 @@
 </head>
 
 <body>
-
+    
+{% block content %}
     <!-- <div class="intro">
-        <h1 class="logo-header">
-            <span class="logo">Hoş</span>
-            <span class="logo">Geldiniz...</span>
-        </h1>
+    <h1 class="logo-header">
+        <span class="logo">Hoş</span>
+        <span class="logo">Geldiniz...</span>
+    </h1>
     </div> -->
 
     <div class="header">
-        <nav class="navbar navbar-expand-md bg-white">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'index' %}">Ayhan D. Şanlı</a>
 
-                <!-- respoensive left menu button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        {% include 'includes/_navbar.html' %}
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav d-none d-md-flex">
-
-                    {% for navbar in navbar  %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
-                        </li>
-                    {% endfor %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}#sectioncontact-us">İletişim</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- responsive-socialmedia -->
-                <div class="d-none d-md-flex  d-xl-none justify-content-evenly align-items-center"
-                    style="font-size: 18px; width: 100px; ">
-                    {% for navbarrighmedia in navbarrighmedia  %}
-                        <a target="_blank" href="{{ navbarrighmedia.link }}">
-                            <i class="{{ navbarrighmedia.platform }} text-black"></i>
-                        </a>
-                    {% endfor %}
-                </div>
-
-                <div class="navbar-contacts d-none d-xl-block">
-                    <div class="row">
-                        <div class="col-8 d-flex contacts-left">
-                            <ul class="">
-                                <li><i class="fa-regular fa-envelope"></i> {{ navbarrightcontact.email }}</li>
-                                <li><i class="fa-solid fa-phone"></i> {{ navbarrightcontact.phone }}</li>
-                                <li class="text-animation m-0 p-0"></li>
-                            </ul>
-                        </div>
-                        <div class="col-4 contacts-right d-flex justify-content-evenly align-items-center">
-                            
-                        {% for navbarrighmedia in navbarrighmedia  %}
-                        <a target="_blank" href="{{ navbarrighmedia.link }}">
-                            <i class="{{ navbarrighmedia.platform }} text-black"></i>
-                        </a>
-                        {% endfor %}
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
         <div class="inner-header flex">
             <div class="container">
                 <div class="owl-carousel owl-theme headerowl">
@@ -147,53 +100,6 @@
         <!--Waves end-->
     </div>
 
-    <!-- responsive left menu -->
-    <div class="offcanvas offcanvas-start left-offcanvas-menu" tabindex="-1" id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h4 class="offcanvas-title" id="offcanvasExampleLabel">Ayhan D. Şanlı</h4>
-
-        {% for navbarrighmedia in navbarrighmedia  %}
-            <a href="{{ navbarrighmedia.link }}">
-                <i class="{{ navbarrighmedia.platform }} text-white" style="font-size: 24px;" ></i>
-            </a>
-        {% endfor %}
-
-            <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-
-        <div class="offcanvas-body">
-            <ul class="navbar-nav">
-
-            {% for navbar in navbar  %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
-                </li>
-            {% endfor %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}#sectioncontact-us">İletişim</a>
-                </li>
-
-            </ul>
-        </div>
-
-        <div>
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave2"
-                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
-                </defs>
-                <g class="parallax">
-                    <use class="use" xlink:href="#gentle-wave2" x="48" y="0" fill="rgba(255,255,255,0.7"/>
-                    <use class="use" xlink:href="#gentle-wave2" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
-                    <use class="use" xlink:href="#gentle-wave2" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
-                    <use class="use" xlink:href="#gentle-wave2" x="48" y="7" fill="#fff"/>
-                </g>
-            </svg>
-        </div>
-    </div>
-    <!-- responsive left menu finish -->
     {% for section in index_section_one_data %}
     <section class="my-5 section-one">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
@@ -675,92 +581,12 @@
         </div>
     </section>
 
-    {% for fot in footer %}
-    <footer class="text-center text-lg-start text-white ">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-            <!-- Section: Links -->
-            <section class="">
-                <!--Grid row-->
-                <div class="row ">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 class="mb-4 " style="font-family: 'Dancing Script', cursive; font-size: 18px;">
-                            Ayhan D. Şanlı
-                        </h6>
+{% endblock content %}
 
-                        <div>
-                            {{ fot.description | safe }}
-                        </div>
-                    </div>
-                    <!-- Grid column -->
-
-                    <hr class="w-100 clearfix d-md-none">
+{% include 'includes/_leftoffcanvas.html' %}
 
 
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Linkler</h6>
-                        {% for footer_subsection in fot.footersubsection_set.all %}
-                        <p>
-                            <a href="{% url footer_subsection.url %}" class="text-white">{{ footer_subsection.title }}</a>
-                        </p>
-                        {% endfor %}
-                        
-                    </div>
-                    <!-- Grid column -->
-
-                    <hr class="w-100 clearfix d-md-none">
-
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">İletişim</h6>
-
-                        <p><i class="fas fa-home mr-3"></i> {{ fot.adress }}</p>
-                        <p><i class="fas fa-envelope mr-3"></i> {{ fot.email }}</p>
-                        <p><i class="fas fa-phone mr-3"></i> {{ fot.phone }}</p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h6 class="text-uppercase mb-4 font-weight-bold">Takip Et</h6>
-
-
-                        {% for footer_supsection in fot.footersupsection_set.all %}
-                        <!-- Github -->
-                        <a target="_blank" class="btn btn-primary" style="background-color: #071C4D" href="{{ footer_supsection.socialmedia_link }}" role="button"><i
-                                class="{{ footer_supsection.socialmedia }}"></i></a>
-
-                        <!-- Linkedin -->
-                        {% comment %} <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!"
-                            role="button"><i class="{{ navbarrighmedia.platform }}"></i></a> {% endcomment %}
-                        {% endfor %}
-                        <div class="row mt-4 d-flex justify-content-center">
-                            <div class="col-8 d-flex justify-content-center align-items-center">
-                                <img src="{% static 'img/lineblue.png' %}" alt="" style="width: 100%;">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-        </div>
-    </footer>
-    {% endfor %}
-    
-    <div class="footer-bottom">
-        <div class="container-fluid">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-12">
-                    <div class="text-center p-3 footer-bottom">
-                        <span class="text-white">© 2023 Designed by:</span>
-                        <a class="text-white">Ayhan D. Şanlı</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+{% include 'includes/_footer.html' %}
 
 
 
@@ -788,6 +614,9 @@
 
     <!-- owlapp js -->
     <script src="{% static 'js/owl.js' %}"></script>
+
+    <!-- filtercategory.js -->
+    <script src="{% static 'js/filtercategory.js' %}"></script>
 
     <!-- app js -->
     <script src="{% static 'js/app.js' %}"></script>

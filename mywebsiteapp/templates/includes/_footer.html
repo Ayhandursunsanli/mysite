@@ -1,0 +1,88 @@
+{% load static %}
+
+{% for fot in footer %}
+<footer class="text-center text-lg-start text-white ">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+            <!--Grid row-->
+            <div class="row ">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="mb-4 " style="font-family: 'Dancing Script', cursive; font-size: 18px;">
+                        Ayhan D. Şanlı
+                    </h6>
+
+                    <div>
+                        {{ fot.description | safe }}
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+                <hr class="w-100 clearfix d-md-none">
+
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Linkler</h6>
+                    {% for footer_subsection in fot.footersubsection_set.all %}
+                    <p>
+                        <a href="{% url footer_subsection.url %}" class="text-white">{{ footer_subsection.title }}</a>
+                    </p>
+                    {% endfor %}
+                    
+                </div>
+                <!-- Grid column -->
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">İletişim</h6>
+
+                    <p><i class="fas fa-home mr-3"></i> {{ fot.adress }}</p>
+                    <p><i class="fas fa-envelope mr-3"></i> {{ fot.email }}</p>
+                    <p><i class="fas fa-phone mr-3"></i> {{ fot.phone }}</p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Takip Et</h6>
+
+
+                    {% for footer_supsection in fot.footersupsection_set.all %}
+                    <!-- Github -->
+                    <a target="_blank" class="btn btn-primary" style="background-color: #071C4D" href="{{ footer_supsection.socialmedia_link }}" role="button"><i
+                            class="{{ footer_supsection.socialmedia }}"></i></a>
+
+                    <!-- Linkedin -->
+                    {% comment %} <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!"
+                        role="button"><i class="{{ navbarrighmedia.platform }}"></i></a> {% endcomment %}
+                    {% endfor %}
+                    <div class="row mt-4 d-flex justify-content-center">
+                        <div class="col-8 d-flex justify-content-center align-items-center">
+                            <img src="{% static 'img/lineblue.png' %}" alt="" style="width: 100%;">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</footer>
+{% endfor %}
+
+<div class="footer-bottom">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12">
+                <div class="text-center p-3 footer-bottom">
+                    <span class="text-white">© 2023 Designed by:</span>
+                    <a class="text-white">Ayhan D. Şanlı</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
