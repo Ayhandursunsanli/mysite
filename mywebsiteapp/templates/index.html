@@ -52,7 +52,7 @@
     <div id="progress">
         <span id="progress-value"><i class="fa-solid fa-arrow-up text-white"></i></span>
     </div>
-    
+
 {% block content %}
     <!-- <div class="intro">
     <h1 class="logo-header">
@@ -61,334 +61,354 @@
     </h1>
     </div> -->
 
-    <div class="header">
+<!-- bu div site haritası başlangıç divi.     -->
+    <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
 
-        {% include 'includes/_navbar.html' %}
+        <div class="header">
 
-        <div class="inner-header flex">
-            <div class="container">
-                <div class="owl-carousel owl-theme headerowl">
-                    
-                {% for headercarousel in headercarousel  %}
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="img-box">
-                                    <img src="{{ headercarousel.image.url }}" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 item-right d-flex flex-column justify-content-center align-items-center mt-5 mt-lg-0">
-                                <h4>{{ headercarousel.title }}</h4>
-                                <p>{{ headercarousel.about }}</p>
-                            </div>
-                        </div>
-                        <img class="headerarrow d-none d-lg-block" src=" {% static 'img/arrowleft.png' %}" alt="">
-                    </div>
-                {% endfor %}
-                </div>
-            </div>
-        </div>
+            {% include 'includes/_navbar.html' %}
 
-        <div>
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave"
-                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
-                </defs>
-                <g class="parallax">
-                    <use class="use" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"/>
-                    <use class="use" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
-                    <use class="use" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
-                    <use class="use" xlink:href="#gentle-wave" x="48" y="7" fill="#fff"/>
-                </g>
-            </svg>
-        </div>
-        <!--Waves end-->
-    </div>
-
-    {% for section in index_section_one_data %}
-    <section class="my-5 section-one" data-aos="fade-up">
-        <div class="section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> {{ section.title }}</h4>
-            <img src="{% static 'img/lineblack.png' %}" alt="">
-        </div>
-
-        <div class="container py-5" style="overflow: hidden;">
-            {% for first_subsection in section.firstsubsection_set.all %}
-            <div class="row">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="laptop">
-                        <div class="laptop__screen">
-                            <div class="owl-carousel owl-theme myowl">
-                                {% if first_subsection.carousel_image_1 %}
-                                <div class="item">
-                                    <img src="{{ first_subsection.carousel_image_1.url }}" alt="">
-                                </div>
-                            {% endif %}
-                            {% if first_subsection.carousel_image_2 %}
-                                <div class="item">
-                                    <img src="{{ first_subsection.carousel_image_2.url }}" alt="">
-                                </div>
-                            {% endif %}
-                            {% if first_subsection.carousel_image_ %}
-                                <div class="item">
-                                    <img src="{{ first_subsection.carousel_image_3.url }}" alt="">
-                                </div>
-                            {% endif %}
-                            {% if first_subsection.carousel_image_4 %}
-                                <div class="item">
-                                    <img src="{{ first_subsection.carousel_image_4.url }}" alt="">
-                                </div>
-                            {% endif %}
-                            </div>
-
-                        </div>
-                        <div class="laptop__bottom">
-                            <div class="laptop__under"></div>
-                        </div>
-                        <div class="laptop__shadow"></div>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center mt-5 pt-5 pt-lg-0 mt-lg-0" data-aos="fade-left">
-                    <h4 class="minihead mb-4">{{ first_subsection.sub_title }}</h4>
-                    <div>
-                        {{ first_subsection.description | safe }}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            <div class="container">
-                <div class="row my-5">
-                    <div class="col-12 d-flex justify-content-center">
-                        <img src="{% static 'img/lineblack2.png' %}" alt="" width="200">
-                    </div>
-                </div>
-            </div>
-            {% for second_subsection in section.secondsubsection_set.all %}
-            <div class="row my-5 ">
-                <div class="col-lg-6 order-lg-2 sec-responsive" data-aos="fade-left">  
-                    <img src="{{ second_subsection.image.url }}" alt="">
-                </div>
-                <div class="col-lg-6 mt-5 mt-lg-0 d-flex flex-column align-items-center justify-content-center order-lg-1" data-aos="fade-right">
-                    <h4 class="minihead mb-4 text-center">{{ second_subsection.sub_title }}</h4>
-                    <div>
-                        {{ second_subsection.description | safe }}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-    {% endfor %}
-
-    {% for sectionthree in index_section_three_data %}
-    <section class="section-three" data-aos="fade-up">
-        <div class="section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> {{ sectionthree.title }}</h4>
-            <img src="{% static 'img/linewhite.png' %}" alt="">
-        </div>
-        <div class="container py-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-12 d-flex justify-content-center ">
-                    <div class="owl-carousel owl-theme myowlone">
-                        {% for first_subsectionthree in sectionthree.firstsubsectionthree_set.all %}
+            <div class="inner-header flex">
+                <div class="container">
+                    <div class="owl-carousel owl-theme headerowl">
+                        
+                    {% for headercarousel in headercarousel  %}
                         <div class="item">
-                            <h4 class="minihead mb-4 text-center">{{ first_subsectionthree.sub_title }}</h4>
-                            <div class="row d-flex justify-content-center mt-5">
-                                <div class="col-lg-6 d-flex justify-content-center">
-                                    <div class="section-three-img-box">
-                                        <img class="border" src="{{ first_subsectionthree.carousel_image.url }}" alt="">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="img-box">
+                                        <img src="{{ headercarousel.image.url }}" alt="">
                                     </div>
                                 </div>
-                                <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center text-white text-center">
-                                    {{ first_subsectionthree.description | safe }}
+                                <div class="col-lg-6 item-right d-flex flex-column justify-content-center align-items-center mt-5 mt-lg-0">
+                                    <h4>{{ headercarousel.title }}</h4>
+                                    <p>{{ headercarousel.about }}</p>
                                 </div>
                             </div>
+                            <img class="headerarrow d-none d-lg-block" src=" {% static 'img/arrowleft.png' %}" alt="">
                         </div>
-                        {% endfor %}
-
+                    {% endfor %}
                     </div>
                 </div>
-                <a href="{% url 'project' %}" class="learn-more mybtn mt-5">
-                    <span class="circle" aria-hidden="true">
-                        <span class="icon arrow"></span>
-                    </span>
-                    <span class="button-text">Projelere Git</span>
-                </a>
             </div>
-        </div>    
-    </section>
-    {% endfor %}
 
-
-    {% for sectionfour in index_section_four_data %}
-    <section class="section-four" data-aos="fade-up">
-        <div class="section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> {{ sectionfour.title }}</h4>
-            <img src="{% static 'img/lineblack.png' %}" alt="">
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                    </defs>
+                    <g class="parallax">
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"/>
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="7" fill="#fff"/>
+                    </g>
+                </svg>
+            </div>
+            <!--Waves end-->
         </div>
-        {% for first_subsectionfour in sectionfour.firstsubsectionfour_set.all %}
-        <h4 class="minihead my-5 text-center"> {{ first_subsectionfour.sub_title }}</h4>
-        
-        <div class="container">
-            <div class="text-center">
-            {{ first_subsectionfour.description | safe }}
-            </div>
-            <div class="row my-5">
-                <div class="col-12 plan-head">
-                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                        <li class="nav-item" role="presentation" style="margin-top: 6rem;">
-                            <button class="nav-link active" id="pills-talep-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-talep" type="button" role="tab" aria-controls="pills-talep"
-                                aria-selected="true">
-                                <i class="fa-solid fa-code-pull-request d-none d-lg-inline"></i>
-                                Talep
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation" style="margin-top: 2rem;">
-                            <button class="nav-link" id="pills-analiz-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-analiz" type="button" role="tab" aria-controls="pills-analiz"
-                                aria-selected="false">
-                                <i class="fa-solid fa-magnifying-glass-chart d-none d-lg-inline"></i>
-                                Analiz
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-tasarim-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-tasarim" type="button" role="tab" aria-controls="pills-tasarim"
-                                aria-selected="false">
-                                <i class="fa-solid fa-compass-drafting d-none d-lg-inline"></i>
-                                Tasarım
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-kodlama-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-kodlama" type="button" role="tab" aria-controls="pills-kodlama"
-                                aria-selected="false">
-                                <i class="fa-solid fa-code d-none d-lg-inline"></i>
-                                Kodlama
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation" style="margin-top: 2rem;">
-                            <button class="nav-link" id="pills-test-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-test" type="button" role="tab" aria-controls="pills-test"
-                                aria-selected="false">
-                                <i class="fa-solid fa-stethoscope d-none d-lg-inline"></i>
-                                Test-Yayın
-                            </button>
-                        </li>
-                        <li class="nav-item" role="presentation" style="margin-top: 6rem;">
-                            <button class="nav-link" id="pills-bakim-tab" data-bs-toggle="pill"
-                                data-bs-target="#pills-bakim" type="button" role="tab" aria-controls="pills-bakim"
-                                aria-selected="false">
-                                <i class="fa-solid fa-headset d-none d-lg-inline"></i>
-                                Bakım-Destek
-                            </button>
-                        </li>
-                    </ul>
-                    <div class="plan-imgbox">
-                        <img src="{% static 'img/dashedline.png' %}" alt="">
-                    </div>
-                </div>
+
+        {% for section in index_section_one_data %}
+        <section id="list-item-1" class="my-5 section-one" data-aos="fade-up">
+            <div class="section-header d-flex flex-column justify-content-center align-items-center">
+                <h4 class="text-center mb-3"> {{ section.title }}</h4>
+                <img src="{% static 'img/lineblack.png' %}" alt="">
             </div>
 
-            <div class="row d-flex justify-content-center mt-5">
-                <div class="col-lg-4 plan-details mt-5">
-                    <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-talep" role="tabpanel"
-                            aria-labelledby="pills-talep-tab" tabindex="0">
-                            {{ first_subsectionfour.sue | safe }}
-                        </div>
-                        <div class="tab-pane fade" id="pills-analiz" role="tabpanel" aria-labelledby="pills-analiz-tab"
-                            tabindex="0">
-                            {{ first_subsectionfour.analysis | safe }}
-                        </div>
-                        <div class="tab-pane fade" id="pills-tasarim" role="tabpanel"
-                            aria-labelledby="pills-tasarim-tab" tabindex="0">
-                            {{ first_subsectionfour.design | safe }}
-                        </div>
-                        <div class="tab-pane fade" id="pills-kodlama" role="tabpanel"
-                            aria-labelledby="pills-kodlama-tab" tabindex="0">
-                            {{ first_subsectionfour.coding | safe }}
-                        </div>
-                        <div class="tab-pane fade" id="pills-test" role="tabpanel" aria-labelledby="pills-test-tab"
-                            tabindex="0">
-                            {{ first_subsectionfour.testing_release | safe }}
-                        </div>
-                        <div class="tab-pane fade" id="pills-bakim" role="tabpanel" aria-labelledby="pills-bakim-tab"
-                            tabindex="0">
-                            {{ first_subsectionfour.maintenance_support | safe }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-    {% endfor %}
-
-
-    {% for sectionfive in index_section_five_data %}
-    <section class="section-five" data-aos="fade-up">
-        <div class="section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> {{ sectionfive.title }}</h4>
-            <img src="{% static 'img/questionmark.png' %}" alt="">
-        </div>
-        <div class="container">
-            <div class="row ssshead mb-5 d-flex justify-content-center">
-                <h4 class="minihead text-center">{{ sectionfive.sub_title }}</h4>
-                <div class="col-md-10">
-                    <div class="text-center">
-                        {{ sectionfive.description |safe }}
-                    </div>
-                </div>
-            </div>
-            <div class="row sss">
-                <div class="col-lg-6 sss-right order-lg-2">
-                    <img src="{{ sectionfive.image.url }}" alt="">
-                </div>
-                <div class="col-lg-6 sss-left order-lg-1">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        {% for first_subsectionfive in sectionfive.firstsubsectionfive_set.all %}
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-{{ first_subsectionfive.id }}" aria-expanded="false"
-                                    aria-controls="flush-{{ first_subsectionfive.id }}">
-                                    {{ first_subsectionfive.question | safe }}
-                                </button>
-                            </h2>
-                            <div id="flush-{{ first_subsectionfive.id }}" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    {{ first_subsectionfive.answer | safe }}
+            <div class="container py-5" style="overflow: hidden;">
+                {% for first_subsection in section.firstsubsection_set.all %}
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="laptop">
+                            <div class="laptop__screen">
+                                <div class="owl-carousel owl-theme myowl">
+                                    {% if first_subsection.carousel_image_1 %}
+                                    <div class="item">
+                                        <img src="{{ first_subsection.carousel_image_1.url }}" alt="">
+                                    </div>
+                                {% endif %}
+                                {% if first_subsection.carousel_image_2 %}
+                                    <div class="item">
+                                        <img src="{{ first_subsection.carousel_image_2.url }}" alt="">
+                                    </div>
+                                {% endif %}
+                                {% if first_subsection.carousel_image_ %}
+                                    <div class="item">
+                                        <img src="{{ first_subsection.carousel_image_3.url }}" alt="">
+                                    </div>
+                                {% endif %}
+                                {% if first_subsection.carousel_image_4 %}
+                                    <div class="item">
+                                        <img src="{{ first_subsection.carousel_image_4.url }}" alt="">
+                                    </div>
+                                {% endif %}
                                 </div>
+
                             </div>
+                            <div class="laptop__bottom">
+                                <div class="laptop__under"></div>
+                            </div>
+                            <div class="laptop__shadow"></div>
                         </div>
-                        {% endfor %}
-
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {% endfor %}
-
-    <section class="section-six">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-10">
-                {% for item in index_section_six_data %}
-                <div>
-                    {{ item.description |safe }}
+                    <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center mt-5 pt-5 pt-lg-0 mt-lg-0" data-aos="fade-left">
+                        <h4 class="minihead mb-4">{{ first_subsection.sub_title }}</h4>
+                        <div>
+                            {{ first_subsection.description | safe }}
+                        </div>
+                    </div>
                 </div>
                 {% endfor %}
-                    
+                <div class="container">
+                    <div class="row my-5">
+                        <div class="col-12 d-flex justify-content-center">
+                            <img src="{% static 'img/lineblack2.png' %}" alt="" width="200">
+                        </div>
+                    </div>
+                </div>
+                {% for second_subsection in section.secondsubsection_set.all %}
+                <div class="row my-5 ">
+                    <div class="col-lg-6 order-lg-2 sec-responsive" data-aos="fade-left">  
+                        <img src="{{ second_subsection.image.url }}" alt="">
+                    </div>
+                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex flex-column align-items-center justify-content-center order-lg-1" data-aos="fade-right">
+                        <h4 class="minihead mb-4 text-center">{{ second_subsection.sub_title }}</h4>
+                        <div>
+                            {{ second_subsection.description | safe }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
+
+        {% for sectionthree in index_section_three_data %}
+        <section id="list-item-2" class="section-three" data-aos="fade-up">
+            <div class="section-header d-flex flex-column justify-content-center align-items-center">
+                <h4 class="text-center mb-3"> {{ sectionthree.title }}</h4>
+                <img src="{% static 'img/linewhite.png' %}" alt="">
+            </div>
+            <div class="container py-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-12 d-flex justify-content-center ">
+                        <div class="owl-carousel owl-theme myowlone">
+                            {% for first_subsectionthree in sectionthree.firstsubsectionthree_set.all %}
+                            <div class="item">
+                                <h4 class="minihead mb-4 text-center">{{ first_subsectionthree.sub_title }}</h4>
+                                <div class="row d-flex justify-content-center mt-5">
+                                    <div class="col-lg-6 d-flex justify-content-center">
+                                        <div class="section-three-img-box">
+                                            <img class="border" src="{{ first_subsectionthree.carousel_image.url }}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center text-white text-center">
+                                        {{ first_subsectionthree.description | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <a href="{% url 'project' %}" class="learn-more mybtn mt-5">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Projelere Git</span>
+                    </a>
+                </div>
+            </div>    
+        </section>
+        {% endfor %}
+
+
+        {% for sectionfour in index_section_four_data %}
+        <section id="list-item-3" class="section-four" data-aos="fade-up">
+            <div class="section-header d-flex flex-column justify-content-center align-items-center">
+                <h4 class="text-center mb-3"> {{ sectionfour.title }}</h4>
+                <img src="{% static 'img/lineblack.png' %}" alt="">
+            </div>
+            {% for first_subsectionfour in sectionfour.firstsubsectionfour_set.all %}
+            <h4 class="minihead my-5 text-center"> {{ first_subsectionfour.sub_title }}</h4>
+            
+            <div class="container">
+                <div class="text-center">
+                {{ first_subsectionfour.description | safe }}
+                </div>
+                <div class="row my-5">
+                    <div class="col-12 plan-head">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation" style="margin-top: 6rem;">
+                                <button class="nav-link active" id="pills-talep-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-talep" type="button" role="tab" aria-controls="pills-talep"
+                                    aria-selected="true">
+                                    <i class="fa-solid fa-code-pull-request d-none d-lg-inline"></i>
+                                    Talep
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation" style="margin-top: 2rem;">
+                                <button class="nav-link" id="pills-analiz-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-analiz" type="button" role="tab" aria-controls="pills-analiz"
+                                    aria-selected="false">
+                                    <i class="fa-solid fa-magnifying-glass-chart d-none d-lg-inline"></i>
+                                    Analiz
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-tasarim-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-tasarim" type="button" role="tab" aria-controls="pills-tasarim"
+                                    aria-selected="false">
+                                    <i class="fa-solid fa-compass-drafting d-none d-lg-inline"></i>
+                                    Tasarım
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-kodlama-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-kodlama" type="button" role="tab" aria-controls="pills-kodlama"
+                                    aria-selected="false">
+                                    <i class="fa-solid fa-code d-none d-lg-inline"></i>
+                                    Kodlama
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation" style="margin-top: 2rem;">
+                                <button class="nav-link" id="pills-test-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-test" type="button" role="tab" aria-controls="pills-test"
+                                    aria-selected="false">
+                                    <i class="fa-solid fa-stethoscope d-none d-lg-inline"></i>
+                                    Test-Yayın
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation" style="margin-top: 6rem;">
+                                <button class="nav-link" id="pills-bakim-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-bakim" type="button" role="tab" aria-controls="pills-bakim"
+                                    aria-selected="false">
+                                    <i class="fa-solid fa-headset d-none d-lg-inline"></i>
+                                    Bakım-Destek
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="plan-imgbox">
+                            <img src="{% static 'img/dashedline.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row d-flex justify-content-center mt-5">
+                    <div class="col-lg-4 plan-details mt-5">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-talep" role="tabpanel"
+                                aria-labelledby="pills-talep-tab" tabindex="0">
+                                {{ first_subsectionfour.sue | safe }}
+                            </div>
+                            <div class="tab-pane fade" id="pills-analiz" role="tabpanel" aria-labelledby="pills-analiz-tab"
+                                tabindex="0">
+                                {{ first_subsectionfour.analysis | safe }}
+                            </div>
+                            <div class="tab-pane fade" id="pills-tasarim" role="tabpanel"
+                                aria-labelledby="pills-tasarim-tab" tabindex="0">
+                                {{ first_subsectionfour.design | safe }}
+                            </div>
+                            <div class="tab-pane fade" id="pills-kodlama" role="tabpanel"
+                                aria-labelledby="pills-kodlama-tab" tabindex="0">
+                                {{ first_subsectionfour.coding | safe }}
+                            </div>
+                            <div class="tab-pane fade" id="pills-test" role="tabpanel" aria-labelledby="pills-test-tab"
+                                tabindex="0">
+                                {{ first_subsectionfour.testing_release | safe }}
+                            </div>
+                            <div class="tab-pane fade" id="pills-bakim" role="tabpanel" aria-labelledby="pills-bakim-tab"
+                                tabindex="0">
+                                {{ first_subsectionfour.maintenance_support | safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
+
+
+        {% for sectionfive in index_section_five_data %}
+        <section id="list-item-4" class="section-five" data-aos="fade-up">
+            <div class="section-header d-flex flex-column justify-content-center align-items-center">
+                <h4 class="text-center mb-3"> {{ sectionfive.title }}</h4>
+                <img src="{% static 'img/questionmark.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row ssshead mb-5 d-flex justify-content-center">
+                    <h4 class="minihead text-center">{{ sectionfive.sub_title }}</h4>
+                    <div class="col-md-10">
+                        <div class="text-center">
+                            {{ sectionfive.description |safe }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row sss">
+                    <div class="col-lg-6 sss-right order-lg-2">
+                        <img src="{{ sectionfive.image.url }}" alt="">
+                    </div>
+                    <div class="col-lg-6 sss-left order-lg-1">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            {% for first_subsectionfive in sectionfive.firstsubsectionfive_set.all %}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-{{ first_subsectionfive.id }}" aria-expanded="false"
+                                        aria-controls="flush-{{ first_subsectionfive.id }}">
+                                        {{ first_subsectionfive.question | safe }}
+                                    </button>
+                                </h2>
+                                <div id="flush-{{ first_subsectionfive.id }}" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        {{ first_subsectionfive.answer | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+        {% endfor %}
+
+        <section id="list-item-5" class="section-six list-item-5">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-10">
+                    {% for item in index_section_six_data %}
+                    <div>
+                        {{ item.description |safe }}
+                    </div>
+                    {% endfor %}
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <div id="list-example" class="list-group sidepanel">
+            <h6>Sayfa Haritası</h6>
+            <hr>
+            <a class="list-group-item list-group-item-action" href="#list-item-1">Kullanıcı Odaklı</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-2">Çeşitlilik</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-3">Süreçler</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-4">SSS</a>
+            <a class="list-group-item list-group-item-action" href="#list-item-5">Açıklamalar</a>
+            <div class="circle">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <!-- <i class="fa fa-chevron-right hide" aria-hidden="true"></i>-->
+            </div>
         </div>
-    </section>
+        <!-- Bu son div site haritasının başlangıç divinin kapanışı. Bir div içinde olması gerekliydi.  -->
+    </div>
 
 {% endblock content %}
 
@@ -396,6 +416,9 @@
 
 
 {% include 'includes/_footer.html' %}
+
+    
+
 
 
 

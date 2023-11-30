@@ -309,6 +309,72 @@ footer .btn-primary {
   max-width: 50%;
 }
 
+#list-example {
+  background: #071c4d !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#list-example h6 {
+  font-family: "Dancing Script", cursive;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.list-group {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 0;
+  z-index: 2;
+  font-size: 16px;
+  color: #f1f1f2;
+  font-family: Helvetica;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  height: 350px;
+  width: 250px;
+}
+.list-group .circle {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 16px;
+  background-color: #071c4d;
+  color: #f1f1f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - 22px);
+  right: calc(100% - 22px);
+  z-index: 3;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.list-group .circle:hover {
+  background: #214f85;
+}
+.list-group .circle .fa-chevron-left {
+  margin-right: 5px;
+}
+.list-group .list-group-item {
+  background: #071c4d;
+  color: white;
+  border: none;
+}
+.list-group .list-group-item.active {
+  background: white;
+  border: none;
+  color: black;
+}
+
 .header {
   font-family: "Mulish", sans-serif;
   height: 100vh;

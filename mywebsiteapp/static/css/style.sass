@@ -191,12 +191,6 @@ ul
                         transform-origin: left
                         transition: width 0.4s ease-in-out
 
-// .navbar.scrolled-navbar
-//     width: 100%
-//     max-width: 100%
-//     position: fixed
-//     top: 0
-//     transition: .5s ease
 
 footer
     border-top: 15px solid #041232
@@ -298,10 +292,81 @@ footer
             max-width: 50%
 
 
+// Sayfa haritası
+#list-example
+    background: #071c4d !important
+    // padding: 1rem
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+    h6
+        font-family: 'Dancing Script', cursive
+        font-size: 25px
+        margin-bottom: 0
+
+.list-group
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+    border-top-left-radius: 40px
+    border-bottom-left-radius: 40px
+    position: fixed
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+    margin-right: 0
+    z-index: 2
+    font-size: 16px
+    color: #f1f1f2
+    font-family: Helvetica
+    text-align: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 5px
+    height: 350px
+    width: 250px
+
+    .circle 
+        position: absolute
+        width: 44px
+        height: 44px
+        border-radius: 50%
+        font-size: 16px
+        background-color: #071c4d
+        color: #f1f1f2
+        display: flex
+        justify-content: center
+        align-items: center
+        top: calc(50% - 22px)
+        right: calc(100% - 22px)
+        z-index: 3
+        cursor: pointer
+        transition:  0.3s ease
+        &:hover
+            background: #214f85
+
+
+        .fa-chevron-left 
+            margin-right: 5px
+        
+        // .fa-chevron-right 
+        //     margin-left: 5px
+        
+        // .hide 
+        //     display: none
+
+    .list-group-item
+        background: #071c4d
+        color: white
+        border: none
+    .list-group-item.active
+        background: white
+        border: none
+        color: black
+
+// -----------------
+
 
 
 // index.html
-
 .header
     font-family: 'Mulish', sans-serif
     height: 100vh

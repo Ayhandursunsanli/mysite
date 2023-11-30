@@ -41,4 +41,29 @@ typeText();
 
 
 
+// Sayfa Haritası
+
+$('.circle').click(function () {
+    let spWidth = $('.list-group').width();
+    let spMarginRight = parseInt($('.list-group').css('margin-right'), 0);
+    let w = (spMarginRight >= 0) ? -spWidth : 0;
+    let cw = (w < 0) ? -w : spWidth - 22;
+    
+    // .list-group paneline uygun animasyonları ekleyin
+    $('.list-group').animate({
+        marginRight: w
+    });
+    $('.list-group span').animate({
+        marginRight: w
+    });
+
+    // .circle butonunu hareket ettirin ve ikonları değiştirin
+    $('.circle').animate({
+        right: cw
+    }, function () {
+        $('.fa-chevron-left').toggleClass('hide');
+        $('.fa-chevron-right').toggleClass('hide');
+    });
+});
+
 
