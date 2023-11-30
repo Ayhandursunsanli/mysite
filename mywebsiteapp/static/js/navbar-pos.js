@@ -18,7 +18,7 @@ function scrollFunction() {
         navbar.style.background = "linear-gradient(180deg, rgba(7,28,77,1) 9%, rgba(33,79,133,1) 100%) !important";
     } else {
         navbar.style.width = "80%";
-        navbar.style.position = "absolute";
+        navbar.style.position = "fixed";
         navbar.style.top = "30px";
         navbar.style.borderRadius = "30px";
         navbar.style.boxShadow = "none";
