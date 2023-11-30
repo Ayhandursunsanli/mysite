@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-md bg-white">
+<nav class="navbar navbar-expand-md bg-white scrolled-navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'index' %}">Ayhan D. Şanlı</a>
 
@@ -13,9 +13,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav d-none d-md-flex">
 
-            {% for navbar in navbar  %}
+            {% for navbar_item in navbar %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
+                    <a class="nav-link {% if request.resolver_match.url_name == navbar_item.url %}activemenu{% endif %}" href="{% url navbar_item.url %}">{{navbar_item.title}}</a>
                 </li>
             {% endfor %}
             
@@ -53,3 +53,5 @@
         </div>
     </div>
 </nav>
+
+

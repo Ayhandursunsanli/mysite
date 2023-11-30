@@ -88,6 +88,111 @@ ul li {
   transition: ease-in-out 0.5s;
 }
 
+#progress {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  height: 55px;
+  width: 55px;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+}
+#progress #progress-value {
+  display: block;
+  height: calc(100% - 5px);
+  width: calc(100% - 5px);
+  background-color: #071c4d;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  color: #214f85;
+}
+
+.navbar {
+  background: #e9e9e9;
+  z-index: 100;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+  transition: 0.5s ease !important;
+  width: 80%;
+  height: 70px;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  overflow: hidden;
+}
+.navbar .container-fluid {
+  padding-left: 2rem;
+}
+.navbar .container-fluid .navbar-brand {
+  font-family: "Dancing Script", cursive;
+  border-right: 1px solid;
+  padding-right: 1rem;
+}
+.navbar .container-fluid .navbar-contacts {
+  width: 300px;
+}
+.navbar .container-fluid .navbar-contacts .contacts-left {
+  font-size: 12px;
+  color: gray;
+  border-left: 1px solid;
+  padding-left: 1rem;
+  border-right: 1px solid;
+  padding-right: 1rem;
+}
+.navbar .container-fluid .navbar-contacts .contacts-left .text-animation {
+  height: 15px;
+  font-family: "Dancing Script", cursive;
+  font-size: 12px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.navbar .container-fluid .navbar-contacts .contacts-right {
+  font-size: 18px;
+}
+.navbar .navbar-collapse {
+  font-size: 14px;
+  display: flex !important;
+  justify-content: space-around;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+  color: black;
+  transition: 0.4s ease-in-out;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover {
+  letter-spacing: 2px;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0.5px;
+  background-color: black;
+  transform-origin: left;
+  transition: width 0.4s ease-in-out;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover::after {
+  width: 100%;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link.activemenu {
+  letter-spacing: 2px;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link.activemenu::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.5px;
+  background-color: black;
+  transform-origin: left;
+  transition: width 0.4s ease-in-out;
+}
+
 footer {
   border-top: 15px solid #041232;
   font-family: "Mulish", sans-serif;
@@ -330,73 +435,6 @@ footer .btn-primary {
   100% {
     transform: translate3d(85px, 0, 0);
   }
-}
-.header nav {
-  z-index: 100;
-  position: absolute !important;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 30px;
-  transition: top 0.5s ease;
-  width: 80%;
-  height: 70px;
-  border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  overflow: hidden;
-}
-.header nav .container-fluid {
-  padding-left: 2rem;
-}
-.header nav .container-fluid .navbar-brand {
-  font-family: "Dancing Script", cursive;
-  border-right: 1px solid;
-  padding-right: 1rem;
-}
-.header nav .container-fluid .navbar-contacts {
-  width: 300px;
-}
-.header nav .container-fluid .navbar-contacts .contacts-left {
-  font-size: 12px;
-  color: gray;
-  border-left: 1px solid;
-  padding-left: 1rem;
-  border-right: 1px solid;
-  padding-right: 1rem;
-}
-.header nav .container-fluid .navbar-contacts .contacts-left .text-animation {
-  height: 15px;
-  font-family: "Dancing Script", cursive;
-  font-size: 12px;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.header nav .container-fluid .navbar-contacts .contacts-right {
-  font-size: 18px;
-}
-.header nav .navbar-collapse {
-  font-size: 14px;
-  display: flex !important;
-  justify-content: space-around;
-}
-.header nav .navbar-collapse .navbar-nav .nav-item a {
-  color: black;
-  transition: 0.4s ease-in-out;
-}
-.header nav .navbar-collapse .navbar-nav .nav-item a:hover {
-  letter-spacing: 2px;
-}
-.header nav .navbar-collapse .navbar-nav .nav-item a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 1px;
-  background-color: black;
-  transform-origin: left;
-  transition: width 0.4s ease-in-out;
-}
-.header nav .navbar-collapse .navbar-nav .nav-item a:hover::after {
-  width: 100%;
 }
 
 .section-one {
@@ -939,73 +977,6 @@ footer .btn-primary {
   100% {
     transform: translate3d(85px, 0, 0);
   }
-}
-.common-header-nav nav {
-  z-index: 100;
-  position: absolute !important;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 30px;
-  transition: top 0.5s ease;
-  width: 80%;
-  height: 70px;
-  border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  overflow: hidden;
-}
-.common-header-nav nav .container-fluid {
-  padding-left: 2rem;
-}
-.common-header-nav nav .container-fluid .navbar-brand {
-  font-family: "Dancing Script", cursive;
-  border-right: 1px solid;
-  padding-right: 1rem;
-}
-.common-header-nav nav .container-fluid .navbar-contacts {
-  width: 300px;
-}
-.common-header-nav nav .container-fluid .navbar-contacts .contacts-left {
-  font-size: 12px;
-  color: gray;
-  border-left: 1px solid;
-  padding-left: 1rem;
-  border-right: 1px solid;
-  padding-right: 1rem;
-}
-.common-header-nav nav .container-fluid .navbar-contacts .contacts-left .text-animation {
-  height: 15px;
-  font-family: "Dancing Script", cursive;
-  font-size: 12px;
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.common-header-nav nav .container-fluid .navbar-contacts .contacts-right {
-  font-size: 18px;
-}
-.common-header-nav nav .navbar-collapse {
-  font-size: 14px;
-  display: flex !important;
-  justify-content: space-around;
-}
-.common-header-nav nav .navbar-collapse .navbar-nav .nav-item a {
-  color: black;
-  transition: 0.4s ease-in-out;
-}
-.common-header-nav nav .navbar-collapse .navbar-nav .nav-item a:hover {
-  letter-spacing: 2px;
-}
-.common-header-nav nav .navbar-collapse .navbar-nav .nav-item a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 1px;
-  background-color: black;
-  transform-origin: left;
-  transition: width 0.4s ease-in-out;
-}
-.common-header-nav nav .navbar-collapse .navbar-nav .nav-item a:hover::after {
-  width: 100%;
 }
 
 .projects-section-one {

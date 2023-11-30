@@ -26,6 +26,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -45,6 +48,10 @@
 </head>
 
 <body>
+
+    <div id="progress">
+        <span id="progress-value"><i class="fa-solid fa-arrow-up text-white"></i></span>
+    </div>
     
 {% block content %}
     <!-- <div class="intro">
@@ -101,7 +108,7 @@
     </div>
 
     {% for section in index_section_one_data %}
-    <section class="my-5 section-one">
+    <section class="my-5 section-one" data-aos="fade-up">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
             <h4 class="text-center mb-3"> {{ section.title }}</h4>
             <img src="{% static 'img/lineblack.png' %}" alt="">
@@ -110,7 +117,7 @@
         <div class="container py-5" style="overflow: hidden;">
             {% for first_subsection in section.firstsubsection_set.all %}
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6" data-aos="fade-right">
                     <div class="laptop">
                         <div class="laptop__screen">
                             <div class="owl-carousel owl-theme myowl">
@@ -143,7 +150,7 @@
                         <div class="laptop__shadow"></div>
                     </div>
                 </div>
-                <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center mt-5 pt-5 pt-lg-0 mt-lg-0">
+                <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center mt-5 pt-5 pt-lg-0 mt-lg-0" data-aos="fade-left">
                     <h4 class="minihead mb-4">{{ first_subsection.sub_title }}</h4>
                     <div>
                         {{ first_subsection.description | safe }}
@@ -160,10 +167,10 @@
             </div>
             {% for second_subsection in section.secondsubsection_set.all %}
             <div class="row my-5 ">
-                <div class="col-lg-6 order-lg-2 sec-responsive">  
+                <div class="col-lg-6 order-lg-2 sec-responsive" data-aos="fade-left">  
                     <img src="{{ second_subsection.image.url }}" alt="">
                 </div>
-                <div class="col-lg-6 mt-5 mt-lg-0 d-flex flex-column align-items-center justify-content-center order-lg-1">
+                <div class="col-lg-6 mt-5 mt-lg-0 d-flex flex-column align-items-center justify-content-center order-lg-1" data-aos="fade-right">
                     <h4 class="minihead mb-4 text-center">{{ second_subsection.sub_title }}</h4>
                     <div>
                         {{ second_subsection.description | safe }}
@@ -176,7 +183,7 @@
     {% endfor %}
 
     {% for sectionthree in index_section_three_data %}
-    <section class="section-three">
+    <section class="section-three" data-aos="fade-up">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
             <h4 class="text-center mb-3"> {{ sectionthree.title }}</h4>
             <img src="{% static 'img/linewhite.png' %}" alt="">
@@ -216,7 +223,7 @@
 
 
     {% for sectionfour in index_section_four_data %}
-    <section class="section-four">
+    <section class="section-four" data-aos="fade-up">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
             <h4 class="text-center mb-3"> {{ sectionfour.title }}</h4>
             <img src="{% static 'img/lineblack.png' %}" alt="">
@@ -323,7 +330,7 @@
 
 
     {% for sectionfive in index_section_five_data %}
-    <section class="section-five">
+    <section class="section-five" data-aos="fade-up">
         <div class="section-header d-flex flex-column justify-content-center align-items-center">
             <h4 class="text-center mb-3"> {{ sectionfive.title }}</h4>
             <img src="{% static 'img/questionmark.png' %}" alt="">
@@ -419,6 +426,19 @@
 
     <!-- filtercategory.js -->
     <script src="{% static 'js/filtercategory.js' %}"></script>
+
+    <!-- aos cdn js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- aos.js -->
+    <script src="{% static 'js/aos.js' %}"></script>
+
+    <!-- navbar-pos.js -->
+    <script src="{% static 'js/navbar-pos.js' %}"></script>
+
+
+
+    
 
     <!-- app js -->
     <script src="{% static 'js/app.js' %}"></script>
