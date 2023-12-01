@@ -29,5 +29,6 @@ urlpatterns = [
     path('project/', project, name= "project"),
     path('contact/', contact_us, name= "contact"),
     path('thank-you/', thank_you, name='thank_you'),
+    path('loading/', loading_page, name='loading'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

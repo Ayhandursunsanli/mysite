@@ -158,3 +158,5 @@ def thank_you(request):
     return render(request, 'thank_you.html')
 
 
+def loading_page(request):
+    return render(request, 'includes/_loading.html')

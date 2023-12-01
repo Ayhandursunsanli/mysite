@@ -53,13 +53,16 @@
         <span id="progress-value"><i class="fa-solid fa-arrow-up text-white"></i></span>
     </div>
 
+{% include 'includes/_loading.html' %}
+
 {% block content %}
-    <!-- <div class="intro">
+
+    <div class="intro">
         <h1 class="logo-header">
             <span class="logo">Hoş</span>
             <span class="logo">Geldiniz...</span>
         </h1>
-    </div> -->
+    </div>
 
 <!-- bu div site haritası başlangıç divi.     -->
     <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
@@ -428,6 +431,9 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
+    <!-- loading.js -->
+    <script src="{% static 'js/loading.js' %}"></script>
+
     <!-- fontawesome js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 
@@ -459,6 +465,7 @@
     <!-- navbar-pos.js -->
     <script src="{% static 'js/navbar-pos.js' %}"></script>
 
+    
 
 
     
