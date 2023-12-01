@@ -341,7 +341,7 @@ footer .btn-primary {
   height: 350px;
   width: 250px;
 }
-.list-group .circle {
+.list-group .circle2 {
   position: absolute;
   width: 44px;
   height: 44px;
@@ -358,10 +358,10 @@ footer .btn-primary {
   cursor: pointer;
   transition: 0.3s ease;
 }
-.list-group .circle:hover {
+.list-group .circle2:hover {
   background: #214f85;
 }
-.list-group .circle .fa-chevron-left {
+.list-group .circle2 .fa-chevron-left {
   margin-right: 5px;
 }
 .list-group .list-group-item {

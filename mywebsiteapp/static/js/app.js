@@ -43,7 +43,7 @@ typeText();
 
 // Sayfa Haritası
 
-$('.circle').click(function () {
+$('.circle2').click(function () {
     let spWidth = $('.list-group').width();
     let spMarginRight = parseInt($('.list-group').css('margin-right'), 0);
     let w = (spMarginRight >= 0) ? -spWidth : 0;
@@ -58,7 +58,7 @@ $('.circle').click(function () {
     });
 
     // .circle butonunu hareket ettirin ve ikonları değiştirin
-    $('.circle').animate({
+    $('.circle2').animate({
         right: cw
     }, function () {
         $('.fa-chevron-left').toggleClass('hide');
