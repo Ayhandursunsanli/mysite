@@ -1616,4 +1616,26 @@ footer .btn-primary {
 }
 .section-contactus form .mybtn:hover .button-text {
   color: #071c4d;
+}
+
+.thank-you {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(180deg, rgb(7, 28, 77) 9%, rgb(33, 79, 133) 100%);
+}
+.thank-you h2, .thank-you p {
+  color: white;
+}
+.thank-you h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 50px;
+}
+.thank-you p {
+  font-size: 20px;
+}
+.thank-you .imgbox {
+  width: 250px;
+}
+.thank-you .imgbox img {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

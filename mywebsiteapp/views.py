@@ -2,6 +2,9 @@ from django.shortcuts import render, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.core.mail import send_mail
 from .forms import ContactForm
+from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
+import time
 from .models import *
 
 # Create your views here.
@@ -56,7 +59,7 @@ def blog(request):
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
     footer = Footer.objects.all()
-    blogs = Blog.objects.all()
+    blogs = Blog.objects.all().order_by('-publish_date')
 
     context= {
         'navbar': navbar,
@@ -99,20 +102,6 @@ def project(request):
     }
     return render(request, 'projects.html', context)
 
-
-# def contact_us(request):
-#     navbar = Navbar.objects.all()
-#     navbarrighmedia = Navbarrighmedia.objects.all()
-#     navbarrightcontact = Navbarrightcontact.objects.first()
-#     footer = Footer.objects.all()
-
-#     context= {
-#         'navbar': navbar,
-#         'navbarrightcontact': navbarrightcontact,
-#         'navbarrighmedia' : navbarrighmedia,
-#         'footer' : footer
-#     }
-#     return render(request, 'contact-us.html', context)
 
 def contact_us(request):
     navbar = Navbar.objects.all()
