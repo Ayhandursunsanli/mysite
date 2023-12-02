@@ -42,6 +42,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
+    <!-- flat-icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.0.2/css/flag-icons.min.css">
+
     <!-- style-css -->
     <link rel="stylesheet" href="{% static './css/style.css' %}">
 
@@ -57,12 +60,12 @@
 
 {% block content %}
 
-    <div class="intro">
+    {% comment %} <div class="intro">
         <h1 class="logo-header">
             <span class="logo">Hoş</span>
             <span class="logo">Geldiniz...</span>
         </h1>
-    </div>
+    </div> {% endcomment %}
 
 <!-- bu div site haritası başlangıç divi.     -->
     <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
@@ -443,6 +446,9 @@
     <!-- jquerry js -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <!-- selectlang.js -->
+    <script src="{% static 'js/selectlang.js' %}"></script>
 
     <!-- owl carousel js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"

@@ -18,7 +18,12 @@
                     <a class="nav-link {% if request.resolver_match.url_name == navbar_item.url %}activemenu{% endif %}" href="{% url navbar_item.url %}">{{navbar_item.title}}</a>
                 </li>
             {% endfor %}
-            
+                <li class="nav-item d-flex align-items-center ms-auto">
+                    <select class="form-select form-select-sm language-selector" aria-label="Small select example">
+                        <option value="1">Tr</option>
+                        <option value="2">En</option>
+                    </select>
+                </li>
             </ul>
         </div>
         <!-- responsive-socialmedia -->
