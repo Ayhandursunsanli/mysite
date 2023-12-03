@@ -2,12 +2,18 @@ from django.shortcuts import render, HttpResponse
 from django.shortcuts import render, get_object_or_404
 from django.core.mail import send_mail
 from .forms import ContactForm
-from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 import time
 from .models import *
+from urllib.parse import urlparse
+from django.conf import settings
+from django.http import HttpResponseRedirect
+from django.urls.base import resolve, reverse
+from django.urls.exceptions import Resolver404
+from django.utils import translation
 
 # Create your views here.
+
 
 def index(request):
     navbar = Navbar.objects.all()
@@ -149,3 +155,24 @@ def thank_you(request):
 
 def loading_page(request):
     return render(request, 'includes/_loading.html')
+
+
+
+def set_language(request, language):
+    print(f"Language parameter received: {language}")
+    for lang, _ in settings.LANGUAGES:
+        translation.activate(lang)
+        try:
+            view = resolve(urlparse(request.META.get("HTTP_REFERER")).path)
+        except Resolver404:
+            view = None
+        if view:
+            break
+    if view:
+        translation.activate(language)
+        next_url = reverse(view.url_name, args=view.args, kwargs=view.kwargs)
+        response = HttpResponseRedirect(next_url)
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+    else:
+        response = HttpResponseRedirect("/")
+    return response

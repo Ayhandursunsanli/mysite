@@ -37,8 +37,8 @@ class Navbarrighmedia(models.Model):
         return self.platform
     
 class Headercarousel(models.Model):
-    title = models.CharField(max_length=100)
-    about = models.CharField(max_length=500)
+    title = models.CharField(max_length=100, null=True)
+    about = models.CharField(max_length=500, null= True)
     image = models.ImageField(upload_to='headercarousel')
 
     class Meta:

@@ -4,13 +4,50 @@ from django.contrib import admin
 
 from .models import *
 from django.contrib.auth.models import User
+from modeltranslation.admin import TranslationAdmin
 
 # admin.site.register(Deneme)
 
-admin.site.register(Navbar)
+
+#Navbar Title tr-en
+@admin.register(Navbar)
+class NavbarAdmin(TranslationAdmin):
+    list_display = ("title",)
+
+    group_fieldsets = True
+    
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
+
+
 admin.site.register(Navbarrightcontact)
 admin.site.register(Navbarrighmedia)
-admin.site.register(Headercarousel)
+
+
+#Header carousel tr-en 
+@admin.register(Headercarousel)
+class HeadercarouselAdmin(TranslationAdmin):
+    list_display = ("title", "about")
+
+    group_fieldsets = True
+    
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
 
 
 

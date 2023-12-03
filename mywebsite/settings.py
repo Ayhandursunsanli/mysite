@@ -44,18 +44,20 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'ckeditor',
-    'mywebsiteapp',
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'modeltranslation',
+    'django.contrib.admin',
+    'mywebsiteapp',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware', # YENİ dil için
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -119,6 +121,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'tr'
 
+USE_TZ = True
+
+USE_L10N = True
+
+USE_I18N = True
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -136,7 +144,20 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = ''
+LANGUAGES = (
+    ('en', 'English'),
+    ('tr', 'Turkish')
+)
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'tr'
+
+MODELTRANSLATION_LANGUAGES = ('tr', 'en')
+
+MEDIA_URL = '/media/' #burası boştu '' bu şekilde. Boş olması sebebiyle modeltranslation çalışmıyor. Bu şekilde doldurulmalı
 
 MEDIA_ROOT = os.path.join(
     BASE_DIR / 'media'

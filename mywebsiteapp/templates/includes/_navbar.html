@@ -19,10 +19,16 @@
                 </li>
             {% endfor %}
                 <li class="nav-item d-flex align-items-center ms-auto">
-                    <select class="form-select form-select-sm language-selector" aria-label="Small select example">
-                        <option value="1">Tr</option>
-                        <option value="2">En</option>
-                    </select>
+                    <!-- <select class="form-select form-select-sm language-selector" aria-label="Small select example">
+                        <option value="1">
+                            <a href="">Tr</a>
+                        </option>
+                        <option value="2">
+                            <a href="">En</a>
+                        </option>
+                    </select> -->
+                    <a class="nav-link" href="{% url 'set-language' 'tr' %}">tr</a>
+                    <a class="nav-link" href="{% url 'set-language' 'en' %}">English</a>
                 </li>
             </ul>
         </div>

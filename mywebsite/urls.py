@@ -17,18 +17,30 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mywebsiteapp.views import *
+from mywebsiteapp.views import set_language
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls import include
+from django.urls import reverse
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name= "index"),
-    path('about/', about, name= "about"),
-    path('blog/', blog, name= "blog"),
-    path('<int:blog_id>/', blog_detail, name='blog-detail'),
-    path('project/', project, name= "project"),
-    path('contact/', contact_us, name= "contact"),
-    path('thank-you/', thank_you, name='thank_you'),
+    path('', index, name= 'index'),
+    path('about/', about, name= 'about'),
+    path('blog/', blog, name= 'blog'),
+    path('blog/<int:blog_id>/', blog_detail, name='blog_detail'),
+    path('project/', project, name= 'project'),
+    path('contact/', contact_us, name= 'contact'),
+    path('thank_you/', thank_you, name='thank_you'),
     path('loading/', loading_page, name='loading'),
-
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+urlpatterns = [
+    *i18n_patterns(*urlpatterns, prefix_default_language=False),
+    path('set_language/<str:language>/', set_language, name="set-language"),
+    
+] 
