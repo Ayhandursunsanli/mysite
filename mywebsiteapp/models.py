@@ -3,6 +3,7 @@ from ckeditor.fields import RichTextField
 
 # Create your models here.
 
+#*Navbar
 class Navbar(models.Model):
     title = models.CharField(max_length=100)
     url = models.CharField(max_length=500)
@@ -36,6 +37,8 @@ class Navbarrighmedia(models.Model):
     def __str__(self):
         return self.platform
     
+    
+#*headercarousel    
 class Headercarousel(models.Model):
     title = models.CharField(max_length=100, null=True)
     about = models.CharField(max_length=500, null= True)
@@ -50,8 +53,10 @@ class Headercarousel(models.Model):
         return self.title
     
 
+
+#*Indexsectionone
 class Indexsectionone(models.Model):
-    title = models.CharField(max_length=250)
+    title = models.CharField(max_length=250, null=True)
 
     class Meta:
         verbose_name = "Anasayfa - Section-1"
@@ -63,18 +68,20 @@ class FirstSubSection(models.Model):
     carousel_image_2 = models.ImageField(upload_to='indexsectiononecarousel_images/', blank=True, null=True)
     carousel_image_3 = models.ImageField(upload_to='indexsectiononecarousel_images/', blank=True, null=True)
     carousel_image_4 = models.ImageField(upload_to='indexsectiononecarousel_images/', blank=True, null=True)
-    sub_title = models.CharField(max_length=250)
-    description = RichTextField()
+    sub_title = models.CharField(max_length=250, null=True)
+    description = RichTextField(null=True)
 
 class SecondSubSection(models.Model):
     section = models.ForeignKey(Indexsectionone, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='subsection_images/')
-    sub_title = models.CharField(max_length=250)
-    description = RichTextField()
+    image = models.ImageField(upload_to='subsection_images/', null=True)
+    sub_title = models.CharField(max_length=250, null=True)
+    description = RichTextField(null=True)
 
 
+#*Indexsectionthree
 class Indexsectionthree(models.Model):
-    title = models.CharField(max_length=250)
+    title = models.CharField(max_length=250, null=True)
+    buttonText = models.CharField(max_length=250, null=True)
 
     class Meta:
         verbose_name = "Anasayfa - Section-3"
@@ -83,8 +90,11 @@ class Indexsectionthree(models.Model):
 class FirstSubSectionThree(models.Model):
     section = models.ForeignKey(Indexsectionthree, on_delete=models.CASCADE)
     carousel_image = models.ImageField(upload_to='indexsectionthreecarousel_images/', null=True)
-    sub_title = models.CharField(max_length=250)
-    description = RichTextField()
+    sub_title = models.CharField(max_length=250, null=True)
+    description = RichTextField(null=True)
+
+
+
 
 
 class Indexsectionfour(models.Model):

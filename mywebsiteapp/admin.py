@@ -53,39 +53,37 @@ class HeadercarouselAdmin(TranslationAdmin):
 
 # -------------------------------------------------------------
 
-# class FirstSubSectionInline(admin.StackedInline):  
-#     model = FirstSubSection
-
-# class SecondSubSectionInline(admin.StackedInline):  
-#     model = SecondSubSection
-
-# @admin.register(Indexsectionone)
-# class IndexSectionOneAdmin(admin.ModelAdmin):
-#     list_display = ('title',)
-#     inlines = [FirstSubSectionInline, SecondSubSectionInline]
-
+#*index section one
 class FirstSubSectionInline(admin.StackedInline):
     model = FirstSubSection
-    max_num = 1  # Yalnızca bir örnek olacak
+    max_num = 1
 
 class SecondSubSectionInline(admin.StackedInline):
     model = SecondSubSection
-    max_num = 1  # Yalnızca bir örnek olacak
+    max_num = 1
 
 @admin.register(Indexsectionone)
-class IndexSectionOneAdmin(admin.ModelAdmin):
-    list_display = ('title',)
+class IndexSectionOneAdmin(TranslationAdmin):
+    list_display = ('title', )
     inlines = [FirstSubSectionInline, SecondSubSectionInline]
 
 
+
+
+#*index section three
 class FirstSubSectionThreeInline(admin.StackedInline):
     model = FirstSubSectionThree
-    # max_num = 1  # Yalnızca bir örnek olacak
+    # max_num = 1
 
 @admin.register(Indexsectionthree)
-class IndexSectionThreeAdmin(admin.ModelAdmin):
-    list_display = ('title',)
+class IndexSectionThreeAdmin(TranslationAdmin):
+    list_display = ('title', )
     inlines = [FirstSubSectionThreeInline]
+
+
+
+
+
 
 
 class FirstSubSectionFourInline(admin.StackedInline):
