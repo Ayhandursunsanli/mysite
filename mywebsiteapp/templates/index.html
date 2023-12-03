@@ -208,7 +208,7 @@
                                 <div class="row d-flex justify-content-center mt-5">
                                     <div class="col-lg-6 d-flex justify-content-center">
                                         <div class="section-three-img-box">
-                                            <img class="border" src="{{ first_subsectionthree.carousel_image.url }}" alt="">
+                                            <img class="" src="{{ first_subsectionthree.carousel_image.url }}" alt="">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center text-white text-center">
@@ -254,7 +254,7 @@
                                     data-bs-target="#pills-talep" type="button" role="tab" aria-controls="pills-talep"
                                     aria-selected="true">
                                     <i class="fa-solid fa-code-pull-request d-none d-lg-inline"></i>
-                                    Talep
+                                    {{ first_subsectionfour.sueTitle }}
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation" style="margin-top: 2rem;">
@@ -262,7 +262,7 @@
                                     data-bs-target="#pills-analiz" type="button" role="tab" aria-controls="pills-analiz"
                                     aria-selected="false">
                                     <i class="fa-solid fa-magnifying-glass-chart d-none d-lg-inline"></i>
-                                    Analiz
+                                    {{ first_subsectionfour.analysisTitle }}
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -270,7 +270,7 @@
                                     data-bs-target="#pills-tasarim" type="button" role="tab" aria-controls="pills-tasarim"
                                     aria-selected="false">
                                     <i class="fa-solid fa-compass-drafting d-none d-lg-inline"></i>
-                                    Tasarım
+                                    {{ first_subsectionfour.designTitle }}
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -278,7 +278,7 @@
                                     data-bs-target="#pills-kodlama" type="button" role="tab" aria-controls="pills-kodlama"
                                     aria-selected="false">
                                     <i class="fa-solid fa-code d-none d-lg-inline"></i>
-                                    Kodlama
+                                    {{ first_subsectionfour.codingTitle }}
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation" style="margin-top: 2rem;">
@@ -286,7 +286,7 @@
                                     data-bs-target="#pills-test" type="button" role="tab" aria-controls="pills-test"
                                     aria-selected="false">
                                     <i class="fa-solid fa-stethoscope d-none d-lg-inline"></i>
-                                    Test-Yayın
+                                    {{ first_subsectionfour.testingTitle }}
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation" style="margin-top: 6rem;">
@@ -294,7 +294,7 @@
                                     data-bs-target="#pills-bakim" type="button" role="tab" aria-controls="pills-bakim"
                                     aria-selected="false">
                                     <i class="fa-solid fa-headset d-none d-lg-inline"></i>
-                                    Bakım-Destek
+                                    {{ first_subsectionfour.maintenance_support_title }}
                                 </button>
                             </li>
                         </ul>
@@ -305,7 +305,7 @@
                 </div>
 
                 <div class="row d-flex justify-content-center mt-5">
-                    <div class="col-lg-4 plan-details mt-5">
+                    <div class="col-lg-4 plan-details mt-5 ">
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-talep" role="tabpanel"
                                 aria-labelledby="pills-talep-tab" tabindex="0">
@@ -335,6 +335,14 @@
                     </div>
                 </div>
                 {% endfor %}
+            </div>
+            <div class="mybtn-box">
+                <a href="{% url 'contact' %}" class="learn-more mybtn m-auto">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">{{ sectionfour.buttonText }}</span>
+                </a>
             </div>
         </section>
         {% endfor %}
@@ -402,26 +410,25 @@
         </section>
 
         
+        {% for pagemap in indexpagemap %} 
         <div id="list-example" class="list-group sidepanel">
-            <h6>Sayfa Haritası</h6>
+            <h6>{{ pagemap.title }}</h6>
             <hr>
-            <a class="list-group-item list-group-item-action" href="#list-item-1">Kullanıcı Odaklı</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-2">Çeşitlilik</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-3">Süreçler</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-4">SSS</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-5">Açıklamalar</a>
+            
+            {% for indexpagesub in pagemap.indexpagemapsubsection_set.all %}
+            <a class="list-group-item list-group-item-action" href="{{ indexpagesub.href_id }}">{{ indexpagesub.href_title }}</a>
+            {% endfor %}
             <div class="circle2">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                <!-- <i class="fa fa-chevron-right hide" aria-hidden="true"></i>-->
             </div>
         </div>
+        {% endfor %}
         <!-- Bu son div site haritasının başlangıç divinin kapanışı. Bir div içinde olması gerekliydi.  -->
     </div>
 
 {% endblock content %}
 
 {% include 'includes/_leftoffcanvas.html' %}
-
 
 {% include 'includes/_footer.html' %}
 

@@ -26,6 +26,7 @@ def index(request):
     index_section_five_data = Indexsectionfive.objects.all()
     index_section_six_data = Indexsectionsix.objects.all()
     footer = Footer.objects.all()
+    indexpagemap = Indexpagemap.objects.all()
 
     context= {
         'navbar': navbar,
@@ -37,7 +38,8 @@ def index(request):
         'index_section_four_data': index_section_four_data,
         'index_section_five_data': index_section_five_data,
         'index_section_six_data': index_section_six_data,
-        'footer' : footer
+        'footer' : footer,
+        'indexpagemap' : indexpagemap,
     }
 
     return render(request, 'index.html', context)

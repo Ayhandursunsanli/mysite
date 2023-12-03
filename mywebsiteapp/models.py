@@ -96,9 +96,13 @@ class FirstSubSectionThree(models.Model):
 
 
 
-
+#*Indexsectionfour
 class Indexsectionfour(models.Model):
-    title = models.CharField(max_length=250)
+    title = models.CharField(max_length=250, null=True)
+    sub_title = models.CharField(max_length=250, null=True)
+    description = RichTextField(null=True)
+    buttonText = models.CharField(max_length=250, null=True)
+
 
     class Meta:
         verbose_name = "Anasayfa - Section-4"
@@ -106,19 +110,23 @@ class Indexsectionfour(models.Model):
 
 class FirstSubSectionFour(models.Model):
     section = models.ForeignKey(Indexsectionfour, on_delete=models.CASCADE)
-    sub_title = models.CharField(max_length=250)
-    description = RichTextField()
-    sue = RichTextField()
-    analysis = RichTextField()
-    design = RichTextField()
-    coding = RichTextField()
-    testing_release = RichTextField()
-    maintenance_support = RichTextField()
+    sueTitle = models.CharField(max_length=250, null=True)
+    sue = RichTextField(null=True)
+    analysisTitle = models.CharField(max_length=250, null=True)
+    analysis = RichTextField(null=True)
+    designTitle = models.CharField(max_length=250, null=True)
+    design = RichTextField(null=True)
+    codingTitle = models.CharField(max_length=250, null=True)
+    coding = RichTextField(null=True)
+    testingTitle = models.CharField(max_length=250, null=True)
+    testing_release = RichTextField(null=True)
+    maintenance_support_title = models.CharField(max_length=250, null=True)
+    maintenance_support = RichTextField(null=True)
 
 
 
 
-
+#*Indexsectionfive
 class Indexsectionfive(models.Model):
     title = models.CharField(max_length=250)
     sub_title = models.CharField(max_length=250)
@@ -135,8 +143,11 @@ class FirstSubSectionFive(models.Model):
     answer = RichTextField()
     
 
+
+
+#*Indexsectionsix
 class Indexsectionsix(models.Model):
-    description = RichTextField()
+    description = RichTextField(null=True)
 
     class Meta:
         verbose_name = "Anasayfa - Section-6 (Seo Alanı)"
@@ -145,9 +156,27 @@ class Indexsectionsix(models.Model):
 
 
 
+#*IndexPageMap
+class Indexpagemap(models.Model):
+    title = models.CharField(max_length=250, null=True)
 
+    class Meta:
+        verbose_name = "Anasayfa - Sayfa Haritası"
+        verbose_name_plural = "Anasayfa - Sayfa Haritası"
+
+class IndexPageMapSubSection(models.Model):
+    section = models.ForeignKey(Indexpagemap, on_delete=models.CASCADE)
+    href_id = models.CharField(max_length=250, null=True)
+    href_title = models.CharField(max_length=250, null=True)
+
+
+
+#*Footer
 class Footer(models.Model):
-    description = RichTextField()
+    description = RichTextField(null=True)
+    titleOne = models.CharField(max_length=250, null=True)
+    titleTwo = models.CharField(max_length=250, null=True)
+    titleThree = models.CharField(max_length=250, null=True)
     image = models.ImageField(upload_to='footer_images/', null=True, blank=True)
     adress = models.TextField(max_length=250, null=True)
     email = models.EmailField(max_length=250, null=True)

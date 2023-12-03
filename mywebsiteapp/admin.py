@@ -83,37 +83,47 @@ class IndexSectionThreeAdmin(TranslationAdmin):
 
 
 
-
-
-
+#*index section four
 class FirstSubSectionFourInline(admin.StackedInline):
     model = FirstSubSectionFour
     max_num = 1  # Yalnızca bir örnek olacak
 
 @admin.register(Indexsectionfour)
-class IndexSectionFourAdmin(admin.ModelAdmin):
+class IndexSectionFourAdmin(TranslationAdmin):
     list_display = ('title',)
     inlines = [FirstSubSectionFourInline]
 
 
 
-
+#*index section five
 class FirstSubSectionFiveInline(admin.StackedInline):
     model = FirstSubSectionFive
-    # max_num = 1  # Yalnızca bir örnek olacak
 
 @admin.register(Indexsectionfive)
-class IndexSectionFiveAdmin(admin.ModelAdmin):
+class IndexSectionFiveAdmin(TranslationAdmin):
     list_display = ('title',)
     inlines = [FirstSubSectionFiveInline]
 
 
 
-admin.site.register(Indexsectionsix)
+#*index section six
+@admin.register(Indexsectionsix)
+class IndexSectionSixAdmin(TranslationAdmin):
+    list_display = ('description',)
+
+
+#*Index Page Map
+class IndexPageMapSubSectionInline(admin.StackedInline):
+    model = IndexPageMapSubSection
+
+@admin.register(Indexpagemap)
+class IndexPageMapAdmin(TranslationAdmin):
+    list_display = ('title',)
+    inlines = [IndexPageMapSubSectionInline]
 
 
 
-
+#*footer
 class FooterSubSectionInline(admin.StackedInline):
     model = FooterSubSection
     # max_num = 1  # Yalnızca bir örnek olacak
@@ -122,9 +132,12 @@ class FooterSupSectionInline(admin.StackedInline):
     model = FooterSupSection
 
 @admin.register(Footer)
-class FooterSubSectionAdmin(admin.ModelAdmin):
-    list_display = ('description',)
+class FooterSubSectionAdmin(TranslationAdmin):
+    list_display = ('titleOne', 'titleTwo', 'titleThree',)
     inlines = [FooterSubSectionInline, FooterSupSectionInline]
+
+
+
 
 
 # Projects.html
