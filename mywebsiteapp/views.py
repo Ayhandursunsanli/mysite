@@ -116,6 +116,7 @@ def contact_us(request):
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
     footer = Footer.objects.all()
+    contactsheet = Contactsheet.objects.first()
 
     # İletişim formunu oluşturun
     if request.method == 'POST':
@@ -145,7 +146,8 @@ def contact_us(request):
         'navbarrightcontact': navbarrightcontact,
         'navbarrighmedia': navbarrighmedia,
         'footer': footer,
-        'form': form,  # İletişim formunu context'e ekleyin
+        'form': form, 
+        'contactsheet': contactsheet,  
     }
     return render(request, 'contact-us.html', context)
 

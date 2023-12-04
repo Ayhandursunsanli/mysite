@@ -151,8 +151,6 @@ class ProjectsSheetAdmin(TranslationAdmin):
     list_display = ('headTitle',)
     inlines = [ProjectCardInline,]
 
-
-
 class AboutInline(admin.StackedInline):
     model = About
     max_num = 1
@@ -169,6 +167,14 @@ class MySkillsInline(admin.StackedInline):
 class AboutSheetAdmin(TranslationAdmin):
     list_display = ('headTitle',)
     inlines = [AboutInline, CertificateInline, MySkillsInline]
+
+
+#*contact sheet
+
+@admin.register(Contactsheet)
+class ContactsheetAdmin(TranslationAdmin):
+    list_display = ('headTitle',)
+
 
 
 # blog

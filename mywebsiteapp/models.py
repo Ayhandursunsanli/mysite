@@ -222,9 +222,7 @@ class ProjectCard(models.Model):
 
 
 
-# about.html
-
-
+#* about.html
 class Aboutsheet(models.Model):
     breadcrumbOne = models.CharField(max_length=250, null=True)
     breadcrumbOneUrl = models.CharField(max_length=250, null=True)
@@ -274,7 +272,25 @@ class Myskills(models.Model):
     skill_img10 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
 
 
-# blog
+
+#* contact.html
+class Contactsheet(models.Model):
+    breadcrumbOne = models.CharField(max_length=250, null=True)
+    breadcrumbOneUrl = models.CharField(max_length=250, null=True)
+    breadcrumbTwo = models.CharField(max_length=250, null=True)
+    headTitle = models.CharField(max_length=250, null=True)
+    subtitle = models.CharField(max_length=250, null=True)
+    about = RichTextField(null=True)
+    buttonText = models.CharField(max_length=250, null=True)
+
+
+    class Meta:
+        verbose_name = "İletişim Sayfası"
+        verbose_name_plural = "İletişim Sayfası"
+
+
+
+#*blog
 class Blog(models.Model):
     image = models.ImageField(upload_to='blog_images/')
     title = models.CharField(max_length=250)

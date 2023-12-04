@@ -16,11 +16,11 @@
         <div class="breadcrumb">
             <ul class="breadcrumbalt d-flex justify-content-between">
                 <li class="breadcrumb-item itemone">
-                    <a href="{% url 'index' %}">
-                        Anasayfa
+                    <a href="{% url contactsheet.breadcrumbOneUrl %}">
+                        {{contactsheet.breadcrumbOne}}
                     </a>
                 </li>
-                <li class="breadcrumb-item itemtwo active" aria-current="page">İletişim</li>
+                <li class="breadcrumb-item itemtwo active" aria-current="page">{{contactsheet.breadcrumbTwo}}</li>
             </ul>
         </div>
 
@@ -42,13 +42,13 @@
             </svg>
         </div>
         <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> İletişim</h4>
+            <h4 class="text-center mb-3">{{contactsheet.headTitle}}</h4>
         </div>
     </div>
 
     <section class="section-contactus">
-        <h4 id="sectioncontact-us" class="minihead my-5 text-center "> Bağlantıda kalın</h4>
-        <p class="text-center mx-5 mb-5">Sormak istediğiniz bir şey var mı? Lütfen doğrudan bizimle iletişime geçmekten çekinmeyin.</p> 
+        <h4 id="sectioncontact-us" class="minihead my-5 text-center ">{{contactsheet.subtitle}}</h4>
+        <p class="text-center mx-5 mb-5">{{contactsheet.about}}</p> 
         <div class="container d-none d-sm-block ">
             <div class="row d-flex justify-content-center">
                 <div class="col-10 d-flex justify-content-center">
@@ -59,11 +59,6 @@
         <div class="container mt-5 mb-4 contact-container">
             <div class="row d-flex align-items-start justify-content-center py-5 px-md-5">
                 <div class="col-md-3 text-center order-md-2  mt-5">
-                    
-                    
-                        
-                    
-                        
                     <ul class="list-unstyled text-white">
                     {% for fot in footer  %}
                         <li><i class="fas fa-map-marker-alt fa-2x"></i>
@@ -82,80 +77,32 @@
                     
                 </div>
                 <div class="col-md-9 mb-md-0 mb-5 order-md-1">
-                    <!-- <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="md-form mb-0">
-                                    <label for="name" class="">İsminiz: </label>
-                                    <input type="text" id="name" name="name" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="md-form mb-0">
-                                    <label for="email" class="">Email:</label>
-                                    <input type="text" id="email" name="email" class="form-control" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="md-form mb-0">
-                                    <label for="subject" class="">Konu:</label>
-                                    <input type="text" id="subject" name="subject" class="form-control" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="md-form">
-                                    <label for="message">Mesajınız:</label>
-                                    <textarea type="text" id="message" name="message" rows="5" class="form-control md-textarea" required></textarea>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <button class="learn-more mybtn mt-5">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">Gönder</span>
-                        </button>
-                    </form>  -->
-
-
-                    <!-- <form method="post">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit">Gönder</button>
-                    </form> -->
-
                     <form method="post">
                         {% csrf_token %}
                         <div class="form-field d-flex flex-column">
-                            {{ form.name.label_tag }}
+                            <label for="id_name">Ad (Name):</label>
                             {{ form.name }}
                         </div>
                         <div class="form-field d-flex flex-column">
-                            {{ form.email.label_tag }}
+                            <label for="id_email">E-posta (Email):</label>
                             {{ form.email }}
                             {% if form.email.errors %}
                                 <small class="error text-danger fw-bold">{{ form.email.errors }}</small>
                             {% endif %}
                         </div>
                         <div class="form-field d-flex flex-column">
-                            {{ form.subject.label_tag }}
+                            <label for="id_subject">Konu (Subject):</label>
                             {{ form.subject }}
                         </div>
                         <div class="form-field d-flex flex-column">
-                            {{ form.message.label_tag }}
+                            <label for="id_message">Mesaj (Message):</label>
                             {{ form.message }}
                         </div>
                         <button type="submit" class="learn-more mybtn mt-5">
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
                             </span>
-                            <span class="button-text">Gönder</span>
+                            <span class="button-text">{{contactsheet.buttonText}}</span>
                         </button>
                     </form>
                     

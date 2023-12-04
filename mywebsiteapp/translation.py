@@ -115,3 +115,11 @@ class CertificateTranslationOptions(TranslationOptions):
 @register(Myskills)
 class MySkillsTranslationOptions(TranslationOptions):
     fields = ('skill_title', 'skill_about',)
+
+
+
+
+#*contact
+@register(Contactsheet)
+class ContactSheetTranslationOptions(TranslationOptions):
+    fields = ('breadcrumbOne', 'breadcrumbTwo', 'headTitle', 'subtitle', 'about', 'buttonText',)
