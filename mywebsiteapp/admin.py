@@ -140,48 +140,35 @@ class FooterSubSectionAdmin(TranslationAdmin):
 
 
 
-# Projects.html
+#* Projects.html
 
 class ProjectCardInline(admin.StackedInline):
     model = ProjectCard
 
 
 @admin.register(Projectssheet)
-class ProjectssheetAdmin(admin.ModelAdmin):
-    list_display = ('title',)
+class ProjectsSheetAdmin(TranslationAdmin):
+    list_display = ('headTitle',)
     inlines = [ProjectCardInline,]
 
 
-# About.html
-# class CertificateInline(admin.StackedInline):
-#     model = Certificate
-#     max_num = 1  # Yalnızca bir örnek olacak
 
-# class MyskillsInline(admin.StackedInline):
-#     model = Myskills
-#     max_num = 1  # Yalnızca bir örnek olacak
-
-# admin.register(Aboutsheet)
-# class AboutsheetAdmin(admin.ModelAdmin):
-#     list_display = ('title',)
-#     inlines = [CertificateInline, MyskillsInline]
-
+class AboutInline(admin.StackedInline):
+    model = About
+    max_num = 1
 
 class CertificateInline(admin.StackedInline):
     model = Certificate
     max_num = 1
 
-class MyskillsInline(admin.StackedInline):
+class MySkillsInline(admin.StackedInline):
     model = Myskills
     max_num = 1
 
-class AboutsheetAdmin(admin.ModelAdmin):
-    list_display = ('title',)
-    inlines = [CertificateInline, MyskillsInline]
-
-admin.site.register(Aboutsheet, AboutsheetAdmin)
-
-
+@admin.register(Aboutsheet)
+class AboutSheetAdmin(TranslationAdmin):
+    list_display = ('headTitle',)
+    inlines = [AboutInline, CertificateInline, MySkillsInline]
 
 
 # blog

@@ -10,18 +10,18 @@
     
 
     {% block content %}
-    
+    {% for about in aboutsheet  %}
         <div class="common-header-nav">
             {% include 'includes/_navbar.html' %}
         
             <div class="breadcrumb">
                 <ul class="breadcrumbalt d-flex justify-content-between">
                     <li class="breadcrumb-item itemone">
-                        <a href="{% url 'index' %}">
-                            Anasayfa
+                        <a href="{% url about.breadcrumbOneUrl %}">
+                            {{ about.breadcrumbOne}}
                         </a>
                     </li>
-                    <li class="breadcrumb-item itemtwo active" aria-current="page">Hakkımda</li>
+                    <li class="breadcrumb-item itemtwo active" aria-current="page">{{ about.breadcrumbTwo }}</li>
                 </ul>
             </div>
         
@@ -42,34 +42,36 @@
                     </g>
                 </svg>
             </div>
+
             <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
-                <h4 class="text-center mb-3"> Hakkımda</h4>
+                <h4 class="text-center mb-3">{{ about.headTitle }}</h4>
             </div>
         </div>
 
         
-    {% for about in aboutsheet  %}
-            
+    
+        {% for abo in about.about_set.all %} 
         <div class="about-section-one">
-            <h4 class="minihead mb-4 text-center">{{ about.title }}</h4>
+            <h4 class="minihead mb-4 text-center">{{ abo.title }}</h4>
             <div class="container about-one">
                 <div class="row aboutonesec d-flex justify-content-center">
                     <img class="aboutone-img" src="{% static 'img/bg-about.png' %}" alt="">
                     <div class="col-lg-4 mt-5">
                         <div class="about-imgbox">
-                            <img class="framed" src="{{ about.img.url }}" alt="">
+                            <img class="framed" src="{{ abo.img.url }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-4 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
                         <div class="about-text">
                             <div class="text-center">
-                                {{ about.about | safe}}
+                                {{ abo.about | safe}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            {% endfor %}
+                
 
             {% for cer in about.certificate_set.all %}
 

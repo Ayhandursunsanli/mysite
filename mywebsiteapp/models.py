@@ -191,18 +191,21 @@ class FooterSubSection(models.Model):
     title = models.CharField(max_length=100, verbose_name= 'Menü İtemi', null=True)
     url = models.CharField(max_length=500, verbose_name= 'Menü İtemi Linki', null=True)
 
-
 class FooterSupSection(models.Model):
     section = models.ForeignKey(Footer, on_delete=models.CASCADE)
     socialmedia = models.CharField(max_length=50, verbose_name= 'Sosyal Medya İcon Uzantısı (Örn: fa fa-github)', null=True)
     socialmedia_link = models.URLField(verbose_name= 'Sosyal Medya İtemi Linki', null=True)
 
 
-# projects.html
-
+#* projects.html
 class Projectssheet(models.Model):
-    title = models.CharField(max_length=250)
-    about = RichTextField()
+    breadcrumbOne = models.CharField(max_length=250, null=True)
+    breadcrumbOneUrl = models.CharField(max_length=250, null=True)
+    breadcrumbTwo = models.CharField(max_length=250, null=True)
+    headTitle = models.CharField(max_length=250, null=True)
+    title = models.CharField(max_length=250, null=True)
+    about = RichTextField(null=True)
+    
 
     class Meta:
         verbose_name = "Projelerim Sayfası"
@@ -210,18 +213,34 @@ class Projectssheet(models.Model):
 
 class ProjectCard(models.Model):
     section = models.ForeignKey(Projectssheet, on_delete=models.CASCADE)
-    site_title = models.CharField(max_length=500)
-    site_img = models.ImageField(upload_to='Projectscard_images/')
-    site_img_logo = models.ImageField(upload_to='Projectscard_images/')
-    site_url = models.URLField()
+    site_title = models.CharField(max_length=500, null=True)
+    site_img = models.ImageField(upload_to='Projectscard_images/', null=True)
+    site_img_logo = models.ImageField(upload_to='Projectscard_images/', null=True)
+    buttonText = models.CharField(max_length=250, null=True)
+    site_url = models.URLField(null=True)
 
 
 
 
 # about.html
+
+
 class Aboutsheet(models.Model):
-    title = models.CharField(max_length=250)
-    about = RichTextField()
+    breadcrumbOne = models.CharField(max_length=250, null=True)
+    breadcrumbOneUrl = models.CharField(max_length=250, null=True)
+    breadcrumbTwo = models.CharField(max_length=250, null=True)
+    headTitle = models.CharField(max_length=250, null=True)
+
+    
+
+    class Meta:
+        verbose_name = "Hakkımda Sayfası"
+        verbose_name_plural = "Hakkımda Sayfası"
+    
+class About(models.Model):
+    section = models.ForeignKey(Aboutsheet, on_delete=models.CASCADE)
+    title = models.CharField(max_length=250, null=True)
+    about = RichTextField(null=True)
     img = models.ImageField(upload_to='about_images/' , null=True)
 
     class Meta:
@@ -230,8 +249,8 @@ class Aboutsheet(models.Model):
 
 class Certificate(models.Model):
     section = models.ForeignKey(Aboutsheet, on_delete=models.CASCADE)
-    cert_title = models.CharField(max_length=500)
-    cert_about = RichTextField()
+    cert_title = models.CharField(max_length=500, null=True)
+    cert_about = RichTextField(null=True)
     cert_img1 = models.ImageField(upload_to='Certificate_images/', null=True, blank=True)
     cert_img2 = models.ImageField(upload_to='Certificate_images/', null=True, blank=True)
     cert_img3 = models.ImageField(upload_to='Certificate_images/', null=True, blank=True)
@@ -240,8 +259,8 @@ class Certificate(models.Model):
 
 class Myskills(models.Model):
     section = models.ForeignKey(Aboutsheet, on_delete=models.CASCADE)
-    skill_title = models.CharField(max_length=500)
-    skill_about = RichTextField()
+    skill_title = models.CharField(max_length=500, null=True)
+    skill_about = RichTextField(null=True)
     skill_img1 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
     skill_img2 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
     skill_img3 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)

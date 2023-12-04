@@ -88,3 +88,30 @@ class FooterTranslationOptions(TranslationOptions):
 @register(FooterSubSection)
 class FooterSubSectionTranslationOptions(TranslationOptions):
     fields = ('title', 'url',)
+
+
+#*project
+@register(Projectssheet)
+class ProjectsSheetTranslationOptions(TranslationOptions):
+    fields = ('breadcrumbOne', 'breadcrumbTwo', 'headTitle', 'title', 'about',)
+@register(ProjectCard)
+class ProjectCardTranslationOptions(TranslationOptions):
+    fields = ('site_title', 'buttonText',)
+
+
+#*about
+@register(Aboutsheet)
+class AboutSheetTranslationOptions(TranslationOptions):
+    fields = ('breadcrumbOne', 'breadcrumbTwo', 'headTitle',)
+    
+@register(About)
+class AboutTranslationOptions(TranslationOptions):
+    fields = ('title', 'about',)
+
+@register(Certificate)
+class CertificateTranslationOptions(TranslationOptions):
+    fields = ('cert_title', 'cert_about',)
+
+@register(Myskills)
+class MySkillsTranslationOptions(TranslationOptions):
+    fields = ('skill_title', 'skill_about',)

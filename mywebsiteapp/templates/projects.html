@@ -11,13 +11,14 @@
 
 
 {% block content %}
+{% for projects in projectssheet  %}
     <div class="common-header-nav">
         {% include 'includes/_navbar.html' %}
 
         <div class="breadcrumb">
             <ul class="breadcrumbalt d-flex justify-content-between">
-                <li class="breadcrumb-item itemone"><a href="{% url 'index' %}">Anasayfa</a></li>
-                <li class="breadcrumb-item itemtwo active" aria-current="page">Projelerim</li>
+                <li class="breadcrumb-item itemone"><a href="{% url projects.breadcrumbOneUrl %}">{{ projects.breadcrumbOne }}</a></li>
+                <li class="breadcrumb-item itemtwo active" aria-current="page">{{ projects.breadcrumbTwo }}</li>
             </ul>
         </div>
 
@@ -41,13 +42,13 @@
             </svg>
         </div>
         <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> Projelerim</h4>
+            <h4 class="text-center mb-3">{{ projects.headTitle }}</h4>
             <!-- <img src="./img/lineblack.png" alt=""> -->
         </div>
     </div>
 
     
-    {% for projects in projectssheet  %}
+    
         
     <div class="projects-section-one">
         <h4 class="minihead mb-4 text-center">{{ projects.title }}</h4>
@@ -82,7 +83,7 @@
                             <span class="circle" aria-hidden="true">
                                 <span class="icon arrow"></span>
                             </span>
-                            <span class="button-text">Siteye Git</span>
+                            <span class="button-text">{{ projectcard.buttonText }}</span>
                         </a>
                     </div>
                 </div>
