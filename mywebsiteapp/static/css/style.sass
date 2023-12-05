@@ -120,6 +120,68 @@ ul
         font-size: 15px
         color: #214f85
 
+
+.dropdown-langauge
+    position: relative
+    width: 20%
+    display: flex
+    align-items: center
+    justify-content: center
+    .dropdown-toggle
+        .img-box
+            display: flex
+            justify-content: center
+            align-items: center
+            img
+                width: 18px
+        span
+            color: black
+    .dropdown-menu
+        .language-selector
+                    .dropdown-item
+                        display: flex
+                        justify-content: space-around
+                        align-items: center
+                        transition: .4s
+                        p
+                            margin-bottom: 0
+                            font-size: 14px
+                        .img-box
+                            width: 18px
+                            img
+                                
+                                max-width: 100%
+                                filter: grayscale(1)
+                        &:hover
+                            .img-box
+                                img
+                                    filter: grayscale(0) 
+                    .dropdown-item.active 
+                        .img-box
+                            img
+                                filter: grayscale(0)
+
+    &::before
+        content: ""
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: .5px !important
+        background-color: gray
+        height: 40px
+    
+    &::after
+        content: ""
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: .5px !important
+        background-color: gray
+        height: 40px
+
+
 .navbar
     background: #e9e9e9
     z-index: 100
@@ -137,17 +199,28 @@ ul
     .container-fluid
         padding-left: 2rem
         .navbar-brand
+            position: relative
             font-family: 'Dancing Script', cursive
-            border-right: 1px solid
             padding-right: 1rem
+
+            &::before
+                content: ""
+                position: absolute
+                right: 0
+                top: 50%
+                transform: translateY(-50%)
+                width: .5px !important
+                background-color: gray
+                height: 40px
+
+
         .navbar-contacts
+            padding-left: .1rem 
             width: 300px
             .contacts-left
                 font-size: 12px
                 color: gray
-                border-left: 1px solid
                 padding-left: 1rem
-                border-right: 1px solid
                 padding-right: 1rem
                 .text-animation
                     height: 15px
@@ -157,13 +230,27 @@ ul
                     white-space: nowrap
                     overflow: hidden
             .contacts-right
+                position: relative
                 font-size: 18px
+                &::before
+                    content: ""
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: .5px !important
+                    background-color: gray
+                    height: 40px
 
     .navbar-collapse
         font-size: 14px
         display: flex !important
         justify-content: space-around
         .navbar-nav
+            width: 75%
+            display: flex
+            align-items: center
+            justify-content: center
             .nav-item
                 .nav-link
                     color: black
@@ -191,31 +278,7 @@ ul
                         background-color: black
                         transform-origin: left
                         transition: width 0.4s ease-in-out
-                        
-        .dropdown
-            .language-selector
-                a
-                    display: flex
-                    justify-content: space-around
-                    align-items: center
-                    transition: .4s
-                    p
-                        margin-bottom: 0
-                        font-size: 14px
-                    .img-box
-                        width: 20px
-                        img
-                            
-                            max-width: 100%
-                            filter: grayscale(1)
-                    &:hover
-                        .img-box
-                            img
-                                filter: grayscale(0) 
-                a.active 
-                    .img-box
-                        img
-                            filter: grayscale(0)
+            
 
 footer
     border-top: 15px solid #041232
@@ -299,7 +362,7 @@ footer
 
     .offcanvas-body
         display: flex
-        justify-content: center
+        flex-direction: column
         padding-top: 4rem
 
         ul
@@ -308,16 +371,16 @@ footer
             display: flex
             align-items: center
             flex-direction: column
-            gap: 2rem
+            gap: 1rem
             color: white
 
-    .offcanvas-line
-        width: 100%
-        display: flex
-        justify-content: center
-        align-items: center
-        img
-            max-width: 50%
+    // .offcanvas-line
+    //     width: 100%
+    //     display: flex
+    //     justify-content: center
+    //     align-items: center
+    //     img
+    //         max-width: 50%
 
 
 

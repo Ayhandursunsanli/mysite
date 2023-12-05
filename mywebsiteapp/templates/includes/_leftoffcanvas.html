@@ -15,14 +15,39 @@
         <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
 
-    <div class="offcanvas-body">
-        <ul class="navbar-nav">
+    <div class="offcanvas-body p-0">
+
+        
+        <ul class="navbar-nav mt-4">
 
         {% for navbar in navbar  %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url navbar.url %}">{{navbar.title}}</a>
             </li>
         {% endfor %}
+        {% if request.LANGUAGE_CODE == 'tr' %}
+            <li class="d-flex flex-column text-center pt-4" style="border-top: 1px solid white; width: 100%;">
+                <span>Dil Seçiniz: </span>  
+                <a class="d-flex flex-column align-items-center" href="{% url 'set-language' 'en' %}" style="text-decoration: none; color: white;">
+                    <div class="img-box mt-3">
+                        <img src="{% static 'img/united-kingdom.png' %}" alt="" style="width: 20px;">
+                        <span>English</span>
+                    </div>
+                    
+                </a>
+            </li>
+        {% endif %}
+        {% if request.LANGUAGE_CODE == 'en' %}
+            <li class="d-flex flex-column text-center pt-4" style="border-top: 1px solid white; width: 100%;">
+                <span>Langauge: </span>  
+                <a class="d-flex flex-column align-items-center" href="{% url 'set-language' 'tr' %}" style="text-decoration: none; color: white;">
+                    <div class="img-box mt-3">
+                        <img src="{% static 'img/turkey.png' %}" alt="" style="width: 20px;">
+                        <span>Turkish</span>
+                    </div>
+                </a>
+            </li>
+        {% endif %}
         </ul>
     </div>
 

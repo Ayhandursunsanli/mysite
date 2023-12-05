@@ -18,45 +18,45 @@
                     <a class="nav-link {% if request.resolver_match.url_name == navbar_item.url %}activemenu{% endif %}" href="{% url navbar_item.url %}">{{navbar_item.title}}</a>
                 </li>
             {% endfor %}
-                <li class="dropdown m-auto">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {% if request.LANGUAGE_CODE == 'tr' %}
-                            <div class="img-box me-2">
-                                <img src="{% static 'img/turkey.png' %}" alt="" style="width: 20px;">
-                            </div>
-                            <span>Türkçe</span>
-                        {% endif %}
-                        {% if request.LANGUAGE_CODE == 'en' %}
-                            <div class="img-box me-2">
-                                <img src="{% static 'img/united-kingdom.png' %}" alt="" style="width: 20px;">
-                            </div>
-                            <span>English</span>
-                        {% endif %}
-                    </a>
-                    <ul class="dropdown-menu p-2">
-                        {% if request.LANGUAGE_CODE != 'tr' %}
-                            <li class="language-selector">
-                                <a class="dropdown-item" href="{% url 'set-language' 'tr' %}">
-                                    <div class="img-box">
-                                        <img src="{% static 'img/turkey.png' %}" alt="">
-                                    </div>
-                                    <p>Türkçe</p>
-                                </a>
-                            </li>
-                        {% endif %}
-                        {% if request.LANGUAGE_CODE != 'en' %}
-                            <li class="language-selector">
-                                <a class="dropdown-item" href="{% url 'set-language' 'en' %}">
-                                    <div class="img-box">
-                                        <img src="{% static 'img/united-kingdom.png' %}" alt="">
-                                    </div>
-                                    <p>English</p>
-                                </a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </li>
             </ul>
+            <li class="dropdown m-auto dropdown-langauge d-none d-lg-flex">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {% if request.LANGUAGE_CODE == 'tr' %}
+                        <div class="img-box me-2">
+                            <img src="{% static 'img/turkey.png' %}" alt="">
+                        </div>
+                        <span>Türkçe</span>
+                    {% endif %}
+                    {% if request.LANGUAGE_CODE == 'en' %}
+                        <div class="img-box me-2">
+                            <img src="{% static 'img/united-kingdom.png' %}" alt="">
+                        </div>
+                        <span>English</span>
+                    {% endif %}
+                </a>
+                <ul class="dropdown-menu p-2">
+                    {% if request.LANGUAGE_CODE != 'tr' %}
+                        <li class="language-selector">
+                            <a class="dropdown-item" href="{% url 'set-language' 'tr' %}">
+                                <div class="img-box">
+                                    <img src="{% static 'img/turkey.png' %}" alt="" style="width: 20px;">
+                                </div>
+                                <p>Türkçe</p>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if request.LANGUAGE_CODE != 'en' %}
+                        <li class="language-selector">
+                            <a class="dropdown-item" href="{% url 'set-language' 'en' %}">
+                                <div class="img-box">
+                                    <img src="{% static 'img/united-kingdom.png' %}" alt="" style="width: 20px;">
+                                </div>
+                                <p>English</p>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </li>
         </div>
 
         
