@@ -133,7 +133,7 @@ ul
     height: 70px
     border-radius: 30px
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px
-    overflow: hidden
+    // overflow: hidden
     .container-fluid
         padding-left: 2rem
         .navbar-brand
@@ -156,9 +156,9 @@ ul
                     display: inline-block
                     white-space: nowrap
                     overflow: hidden
-
             .contacts-right
                 font-size: 18px
+
     .navbar-collapse
         font-size: 14px
         display: flex !important
@@ -191,13 +191,31 @@ ul
                         background-color: black
                         transform-origin: left
                         transition: width 0.4s ease-in-out
-
-
-                .language-selector 
-                    select
                         
-                        
-
+        .dropdown
+            .language-selector
+                a
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    transition: .4s
+                    p
+                        margin-bottom: 0
+                        font-size: 14px
+                    .img-box
+                        width: 20px
+                        img
+                            
+                            max-width: 100%
+                            filter: grayscale(1)
+                    &:hover
+                        .img-box
+                            img
+                                filter: grayscale(0) 
+                a.active 
+                    .img-box
+                        img
+                            filter: grayscale(0)
 
 footer
     border-top: 15px solid #041232
@@ -278,10 +296,12 @@ footer
             font-family: 'Dancing Script', cursive
             border-right: 1px solid
             padding-right: 1rem
+
     .offcanvas-body
         display: flex
         justify-content: center
         padding-top: 4rem
+
         ul
             font-family: 'Mulish', sans-serif
             font-size: 18px
@@ -290,6 +310,7 @@ footer
             flex-direction: column
             gap: 2rem
             color: white
+
     .offcanvas-line
         width: 100%
         display: flex
@@ -297,6 +318,7 @@ footer
         align-items: center
         img
             max-width: 50%
+
 
 
 // Sayfa haritası

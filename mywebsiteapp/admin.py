@@ -170,12 +170,29 @@ class AboutSheetAdmin(TranslationAdmin):
 
 
 #*contact sheet
-
 @admin.register(Contactsheet)
 class ContactsheetAdmin(TranslationAdmin):
     list_display = ('headTitle',)
 
 
 
-# blog
-admin.site.register(Blog)
+#* blog-list (blog.html)
+@admin.register(Bloglist)
+class BlogListAdmin(TranslationAdmin):
+    list_display = ('headTitle',)
+
+
+#* blog-detail (blog-detail.html)
+class BlogWriteInline(admin.StackedInline):
+    model = BlogWrite
+
+@admin.register(Blog)
+class BlogAdmin(TranslationAdmin):
+    list_display = ('headTitle',)
+    inlines = [BlogWriteInline]
+
+
+#* thankyou (thank_you.html)
+@admin.register(Thankyou)
+class ThankyouAdmin(TranslationAdmin):
+    list_display = ('title', 'text',)

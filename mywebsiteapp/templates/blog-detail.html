@@ -11,9 +11,9 @@
         {% include 'includes/_navbar.html' %}
         <div class="breadcrumb w-75">
             <ul class="breadcrumbalt w-100 d-flex justify-content-center align-itemc-center">
-                <li class="breadcrumb-item itemone"><a href="{% url 'index' %}">Anasayfa</a></li>
-                <li class="breadcrumb-item itemone"><a href="{% url 'blog' %}">Blog</a></li>
-                <li class="breadcrumb-item itemtwo active" aria-current="page">Blog Detayı</li>
+                <li class="breadcrumb-item itemone"><a href="{% url blogDetail_sheet.breadcrumbOneUrl %}">{{ blogDetail_sheet.breadcrumbOne }}</a></li>
+                <li class="breadcrumb-item itemone"><a href="{% url blogDetail_sheet.breadcrumbTwoUrl %}">{{ blogDetail_sheet.breadcrumbTwo }}</a></li>
+                <li class="breadcrumb-item itemtwo active" aria-current="page">{{ blogDetail_sheet.breadcrumbThree }}</li>
             </ul>
         </div>
 
@@ -36,7 +36,7 @@
             </svg>
         </div>
         <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> Blog Detayı</h4>
+            <h4 class="text-center mb-3">{{ blogDetail_sheet.headTitle }}</h4>
         </div>
         
     </div>
@@ -77,7 +77,7 @@
                 <div class="col-md-8 d-flex justify-content-center justify-content-sm-start">
                     <a href="{% url 'blog' %}" class="back-button btn"> 
                         <i class="fa-solid fa-arrow-left"></i>
-                        Bloglarıma Dön
+                        {{ blogDetail_sheet.buttonText }}
                     </a>
                 </div>
             </div>

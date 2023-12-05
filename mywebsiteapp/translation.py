@@ -123,3 +123,24 @@ class MySkillsTranslationOptions(TranslationOptions):
 @register(Contactsheet)
 class ContactSheetTranslationOptions(TranslationOptions):
     fields = ('breadcrumbOne', 'breadcrumbTwo', 'headTitle', 'subtitle', 'about', 'buttonText',)
+
+
+#*blog-list (blog.html)
+@register(Bloglist)
+class BlogTranslationOptions(TranslationOptions):
+    fields = ('breadcrumbOne', 'breadcrumbTwo', 'headTitle', 'subtitle', 'about', 'authorsub', 'buttonText_subject_all','buttonText',)
+
+@register(Blog)
+class BlogTranslationOptions(TranslationOptions):
+    fields = ('breadcrumbOne', 'breadcrumbTwo', 'breadcrumbThree', 'headTitle', 'buttonText' )
+
+@register(BlogWrite)
+class BlogWriteTranslationOptions(TranslationOptions):
+    fields = ('title', 'text', 'subject',)
+
+
+
+#* Thank You
+@register(Thankyou)
+class ThankyouTranslationOptions(TranslationOptions):
+    fields = ('title', 'text',)

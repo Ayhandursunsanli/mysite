@@ -67,14 +67,16 @@ def blog(request):
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
     footer = Footer.objects.all()
-    blogs = Blog.objects.all().order_by('-publish_date')
+    blogList = Bloglist.objects.first()
+    blogs = BlogWrite.objects.all().order_by('-publish_date')
 
     context= {
         'navbar': navbar,
         'navbarrightcontact': navbarrightcontact,
         'navbarrighmedia' : navbarrighmedia,
         'footer' : footer,
-        'blogs': blogs
+        'blogs': blogs,
+        'blogList' : blogList,
     }
     return render(request, 'blog.html', context)
 
@@ -83,14 +85,16 @@ def blog_detail(request, blog_id):
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
     footer = Footer.objects.all()
-    blog = get_object_or_404(Blog, pk=blog_id)
+    blog = get_object_or_404(BlogWrite, pk=blog_id)
+    blogDetail_sheet = Blog.objects.first()
 
     context= {
         'navbar': navbar,
         'navbarrightcontact': navbarrightcontact,
         'navbarrighmedia' : navbarrighmedia,
         'footer' : footer,
-        'blog': blog
+        'blog': blog,
+        'blogDetail_sheet' : blogDetail_sheet,
     }
     return render(request, 'blog-detail.html', context)
     
@@ -135,9 +139,14 @@ def contact_us(request):
                 ['ayhandursunsanli@gmail.com'],  # Buraya kendi e-posta adresinizi ekleyin
                 fail_silently=False,
             )
+            thankyou = Thankyou.objects.first()
 
+            context = {
+                'thankyou' : thankyou,
+            }
             # İşlem başarılıysa teşekkür sayfasına yönlendirme
-            return render(request, 'thank_you.html')
+            return render(request, 'thank_you.html', context)
+            
     else:
         form = ContactForm()
 
@@ -146,7 +155,7 @@ def contact_us(request):
         'navbarrightcontact': navbarrightcontact,
         'navbarrighmedia': navbarrighmedia,
         'footer': footer,
-        'form': form, 
+        'form': form,
         'contactsheet': contactsheet,  
     }
     return render(request, 'contact-us.html', context)
@@ -156,11 +165,8 @@ def contact_us(request):
 def thank_you(request):
     return render(request, 'thank_you.html')
 
-
 def loading_page(request):
     return render(request, 'includes/_loading.html')
-
-
 
 def set_language(request, language):
     print(f"Language parameter received: {language}")

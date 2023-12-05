@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-md bg-white scrolled-navbar">
+<nav class="navbar navbar-expand-lg bg-white scrolled-navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'index' %}">Ayhan D. Şanlı</a>
 
@@ -11,29 +11,59 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav d-none d-md-flex">
+            <ul class="navbar-nav d-none d-lg-flex">
 
             {% for navbar_item in navbar %}
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == navbar_item.url %}activemenu{% endif %}" href="{% url navbar_item.url %}">{{navbar_item.title}}</a>
                 </li>
             {% endfor %}
-                <li class="nav-item d-flex align-items-center ms-auto">
-                    <!-- <select class="form-select form-select-sm language-selector" aria-label="Small select example">
-                        <option value="1">
-                            <a href="">Tr</a>
-                        </option>
-                        <option value="2">
-                            <a href="">En</a>
-                        </option>
-                    </select> -->
-                    <a class="nav-link" href="{% url 'set-language' 'tr' %}">tr</a>
-                    <a class="nav-link" href="{% url 'set-language' 'en' %}">English</a>
+                <li class="dropdown m-auto">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% if request.LANGUAGE_CODE == 'tr' %}
+                            <div class="img-box me-2">
+                                <img src="{% static 'img/turkey.png' %}" alt="" style="width: 20px;">
+                            </div>
+                            <span>Türkçe</span>
+                        {% endif %}
+                        {% if request.LANGUAGE_CODE == 'en' %}
+                            <div class="img-box me-2">
+                                <img src="{% static 'img/united-kingdom.png' %}" alt="" style="width: 20px;">
+                            </div>
+                            <span>English</span>
+                        {% endif %}
+                    </a>
+                    <ul class="dropdown-menu p-2">
+                        {% if request.LANGUAGE_CODE != 'tr' %}
+                            <li class="language-selector">
+                                <a class="dropdown-item" href="{% url 'set-language' 'tr' %}">
+                                    <div class="img-box">
+                                        <img src="{% static 'img/turkey.png' %}" alt="">
+                                    </div>
+                                    <p>Türkçe</p>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if request.LANGUAGE_CODE != 'en' %}
+                            <li class="language-selector">
+                                <a class="dropdown-item" href="{% url 'set-language' 'en' %}">
+                                    <div class="img-box">
+                                        <img src="{% static 'img/united-kingdom.png' %}" alt="">
+                                    </div>
+                                    <p>English</p>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
                 </li>
             </ul>
         </div>
+
+        
+
+
         <!-- responsive-socialmedia -->
-        <div class="d-none d-md-flex  d-xl-none justify-content-evenly align-items-center"
+        <div class="d-none d-lg-flex d-xl-none justify-content-evenly align-items-center"
             style="font-size: 18px; width: 100px; ">
             {% for navbarrighmedia in navbarrighmedia  %}
                 <a target="_blank" href="{{ navbarrighmedia.link }}">
@@ -53,12 +83,12 @@
                 </div>
                 <div class="col-4 contacts-right d-flex justify-content-evenly align-items-center">
                     
-                {% for navbarrighmedia in navbarrighmedia  %}
-                <a target="_blank" href="{{ navbarrighmedia.link }}">
-                    <i class="{{ navbarrighmedia.platform }} text-black"></i>
-                </a>
-                {% endfor %}
-                
+                    {% for navbarrighmedia in navbarrighmedia  %}
+                    <a target="_blank" href="{{ navbarrighmedia.link }}">
+                        <i class="{{ navbarrighmedia.platform }} text-black"></i>
+                    </a>
+                    {% endfor %}
+                    
                 </div>
             </div>
         </div>

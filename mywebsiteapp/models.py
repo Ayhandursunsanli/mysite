@@ -290,15 +290,43 @@ class Contactsheet(models.Model):
 
 
 
-#*blog
+#*blog-list (blog.html)
+class Bloglist(models.Model):
+    breadcrumbOne = models.CharField(max_length=250, null=True)
+    breadcrumbOneUrl = models.CharField(max_length=250, null=True)
+    breadcrumbTwo = models.CharField(max_length=250, null=True)
+    headTitle = models.CharField(max_length=250, null=True)
+    subtitle = models.CharField(max_length=250, null=True)
+    about = RichTextField(null=True)
+    authorsub = models.CharField(max_length=250)
+    buttonText_subject_all = models.CharField(max_length=250, null=True)
+    buttonText = models.CharField(max_length=250, null=True)
+
+
+#*blog (blog-detail.html (blogDetail_sheet))
 class Blog(models.Model):
-    image = models.ImageField(upload_to='blog_images/')
-    title = models.CharField(max_length=250)
-    text = RichTextField()
-    subject = models.CharField(max_length=250)
-    subject_icon = models.CharField(max_length=250)
-    author = models.CharField(max_length=100)
+    breadcrumbOne = models.CharField(max_length=250, null=True)
+    breadcrumbOneUrl = models.CharField(max_length=250, null=True)
+    breadcrumbTwo = models.CharField(max_length=250, null=True)
+    breadcrumbTwoUrl = models.CharField(max_length=250, null=True)
+    breadcrumbThree = models.CharField(max_length=250, null=True)
+    headTitle = models.CharField(max_length=250, null=True)
+    buttonText = models.CharField(max_length=250, null=True)
+
+
+class BlogWrite(models.Model):
+    section = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='blog_images/', null=True)
+    title = models.CharField(max_length=250, null=True)
+    text = RichTextField(null=True)
+    subject = models.CharField(max_length=250, null=True)
+    subject_icon = models.CharField(max_length=250, null=True)
+    author = models.CharField(max_length=100, null=True)
     publish_date = models.DateField(auto_now_add=True)
 
-    def __str__(self):
-        return self.title
+
+#*thank you
+class Thankyou(models.Model):
+    title = models.CharField(max_length=250, null=True)
+    text = RichTextField(null=True)
+    img = models.ImageField(upload_to='thankyou_images/', null=True)

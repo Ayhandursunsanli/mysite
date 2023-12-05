@@ -13,8 +13,8 @@
         {% include 'includes/_navbar.html' %}
         <div class="breadcrumb">
             <ul class="breadcrumbalt d-flex justify-content-between">
-                <li class="breadcrumb-item itemone"><a href="{% url 'index' %}">Anasayfa</a></li>
-                <li class="breadcrumb-item itemtwo active" aria-current="page">Blog</li>
+                <li class="breadcrumb-item itemone"><a href="{% url blogList.breadcrumbOneUrl %}">{{ blogList.breadcrumbOne}}</a></li>
+                <li class="breadcrumb-item itemtwo active" aria-current="page">{{ blogList.breadcrumbTwo }}</li>
             </ul>
         </div>
 
@@ -36,16 +36,18 @@
             </svg>
         </div>
         <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3"> Blog</h4>
+            <h4 class="text-center mb-3">{{ blogList.headTitle }}</h4>
         </div>
     </div>
 
     <div class="blog-section-one">
-        <h4 class="minihead mb-4 text-center">İlgi alanlarım hakkında yazıyorum...</h4>
+        <h4 class="minihead mb-4 text-center">{{ blogList.subtitle }}</h4>
         <div class="container">
             <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-10">
-                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsa illo aperiam ipsam perspiciatis inventore nobis nihil voluptatum, asperiores consectetur nisi minima quia beatae tempora excepturi similique! Numquam laudantium possimus animi autem doloremque, corporis quisquam quis iste omnis totam reprehenderit laborum eum excepturi tempore beatae repellat voluptate officiis. Dolorum, quasi!</p>
+                    <div class="text-center">
+                        {{ blogList.about | safe }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,7 +59,7 @@
                 <div class="col-12 category-col d-flex justify-content-around align-items-center">
                     <div id="myBtnContainer">
 
-                        <button class="btn" onclick="filterSelection('all')"> Tümünü Göster</button>
+                        <button class="btn" onclick="filterSelection('all')"> {{ blogList.buttonText_subject_all }}</button>
 
                     {% for blog in blogs %}
                         <button class="btn" onclick="filterSelection('{{ blog.subject }}')"> # {{ blog.subject }}</button>
@@ -100,7 +102,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 d-flex justify-content-center flex-column align-items-start">
-                            <h6>Yazar: <span class="text-muted fw-light">{{ blog.author }}</span></h6>
+                            <h6>{{ blogList.authorsub }}: <span class="text-muted fw-light">{{ blog.author }}</span></h6>
                             <p class="mb-0 text-muted fw-light">{{ blog.publish_date }}</p>
                         </div>
                         <div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -108,7 +110,7 @@
                                 <span class="circle" aria-hidden="true">
                                     <span class="icon arrow"></span>
                                 </span>
-                                <span class="button-text">Devamını Oku</span>
+                                <span class="button-text">{{ blogList.buttonText }}</span>
                             </a>
                         </div>
                     </div>
