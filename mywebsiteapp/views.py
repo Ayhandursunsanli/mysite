@@ -14,106 +14,77 @@ from django.utils import translation
 
 # Create your views here.
 
-
-def index(request):
+def get_common_context():
     navbar = Navbar.objects.all()
     navbarrighmedia = Navbarrighmedia.objects.all()
     navbarrightcontact = Navbarrightcontact.objects.first()
+    footer = Footer.objects.all()
+    
+    common_context = {
+        'navbar': navbar,
+        'navbarrightcontact': navbarrightcontact,
+        'navbarrighmedia' : navbarrighmedia,
+        'footer' : footer,
+    }
+    
+    return common_context
+
+def index(request):
+    common_context = get_common_context()
     headercarousel = Headercarousel.objects.all()
     index_section_one_data = Indexsectionone.objects.all()
     index_section_three_data = Indexsectionthree.objects.all()
     index_section_four_data = Indexsectionfour.objects.all()
     index_section_five_data = Indexsectionfive.objects.all()
     index_section_six_data = Indexsectionsix.objects.all()
-    footer = Footer.objects.all()
     indexpagemap = Indexpagemap.objects.all()
 
-    context= {
-        'navbar': navbar,
-        'navbarrightcontact': navbarrightcontact,
-        'navbarrighmedia' : navbarrighmedia,
-        'headercarousel': headercarousel,
-        'index_section_one_data': index_section_one_data,
-        'index_section_three_data': index_section_three_data,
-        'index_section_four_data': index_section_four_data,
-        'index_section_five_data': index_section_five_data,
-        'index_section_six_data': index_section_six_data,
-        'footer' : footer,
-        'indexpagemap' : indexpagemap,
-    }
+    common_context['headercarousel'] = headercarousel
+    common_context['index_section_one_data'] =  index_section_one_data
+    common_context['index_section_three_data'] = index_section_three_data
+    common_context['index_section_four_data'] = index_section_four_data
+    common_context['index_section_five_data'] = index_section_five_data
+    common_context['index_section_six_data'] = index_section_six_data
+    common_context['indexpagemap'] = indexpagemap
 
-    return render(request, 'index.html', context)
+
+    return render(request, 'index.html', common_context)
 
 def about(request):
-    navbar = Navbar.objects.all()
-    navbarrighmedia = Navbarrighmedia.objects.all()
-    navbarrightcontact = Navbarrightcontact.objects.first()
-    footer = Footer.objects.all()
+    common_context = get_common_context()
     aboutsheet = Aboutsheet.objects.all()
 
-    context= {
-        'navbar': navbar,
-        'navbarrightcontact': navbarrightcontact,
-        'navbarrighmedia' : navbarrighmedia,
-        'footer' : footer,
-        'aboutsheet' : aboutsheet
-    }
+    common_context['aboutsheet'] = aboutsheet
 
-
-    return render(request, 'about.html', context)
+    return render(request, 'about.html', common_context)
 
 def blog(request):
-    navbar = Navbar.objects.all()
-    navbarrighmedia = Navbarrighmedia.objects.all()
-    navbarrightcontact = Navbarrightcontact.objects.first()
-    footer = Footer.objects.all()
+    common_context = get_common_context()
     blogList = Bloglist.objects.first()
     blogs = BlogWrite.objects.all().order_by('-publish_date')
 
-    context= {
-        'navbar': navbar,
-        'navbarrightcontact': navbarrightcontact,
-        'navbarrighmedia' : navbarrighmedia,
-        'footer' : footer,
-        'blogs': blogs,
-        'blogList' : blogList,
-    }
-    return render(request, 'blog.html', context)
+    common_context['blogList'] = blogList
+    common_context['blogs'] = blogs
+
+    return render(request, 'blog.html', common_context)
 
 def blog_detail(request, blog_id):
-    navbar = Navbar.objects.all()
-    navbarrighmedia = Navbarrighmedia.objects.all()
-    navbarrightcontact = Navbarrightcontact.objects.first()
-    footer = Footer.objects.all()
+    common_context = get_common_context()
     blog = get_object_or_404(BlogWrite, pk=blog_id)
     blogDetail_sheet = Blog.objects.first()
 
-    context= {
-        'navbar': navbar,
-        'navbarrightcontact': navbarrightcontact,
-        'navbarrighmedia' : navbarrighmedia,
-        'footer' : footer,
-        'blog': blog,
-        'blogDetail_sheet' : blogDetail_sheet,
-    }
-    return render(request, 'blog-detail.html', context)
+    common_context['blog'] = blog
+    common_context['blogDetail_sheet'] = blogDetail_sheet
+
+    return render(request, 'blog-detail.html', common_context)
     
 def project(request):
-    navbar = Navbar.objects.all()
-    navbarrighmedia = Navbarrighmedia.objects.all()
-    navbarrightcontact = Navbarrightcontact.objects.first()
-    footer = Footer.objects.all()
+    common_context = get_common_context()
     projectssheet = Projectssheet.objects.all()
 
-    context= {
-        'navbar': navbar,
-        'navbarrightcontact': navbarrightcontact,
-        'navbarrighmedia' : navbarrighmedia,
-        'footer' : footer,
-        'projectssheet' : projectssheet
-    }
-    return render(request, 'projects.html', context)
+    common_context['projectssheet'] = projectssheet
 
+    return render(request, 'projects.html', common_context)
 
 def contact_us(request):
     navbar = Navbar.objects.all()
@@ -160,8 +131,6 @@ def contact_us(request):
     }
     return render(request, 'contact-us.html', context)
 
-
-# mesaj gönderdikten sonra gidilecek sayfa
 def thank_you(request):
     return render(request, 'thank_you.html')
 
