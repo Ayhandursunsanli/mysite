@@ -48,7 +48,7 @@
 
     <section class="section-contactus">
         <h4 id="sectioncontact-us" class="minihead my-5 text-center ">{{contactsheet.subtitle}}</h4>
-        <p class="text-center mx-5 mb-5">{{contactsheet.about}}</p> 
+        <div class="text-center mx-5 mb-5">{{contactsheet.about | safe}}</div> 
         <div class="container d-none d-sm-block ">
             <div class="row d-flex justify-content-center">
                 <div class="col-10 d-flex justify-content-center">
