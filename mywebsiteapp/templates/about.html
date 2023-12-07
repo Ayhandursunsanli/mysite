@@ -54,16 +54,18 @@
         <div class="about-section-one">
             <h4 class="minihead mb-4 text-center">{{ abo.title }}</h4>
             <div class="container about-one">
-                <div class="row aboutonesec d-flex justify-content-center">
-                    <img class="aboutone-img" src="{% static 'img/bg-about.png' %}" alt="">
-                    <div class="col-lg-4 mt-5">
+                <div class="row aboutonesec d-flex justify-content-around align-items-center mt-md-5">
+                    <!-- <img class="aboutone-img" src="{% static 'img/bg-about.png' %}" alt=""> -->
+                    <div class="col-md-6 mt-5">
                         <div class="about-imgbox">
                             <img class="framed" src="{{ abo.img.url }}" alt="">
                         </div>
                     </div>
-                    <div class="col-lg-4 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
-                        <div class="about-text">
-                            <div class="text-center">
+                </div>
+                <div class="row mt-md-5 d-flex justify-content-center align-items-center">
+                    <div class="col-md-10 d-flex justify-content-center align-items-center mt-5 mt-lg-0">
+                        <div class="about-text text-center">
+                            <div class="">
                                 {{ abo.about | safe}}
                             </div>
                         </div>
