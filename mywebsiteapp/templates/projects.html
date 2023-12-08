@@ -22,8 +22,7 @@
             </ul>
         </div>
 
-        <div class="inner-header flex">
-            
+        <div class="inner-header flex"> 
         </div>
 
         <div>
@@ -62,11 +61,13 @@
             </div>
             <div class="row d-flex align-items-center justify-content-center">
                 {% for projectcard in projects.projectcard_set.all %}
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mt-5 d-flex justify-content-center">
+                <div class="col-lg-5 mt-5 d-flex justify-content-center">
                     <div class="card">
-                        <div class="card-imgbox">
-                            <img class="image2" src="{{ projectcard.site_img_logo.url }}" alt="">
-                            <div class="laptop">
+                        <div class="card-logo">
+                            <img class="image-logo" src="{{ projectcard.site_img_logo.url }}" alt="">
+                        </div>
+                        <div class="card-imgbox mt-4">
+                            <!-- <div class="laptop">
                                 <div class="laptop__screen">
                                     <img src="{{ projectcard.site_img.url }}" alt="">
                                 </div>
@@ -74,10 +75,17 @@
                                     <div class="laptop__under"></div>
                                 </div>
                                 <div class="laptop__shadow"></div>
-                            </div>
+                            </div> -->
+                            <img class="site-img" src="{{ projectcard.site_img.url }}" alt="">
                         </div>
-                        <div class="card-header">
-                            <h6>{{ projectcard.site_title }}</h6>
+                        <div class="card-header mt-3 mt-md-4">
+                            <h4>{{ projectcard.site_title }}</h4>
+                        </div>
+                        <div class="card-about px-4 d-flex justify-content-center align-items-center">
+                            <div class="text-center text-white fw-light">
+                                {{ projectcard.site_about | safe }}
+                            </div>
+                            
                         </div>
                         <a target="_blank" href="{{projectcard.site_url}}" class="learn-more mybtn m-auto">
                             <span class="circle" aria-hidden="true">

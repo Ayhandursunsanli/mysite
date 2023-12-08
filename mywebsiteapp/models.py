@@ -214,6 +214,7 @@ class Projectssheet(models.Model):
 class ProjectCard(models.Model):
     section = models.ForeignKey(Projectssheet, on_delete=models.CASCADE)
     site_title = models.CharField(max_length=500, null=True)
+    site_about = RichTextField(null=True)
     site_img = models.ImageField(upload_to='Projectscard_images/', null=True)
     site_img_logo = models.ImageField(upload_to='Projectscard_images/', null=True)
     buttonText = models.CharField(max_length=250, null=True)

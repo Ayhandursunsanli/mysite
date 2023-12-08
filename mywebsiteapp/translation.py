@@ -96,7 +96,7 @@ class ProjectsSheetTranslationOptions(TranslationOptions):
     fields = ('breadcrumbOne', 'breadcrumbTwo', 'headTitle', 'title', 'about',)
 @register(ProjectCard)
 class ProjectCardTranslationOptions(TranslationOptions):
-    fields = ('site_title', 'buttonText',)
+    fields = ('site_title', 'buttonText', 'site_about',)
 
 
 #*about
