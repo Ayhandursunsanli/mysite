@@ -131,6 +131,12 @@ def contact_us(request):
     }
     return render(request, 'contact-us.html', context)
 
+def teams(request):
+    common_context = get_common_context()
+
+    return render(request, 'teams.html', common_context)
+
+
 def thank_you(request):
     return render(request, 'thank_you.html')
 

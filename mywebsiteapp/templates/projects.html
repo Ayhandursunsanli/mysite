@@ -11,94 +11,94 @@
 
 
 {% block content %}
-{% for projects in projectssheet  %}
-    <div class="common-header-nav">
-        {% include 'includes/_navbar.html' %}
+    {% for projects in projectssheet  %}
+        <div class="common-header-nav">
+            {% include 'includes/_navbar.html' %}
 
-        <div class="breadcrumb">
-            <ul class="breadcrumbalt d-flex justify-content-between">
-                <li class="breadcrumb-item itemone"><a href="{% url projects.breadcrumbOneUrl %}">{{ projects.breadcrumbOne }}</a></li>
-                <li class="breadcrumb-item itemtwo active" aria-current="page">{{ projects.breadcrumbTwo }}</li>
-            </ul>
+            <div class="breadcrumb">
+                <ul class="breadcrumbalt d-flex justify-content-between">
+                    <li class="breadcrumb-item itemone"><a href="{% url projects.breadcrumbOneUrl %}">{{ projects.breadcrumbOne }}</a></li>
+                    <li class="breadcrumb-item itemtwo active" aria-current="page">{{ projects.breadcrumbTwo }}</li>
+                </ul>
+            </div>
+
+            <div class="inner-header flex"> 
+            </div>
+
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <!-- <use class="use" xlink:href="#gentle-wave" x="48" y="7" fill="#fff" /> -->
+                    </g>
+                </svg>
+            </div>
+            <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
+                <h4 class="text-center mb-3">{{ projects.headTitle }}</h4>
+                <!-- <img src="./img/lineblack.png" alt=""> -->
+            </div>
         </div>
 
-        <div class="inner-header flex"> 
-        </div>
-
-        <div>
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                <defs>
-                    <path id="gentle-wave"
-                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
-                <g class="parallax">
-                    <use class="use" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                    <use class="use" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                    <use class="use" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                    <!-- <use class="use" xlink:href="#gentle-wave" x="48" y="7" fill="#fff" /> -->
-                </g>
-            </svg>
-        </div>
-        <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-center mb-3">{{ projects.headTitle }}</h4>
-            <!-- <img src="./img/lineblack.png" alt=""> -->
-        </div>
-    </div>
-
-    
-    
         
-    <div class="projects-section-one">
-        <h4 class="minihead mb-4 text-center">{{ projects.title }}</h4>
-        <div class="container">
-            <div class="row d-flex justify-content-center mt-5">
-                <div class="col-md-10">
-                    <div class="text-center">
-                        {{ projects.about | safe }}
+        
+            
+        <div class="projects-section-one">
+            <h4 class="minihead mb-4 text-center">{{ projects.title }}</h4>
+            <div class="container">
+                <div class="row d-flex justify-content-center mt-5">
+                    <div class="col-md-10">
+                        <div class="text-center">
+                            {{ projects.about | safe }}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row d-flex align-items-center justify-content-center">
-                {% for projectcard in projects.projectcard_set.all %}
-                <div class="col-lg-5 mt-5 d-flex justify-content-center">
-                    <div class="card">
-                        <div class="card-logo">
-                            <img class="image-logo" src="{{ projectcard.site_img_logo.url }}" alt="">
-                        </div>
-                        <div class="card-imgbox mt-4">
-                            <!-- <div class="laptop">
-                                <div class="laptop__screen">
-                                    <img src="{{ projectcard.site_img.url }}" alt="">
-                                </div>
-                                <div class="laptop__bottom">
-                                    <div class="laptop__under"></div>
-                                </div>
-                                <div class="laptop__shadow"></div>
-                            </div> -->
-                            <img class="site-img" src="{{ projectcard.site_img.url }}" alt="">
-                        </div>
-                        <div class="card-header mt-3 mt-md-4">
-                            <h4>{{ projectcard.site_title }}</h4>
-                        </div>
-                        <div class="card-about px-4 d-flex justify-content-center align-items-center">
-                            <div class="text-center text-white fw-light">
-                                {{ projectcard.site_about | safe }}
+                <div class="row d-flex align-items-center justify-content-center">
+                    {% for projectcard in projects.projectcard_set.all %}
+                    <div class="col-lg-5 mt-5 d-flex justify-content-center">
+                        <div class="card">
+                            <div class="card-logo">
+                                <img class="image-logo" src="{{ projectcard.site_img_logo.url }}" alt="">
                             </div>
-                            
+                            <div class="card-imgbox mt-4">
+                                <!-- <div class="laptop">
+                                    <div class="laptop__screen">
+                                        <img src="{{ projectcard.site_img.url }}" alt="">
+                                    </div>
+                                    <div class="laptop__bottom">
+                                        <div class="laptop__under"></div>
+                                    </div>
+                                    <div class="laptop__shadow"></div>
+                                </div> -->
+                                <img class="site-img" src="{{ projectcard.site_img.url }}" alt="">
+                            </div>
+                            <div class="card-header mt-3 mt-md-4">
+                                <h4>{{ projectcard.site_title }}</h4>
+                            </div>
+                            <div class="card-about px-4 d-flex justify-content-center align-items-center">
+                                <div class="text-center text-white fw-light">
+                                    {{ projectcard.site_about | safe }}
+                                </div>
+                                
+                            </div>
+                            <a target="_blank" href="{{projectcard.site_url}}" class="learn-more mybtn m-auto">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">{{ projectcard.buttonText }}</span>
+                            </a>
                         </div>
-                        <a target="_blank" href="{{projectcard.site_url}}" class="learn-more mybtn m-auto">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">{{ projectcard.buttonText }}</span>
-                        </a>
                     </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
-    </div>
 
     {% endfor %}
 {% endblock content %}

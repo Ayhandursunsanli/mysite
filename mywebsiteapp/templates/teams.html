@@ -1,0 +1,106 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Ocean AF Yazılım | Takımız
+{% endblock title %}
+
+
+
+
+{% block content %}
+{% comment %} {% for projects in projectssheet %} {% endcomment %}
+<div class="common-header-nav">
+    {% include 'includes/_navbar.html' %}
+
+    <div class="breadcrumb">
+        <ul class="breadcrumbalt d-flex justify-content-between">
+            <li class="breadcrumb-item itemone"><a href="#">Anasayfa</a></li>
+            <li class="breadcrumb-item itemtwo active" aria-current="page">Takımımız</li>
+        </ul>
+    </div>
+
+    <div class="inner-header flex">
+    </div>
+
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use class="use" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use class="use" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use class="use" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <!-- <use class="use" xlink:href="#gentle-wave" x="48" y="7" fill="#fff" /> -->
+            </g>
+        </svg>
+    </div>
+    <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
+        <h4 class="text-center mb-3">Takımımız</h4>
+        <!-- <img src="./img/lineblack.png" alt=""> -->
+    </div>
+</div>
+<div class="teams-section-one mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-10 teams-person" style="height: 500px;">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="img-box" style="width: 100%; height: 100%;">
+                            <img src="{% static 'img/DENEME-6.png' %}" alt="" style="width: 100%;">
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-12">
+                                <h6 class="text-center">Ayhan Dursun ŞANLI / <span>Full Stack Developer</span></h6>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+                                            aria-selected="true">Hakkımda</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                            data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                            aria-controls="profile-tab-pane" aria-selected="false">Özgeçmişim</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                            data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                            aria-controls="contact-tab-pane" aria-selected="false">Yetkinliklerim</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content mt-3" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                                        aria-labelledby="home-tab" tabindex="0">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt dignissimos iusto sit totam officia aliquam nemo doloremque quas ducimus ratione possimus magni rem suscipit sunt, nisi nihil corrupti eius harum aut velit beatae quos alias quaerat unde? Quos eveniet eos maxime ut quam sequi sunt! Ab ex iusto culpa corporis!
+                                    </div>
+                                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                                        tabindex="0">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ipsam recusandae magni numquam eius incidunt beatae maxime est ratione deserunt neque, labore temporibus saepe nam quasi eaque veniam. Molestias eum totam maiores, illum ipsa mollitia qui quas, enim tempora iusto ab! Quasi nam illo magni ipsum molestiae accusantium pariatur nostrum optio eaque vitae laborum magnam maiores sed nemo recusandae minus blanditiis facere asperiores cum nihil esse, maxime accusamus aperiam! Tempore voluptas similique rerum voluptatem repudiandae optio. Illum aspernatur cum expedita neque nemo accusamus illo officiis, delectus reiciendis deserunt ullam necessitatibus distinctio eligendi voluptate nisi mollitia id voluptatibus voluptatem porro. At, in! Maiores quas odit est velit delectus facilis distinctio ducimus vero tenetur asperiores, consequatur maxime tempore. Exercitationem natus, in nemo corporis nostrum iure rerum recusandae pariatur voluptatibus nulla explicabo adipisci dolores consequatur eaque eius quia itaque! Atque reprehenderit quis praesentium, soluta repellat consequatur quidem dolor non nam. Minus, mollitia neque!
+                                    </div>
+                                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+                                        tabindex="0">
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium et dolorum deserunt ipsum obcaecati, tempore modi alias architecto quas autem numquam odit iste voluptates corrupti dolorem officia! Nemo at adipisci veritatis, ullam provident odio fugit facere corrupti minus, labore aliquam ab quis, suscipit commodi similique cupiditate accusantium veniam error sit ducimus porro molestias earum animi. Ullam modi, deleniti quis non necessitatibus autem excepturi, dignissimos iure exercitationem, animi sed odio beatae. Eaque porro iste, temporibus minima assumenda tempora tempore quibusdam placeat fugit ex eos, officiis fuga sed beatae nam ullam quia facilis recusandae voluptates iure inventore quo, eum a! Sunt, ipsum sapiente tempora corporis adipisci similique pariatur magni neque sint provident voluptatum dolorem rerum reprehenderit quidem praesentium tenetur molestias magnam animi, error veritatis porro? Repellat ullam enim architecto dolore. Dolores labore quis nobis, perferendis laborum qui quas in tempora porro amet explicabo temporibus, ea officiis dicta, corporis reprehenderit officia repellendus quisquam adipisci? Asperiores suscipit unde, possimus nihil architecto eos laborum perferendis ipsa odit rerum fuga tempora culpa ipsum vel cum minima et velit aut nobis laudantium fugit! Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa, accusamus repellat praesentium veniam molestias autem ipsa, atque natus similique deserunt veritatis sint corporis!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% comment %} {% endfor %} {% endcomment %}
+{% endblock content %}

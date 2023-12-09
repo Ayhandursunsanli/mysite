@@ -33,6 +33,7 @@ urlpatterns = [
     path('blog/<int:blog_id>/', blog_detail, name='blog_detail'),
     path('project/', project, name= 'project'),
     path('contact/', contact_us, name= 'contact'),
+    path('teams/', teams, name= 'teams'),
     path('thank_you/', thank_you, name='thank_you'),
     path('loading/', loading_page, name='loading'),
     
