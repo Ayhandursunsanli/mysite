@@ -4,7 +4,7 @@
 
 
 {% block title %}
-Ocean AF Yazılım | Takımız
+Ocean AF Yazılım | Takımımız
 {% endblock title %}
 
 
@@ -47,26 +47,37 @@ Ocean AF Yazılım | Takımız
 <div class="teams-section-one mt-5">
     <div class="container">
         <div class="row">
-            <div class="col-10 teams-person" style="height: 500px;">
+            <div class="col-10 teams-person pb-lg-0">
+                <div class="row person-name">
+                    <div class="col-12">
+                        <h6 class="text-center">Ayhan Dursun ŞANLI / <span>Full Stack Developer</span></h6>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-4">
-                        <div class="img-box" style="width: 100%; height: 100%;">
-                            <img src="{% static 'img/DENEME-6.png' %}" alt="" style="width: 100%;">
+                    <div class="col-lg-4 person-left ps-0 pe-0">
+                        <div class="img-box">
+                            <img src="{% static 'img/DENEME-6.png' %}" alt="">
+                        </div>
+                        <div class="social">
+                            <a href="">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-8">
-                        <div class="row">
-                            <div class="col-12">
-                                <h6 class="text-center">Ayhan Dursun ŞANLI / <span>Full Stack Developer</span></h6>
-                            </div>
-                        </div>
+                    <div class="col-lg-8 person-right">
                         <div class="row mt-3">
-                            <div class="col-12">
+                            <div class="col-12 person-skill">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                            data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
-                                            aria-selected="true">Hakkımda</button>
+                                            data-bs-target="#home-tab-pane" type="button" role="tab"
+                                            aria-controls="home-tab-pane" aria-selected="true">Hakkımda</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
@@ -76,21 +87,95 @@ Ocean AF Yazılım | Takımız
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
                                             data-bs-target="#contact-tab-pane" type="button" role="tab"
-                                            aria-controls="contact-tab-pane" aria-selected="false">Yetkinliklerim</button>
+                                            aria-controls="contact-tab-pane"
+                                            aria-selected="false">Yetkinliklerim</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="cer-tab" data-bs-toggle="tab"
+                                            data-bs-target="#cer-tab-pane" type="button" role="tab"
+                                            aria-controls="cer-tab-pane" aria-selected="false">Sertifikalarım</button>
                                     </li>
                                 </ul>
                                 <div class="tab-content mt-3" id="myTabContent">
                                     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
                                         aria-labelledby="home-tab" tabindex="0">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt dignissimos iusto sit totam officia aliquam nemo doloremque quas ducimus ratione possimus magni rem suscipit sunt, nisi nihil corrupti eius harum aut velit beatae quos alias quaerat unde? Quos eveniet eos maxime ut quam sequi sunt! Ab ex iusto culpa corporis!
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt dignissimos
+                                        iusto sit totam officia aliquam nemo doloremque quas ducimus ratione possimus
+                                        magni rem suscipit sunt, nisi nihil corrupti eius harum aut velit beatae quos
+                                        alias quaerat unde? Quos eveniet eos maxime ut quam sequi sunt! Ab ex iusto
+                                        culpa corporis!
                                     </div>
-                                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-                                        tabindex="0">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ipsam recusandae magni numquam eius incidunt beatae maxime est ratione deserunt neque, labore temporibus saepe nam quasi eaque veniam. Molestias eum totam maiores, illum ipsa mollitia qui quas, enim tempora iusto ab! Quasi nam illo magni ipsum molestiae accusantium pariatur nostrum optio eaque vitae laborum magnam maiores sed nemo recusandae minus blanditiis facere asperiores cum nihil esse, maxime accusamus aperiam! Tempore voluptas similique rerum voluptatem repudiandae optio. Illum aspernatur cum expedita neque nemo accusamus illo officiis, delectus reiciendis deserunt ullam necessitatibus distinctio eligendi voluptate nisi mollitia id voluptatibus voluptatem porro. At, in! Maiores quas odit est velit delectus facilis distinctio ducimus vero tenetur asperiores, consequatur maxime tempore. Exercitationem natus, in nemo corporis nostrum iure rerum recusandae pariatur voluptatibus nulla explicabo adipisci dolores consequatur eaque eius quia itaque! Atque reprehenderit quis praesentium, soluta repellat consequatur quidem dolor non nam. Minus, mollitia neque!
+                                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+                                        aria-labelledby="profile-tab" tabindex="0">
+                                        <div class="card-content">
+                                            <div class="card-subtitle">WORK EXPERIENCE</div>
+                                            <div class="card-timeline">
+                                                <div class="card-item" data-year="2014">
+                                                    <div class="card-item-title">Front-end Developer at
+                                                        <span>JotForm</span></div>
+                                                    <div class="card-item-desc">Disrupt stumptown retro everyday carry
+                                                        unicorn.</div>
+                                                </div>
+                                                <div class="card-item" data-year="2016">
+                                                    <div class="card-item-title">UI Developer at <span>GitHub</span>
+                                                    </div>
+                                                    <div class="card-item-desc">Developed new conversion funnels and
+                                                        disrupt.</div>
+                                                </div>
+                                                <div class="card-item" data-year="2018">
+                                                    <div class="card-item-title">Illustrator at <span>Google</span>
+                                                    </div>
+                                                    <div class="card-item-desc">Onboarding illustrations for App.</div>
+                                                </div>
+                                                <div class="card-item" data-year="2020">
+                                                    <div class="card-item-title">Full-Stack Developer at
+                                                        <span>CodePen</span></div>
+                                                    <div class="card-item-desc">Responsible for the encomposing brand
+                                                        expreience.</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
-                                        tabindex="0">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium et dolorum deserunt ipsum obcaecati, tempore modi alias architecto quas autem numquam odit iste voluptates corrupti dolorem officia! Nemo at adipisci veritatis, ullam provident odio fugit facere corrupti minus, labore aliquam ab quis, suscipit commodi similique cupiditate accusantium veniam error sit ducimus porro molestias earum animi. Ullam modi, deleniti quis non necessitatibus autem excepturi, dignissimos iure exercitationem, animi sed odio beatae. Eaque porro iste, temporibus minima assumenda tempora tempore quibusdam placeat fugit ex eos, officiis fuga sed beatae nam ullam quia facilis recusandae voluptates iure inventore quo, eum a! Sunt, ipsum sapiente tempora corporis adipisci similique pariatur magni neque sint provident voluptatum dolorem rerum reprehenderit quidem praesentium tenetur molestias magnam animi, error veritatis porro? Repellat ullam enim architecto dolore. Dolores labore quis nobis, perferendis laborum qui quas in tempora porro amet explicabo temporibus, ea officiis dicta, corporis reprehenderit officia repellendus quisquam adipisci? Asperiores suscipit unde, possimus nihil architecto eos laborum perferendis ipsa odit rerum fuga tempora culpa ipsum vel cum minima et velit aut nobis laudantium fugit! Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa, accusamus repellat praesentium veniam molestias autem ipsa, atque natus similique deserunt veritatis sint corporis!
+                                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
+                                        aria-labelledby="contact-tab" tabindex="0">
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium et dolorum
+                                        deserunt ipsum obcaecati, tempore modi alias architecto quas autem numquam odit
+                                        iste voluptates corrupti dolorem officia! Nemo at adipisci veritatis, ullam
+                                        provident odio fugit facere corrupti minus, labore aliquam ab quis, suscipit
+                                        commodi similique cupiditate accusantium veniam error sit ducimus porro
+                                        molestias earum animi. Ullam modi, deleniti quis non necessitatibus autem
+                                        excepturi, dignissimos iure exercitationem, animi sed odio beatae. Eaque porro
+                                        iste, temporibus minima assumenda tempora tempore quibusdam placeat fugit ex
+                                        eos, officiis fuga sed beatae nam ullam quia facilis recusandae voluptates iure
+                                        inventore quo, eum a! Sunt, ipsum sapiente tempora corporis adipisci similique
+                                        pariatur magni neque sint provident voluptatum dolorem rerum reprehenderit
+                                        quidem praesentium tenetur molestias magnam animi, error veritatis porro?
+                                        Repellat ullam enim architecto dolore. Dolores labore quis nobis, perferendis
+                                        laborum qui quas in tempora porro amet explicabo temporibus, ea officiis dicta,
+                                        corporis reprehenderit officia repellendus quisquam adipisci? Asperiores
+                                        suscipit unde, possimus nihil architecto eos laborum perferendis ipsa odit rerum
+                                        fuga tempora culpa ipsum vel cum minima et velit aut nobis laudantium fugit!
+                                        Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa,
+                                        accusamus repellat praesentium veniam molestias autem ipsa, atque natus
+                                        similique deserunt veritatis sint corporis!psum vel cum minima et velit aut nobis laudantium fugit!
+                                        Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa,
+                                        accusamus repellat praesentium veniam molestias autem ipsa, atque natus
+                                        similique deserunt veritatis sint corporis!
+                                        fuga tempora culpa ipsum vel cum minima et velit aut nobis laudantium fugit!
+                                        Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa,
+                                        accusamus repellat praesentium veniam molestias autem ipsa, atque natus
+                                        similique deserunt veritatis sint corporis!psum vel cum minima et velit aut nobis laudantium fugit!
+                                        Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa,
+                                        accusamus repellat praesentium veniam molestias autem ipsa, atque natus
+                                        similique deserunt veritatis sint corporis!
+                                    </div>
+                                    <div class="tab-pane fade" id="cer-tab-pane" role="tabpanel"
+                                        aria-labelledby="cer-tab" tabindex="0">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt dignissimos
+                                        iusto sit totam officia aliquam nemo doloremque quas ducimus ratione possimus
+                                        magni rem suscipit sunt, nisi nihil corrupti eius harum aut velit beatae quos
+                                        alias quaerat unde? Quos eveniet eos maxime ut quam sequi sunt! Ab ex iusto
+                                        culpa corporis!
                                     </div>
                                 </div>
                             </div>
