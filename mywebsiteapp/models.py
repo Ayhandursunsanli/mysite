@@ -331,3 +331,26 @@ class Thankyou(models.Model):
     title = models.CharField(max_length=250, null=True)
     text = RichTextField(null=True)
     img = models.ImageField(upload_to='thankyou_images/', null=True)
+
+
+
+#* teams
+class Teams(models.Model):
+    breadcrumbOne = models.CharField(max_length=250, null=True)
+    breadcrumbOneUrl = models.CharField(max_length=250, null=True)
+    breadcrumbTwo = models.CharField(max_length=250, null=True)
+    headTitle = models.CharField(max_length=250, null=True)
+    title = models.CharField(max_length=250, null=True)
+    about = RichTextField(null=True)
+
+class Person(models.Model):
+    section = models.ForeignKey(Teams, on_delete=models.CASCADE)
+    name = models.CharField(max_length=250, null=True)
+    job = models.CharField(max_length=250, null=True)
+    img = models.ImageField(upload_to='person_images/', null=True)
+    social_icon  = models.CharField(max_length=250, null=True)
+    social_url = models.URLField(null=True)
+    navLink = models.CharField(max_length=250, null=True)
+    navLink_Title = models.CharField(max_length=250, null=True)
+    
+
