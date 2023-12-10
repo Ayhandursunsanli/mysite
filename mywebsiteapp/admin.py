@@ -199,3 +199,10 @@ class ThankyouAdmin(TranslationAdmin):
 
 
 #*Teams (teams.html)
+class PersonInline(admin.StackedInline):
+    model = Person
+
+@admin.register(Teamsheet)
+class TeamsheetAdmin(TranslationAdmin):
+    list_display = ('headTitle',)
+    inlines = [PersonInline]

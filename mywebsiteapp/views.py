@@ -133,6 +133,9 @@ def contact_us(request):
 
 def teams(request):
     common_context = get_common_context()
+    teamsheet = Teamsheet.objects.all()
+
+    common_context['teamsheet'] = teamsheet
 
     return render(request, 'teams.html', common_context)
 

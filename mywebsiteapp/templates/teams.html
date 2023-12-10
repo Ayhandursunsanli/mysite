@@ -7,185 +7,281 @@
 Ocean AF Yazılım | Takımımız
 {% endblock title %}
 
-
-
+    
+    
 
 {% block content %}
-{% comment %} {% for projects in projectssheet %} {% endcomment %}
-<div class="common-header-nav">
-    {% include 'includes/_navbar.html' %}
 
-    <div class="breadcrumb">
-        <ul class="breadcrumbalt d-flex justify-content-between">
-            <li class="breadcrumb-item itemone"><a href="#">Anasayfa</a></li>
-            <li class="breadcrumb-item itemtwo active" aria-current="page">Takımımız</li>
-        </ul>
-    </div>
+    {% for team in teamsheet %}
+        <div class="common-header-nav">
+            {% include 'includes/_navbar.html' %}
 
-    <div class="inner-header flex">
-    </div>
+            <div class="breadcrumb">
+                <ul class="breadcrumbalt d-flex justify-content-between">
+                    <li class="breadcrumb-item itemone"><a href="{{ team.breadcrumbOneUrl }}">{{ team.breadcrumbOne }}</a></li>
+                    <li class="breadcrumb-item itemtwo active" aria-current="page">{{ team.breadcrumbTwo }}</li>
+                </ul>
+            </div>
 
-    <div>
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="parallax">
-                <use class="use" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                <use class="use" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                <use class="use" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                <!-- <use class="use" xlink:href="#gentle-wave" x="48" y="7" fill="#fff" /> -->
-            </g>
-        </svg>
-    </div>
-    <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
-        <h4 class="text-center mb-3">Takımımız</h4>
-        <!-- <img src="./img/lineblack.png" alt=""> -->
-    </div>
-</div>
-<div class="teams-section-one mt-5">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="col-10 teams-person pb-lg-0">
-                <div class="row person-name">
-                    <div class="col-12">
-                        <h6 class="text-center">Ayhan Dursun ŞANLI / <span>Full Stack Developer</span></h6>
+            <div class="inner-header flex">
+            </div>
+
+            <div>
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use class="use" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <!-- <use class="use" xlink:href="#gentle-wave" x="48" y="7" fill="#fff" /> -->
+                    </g>
+                </svg>
+            </div>
+            <div class="common-section-header d-flex flex-column justify-content-center align-items-center">
+                <h4 class="text-center mb-3">{{ team.headTitle }}</h4>
+            </div>
+        </div>
+        <div class="teams-section-one mt-5">
+            <h4 class="minihead mb-4 text-center">{{ team.subtitle }}</h4>
+            <div class="container">
+                <div class="row d-flex justify-content-center mt-5">
+                    <div class="col-md-10">
+                        <div class="text-center">
+                            {{ team.about | safe }}
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 person-left ps-0 pe-0">
-                        <div class="img-box">
-                            <img src="{% static 'img/DENEME-6.png' %}" alt="">
+                {% for persons in team.person_set.all %}
+                <div class="row d-flex justify-content-center mt-5">
+                    <div class="col-10 teams-person pb-lg-0">
+                        <div class="row person-name">
+                            <div class="col-12">
+                                <h6 class="text-center">{{ persons.personName }} / <span>{{ persons.personJob }}</span></h6>
+                            </div>
                         </div>
-                        <div class="social">
-                            <a href="">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa-brands fa-x-twitter"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 person-right">
-                        <div class="row mt-3">
-                            <div class="col-12 person-skill">
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                            data-bs-target="#home-tab-pane" type="button" role="tab"
-                                            aria-controls="home-tab-pane" aria-selected="true">Hakkımda</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                            data-bs-target="#profile-tab-pane" type="button" role="tab"
-                                            aria-controls="profile-tab-pane" aria-selected="false">Özgeçmişim</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                                            data-bs-target="#contact-tab-pane" type="button" role="tab"
-                                            aria-controls="contact-tab-pane"
-                                            aria-selected="false">Yetkinliklerim</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="cer-tab" data-bs-toggle="tab"
-                                            data-bs-target="#cer-tab-pane" type="button" role="tab"
-                                            aria-controls="cer-tab-pane" aria-selected="false">Sertifikalarım</button>
-                                    </li>
-                                </ul>
-                                <div class="tab-content mt-3" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
-                                        aria-labelledby="home-tab" tabindex="0">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt dignissimos
-                                        iusto sit totam officia aliquam nemo doloremque quas ducimus ratione possimus
-                                        magni rem suscipit sunt, nisi nihil corrupti eius harum aut velit beatae quos
-                                        alias quaerat unde? Quos eveniet eos maxime ut quam sequi sunt! Ab ex iusto
-                                        culpa corporis!
-                                    </div>
-                                    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
-                                        aria-labelledby="profile-tab" tabindex="0">
-                                        <div class="card-content">
-                                            <div class="card-subtitle">WORK EXPERIENCE</div>
-                                            <div class="card-timeline">
-                                                <div class="card-item" data-year="2014">
-                                                    <div class="card-item-title">Front-end Developer at
-                                                        <span>JotForm</span></div>
-                                                    <div class="card-item-desc">Disrupt stumptown retro everyday carry
-                                                        unicorn.</div>
-                                                </div>
-                                                <div class="card-item" data-year="2016">
-                                                    <div class="card-item-title">UI Developer at <span>GitHub</span>
+                        <div class="row">
+                            <div class="col-lg-4 person-left ps-0 pe-0">
+                                <div class="img-box">
+                                    <img src="{{ persons.personImg.url }}" alt="">
+                                </div>
+                                <div class="social">
+                                    <a href="{{ persons.socialmediaIcon1_url }}">
+                                        <i class="{{ persons.socialmediaIcon1 }}"></i>
+                                    </a>
+                                    <a href="{{ persons.socialmediaIcon2_url }}">
+                                        <i class="{{ persons.socialmediaIcon2 }}"></i>
+                                    </a>
+                                    <a href="{{ persons.socialmediaIcon3_url }}">
+                                        <i class="{{ persons.socialmediaIcon3 }}"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 person-right">
+                                <div class="row mt-3">
+                                    <div class="col-12 person-skill">
+                                        {% if request.LANGUAGE_CODE == 'tr' %}
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#home-tab-pane" type="button" role="tab"
+                                                    aria-controls="home-tab-pane" aria-selected="true">Hakkımda</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                                    aria-controls="profile-tab-pane" aria-selected="false">Özgeçmişim</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                                    aria-controls="contact-tab-pane"
+                                                    aria-selected="false">Yetkinliklerim</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="cer-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#cer-tab-pane" type="button" role="tab"
+                                                    aria-controls="cer-tab-pane" aria-selected="false">Sertifikalarım</button>
+                                            </li>
+                                        </ul>
+                                        {% else %}
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#home-tab-pane" type="button" role="tab"
+                                                    aria-controls="home-tab-pane" aria-selected="true">About</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                                    aria-controls="profile-tab-pane" aria-selected="false">My Resume</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#contact-tab-pane" type="button" role="tab"
+                                                    aria-controls="contact-tab-pane"
+                                                    aria-selected="false">My Features</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="cer-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#cer-tab-pane" type="button" role="tab"
+                                                    aria-controls="cer-tab-pane" aria-selected="false">My Certificates</button>
+                                            </li>
+                                        </ul>
+                                        {% endif %}
+                                        <div class="tab-content mt-3" id="myTabContent-{{ persons_id }}">
+                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                                                aria-labelledby="home-tab" tabindex="0">
+                                                {{ persons.about | safe }}
+                                            </div>
+                                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+                                                aria-labelledby="profile-tab" tabindex="0">
+                                                <div class="card-content">
+                                                    <div class="card-subtitle">{{ persons.cvHead }}</div>
+                                                    <div class="card-timeline">
+                                                        {% if persons.cvYear %}
+                                                            <div class="card-item" data-year="{{ persons.cvYear }}">
+                                                                <div class="card-item-title">{{ persons.cvJob }} /
+                                                                    <span>{{ persons.cvCompany }}</span>
+                                                                </div>
+                                                                <div class="card-item-desc">{{ persons.cvAbout | safe }}</div>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if persons.cvYear2 %}
+                                                            <div class="card-item" data-year="{{ persons.cvYear2 }}">
+                                                                <div class="card-item-title">{{ persons.cvJob2 }} /
+                                                                    <span>{{ persons.cvCompany2 }}</span>
+                                                                </div>
+                                                                <div class="card-item-desc">{{ persons.cvAbout2 | safe }}</div>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if persons.cvYear3 %}
+                                                            <div class="card-item" data-year="{{ persons.cvYear3 }}">
+                                                                <div class="card-item-title">{{ persons.cvJob3 }} /
+                                                                    <span>{{ persons.cvCompany3 }}</span>
+                                                                </div>
+                                                                <div class="card-item-desc">{{ persons.cvAbout3 | safe }}</div>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if persons.cvYear4 %}
+                                                            <div class="card-item" data-year="{{ persons.cvYear4 }}">
+                                                                <div class="card-item-title">{{ persons.cvJob4 }} /
+                                                                    <span>{{ persons.cvCompany4 }}</span>
+                                                                </div>
+                                                                <div class="card-item-desc">{{ persons.cvAbout4 | safe }}</div>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if persons.cvYear5 %}
+                                                            <div class="card-item" data-year="{{ persons.cvYear5 }}">
+                                                                <div class="card-item-title">{{ persons.cvJob5 }} /
+                                                                    <span>{{ persons.cvCompany5 }}</span>
+                                                                </div>
+                                                                <div class="card-item-desc">{{ persons.cvAbout5 | safe }}</div>
+                                                            </div>
+                                                        {% endif %}
+
                                                     </div>
-                                                    <div class="card-item-desc">Developed new conversion funnels and
-                                                        disrupt.</div>
                                                 </div>
-                                                <div class="card-item" data-year="2018">
-                                                    <div class="card-item-title">Illustrator at <span>Google</span>
+                                            </div>
+                                            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
+                                                aria-labelledby="contact-tab" tabindex="0">
+                                                <div>
+                                                    {{ persons.skillAbout | safe }}
+                                                </div>
+                                                <div class="row">
+                                                    {% if persons.skillImg1 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg1.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if persons.skillImg2 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg2.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if persons.skillImg3 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg3.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if persons.skillImg4 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg4.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if persons.skillImg5 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg5.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if persons.skillImg6 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg6.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if persons.skillImg7 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg7.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if persons.skillImg8 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg8.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if persons.skillImg9 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg9.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if persons.skillImg10 %}
+                                                        <div class="col-2 mb-2">
+                                                            <img class="w-100" src="{{ persons.skillImg10.url }}" alt="">
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="cer-tab-pane" role="tabpanel"
+                                                aria-labelledby="cer-tab" tabindex="0">
+                                                <div>
+                                                    {{ persons.cerAbout | safe }}
+                                                </div>
+                                                <div>
+                                                    <div class="row">
+                                                        {% if persons.cerImg1 %}
+                                                            <div class="col-md-4">
+                                                                <img class="w-100" src="{{ persons.cerImg1.url }}" alt="">
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if persons.cerImg2 %}
+                                                            <div class="col-md-4">
+                                                                <img class="w-100" src="{{ persons.cerImg2.url }}" alt="">
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if persons.cerImg3 %}
+                                                            <div class="col-md-4">
+                                                                <img class="w-100" src="{{ persons.cerImg3.url }}" alt="">
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if persons.cerImg4 %}
+                                                            <div class="col-md-4">
+                                                                <img class="w-100" src="{{ persons.cerImg4.url }}" alt="">
+                                                            </div>
+                                                        {% endif %}
                                                     </div>
-                                                    <div class="card-item-desc">Onboarding illustrations for App.</div>
-                                                </div>
-                                                <div class="card-item" data-year="2020">
-                                                    <div class="card-item-title">Full-Stack Developer at
-                                                        <span>CodePen</span></div>
-                                                    <div class="card-item-desc">Responsible for the encomposing brand
-                                                        expreience.</div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
-                                        aria-labelledby="contact-tab" tabindex="0">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium et dolorum
-                                        deserunt ipsum obcaecati, tempore modi alias architecto quas autem numquam odit
-                                        iste voluptates corrupti dolorem officia! Nemo at adipisci veritatis, ullam
-                                        provident odio fugit facere corrupti minus, labore aliquam ab quis, suscipit
-                                        commodi similique cupiditate accusantium veniam error sit ducimus porro
-                                        molestias earum animi. Ullam modi, deleniti quis non necessitatibus autem
-                                        excepturi, dignissimos iure exercitationem, animi sed odio beatae. Eaque porro
-                                        iste, temporibus minima assumenda tempora tempore quibusdam placeat fugit ex
-                                        eos, officiis fuga sed beatae nam ullam quia facilis recusandae voluptates iure
-                                        inventore quo, eum a! Sunt, ipsum sapiente tempora corporis adipisci similique
-                                        pariatur magni neque sint provident voluptatum dolorem rerum reprehenderit
-                                        quidem praesentium tenetur molestias magnam animi, error veritatis porro?
-                                        Repellat ullam enim architecto dolore. Dolores labore quis nobis, perferendis
-                                        laborum qui quas in tempora porro amet explicabo temporibus, ea officiis dicta,
-                                        corporis reprehenderit officia repellendus quisquam adipisci? Asperiores
-                                        suscipit unde, possimus nihil architecto eos laborum perferendis ipsa odit rerum
-                                        fuga tempora culpa ipsum vel cum minima et velit aut nobis laudantium fugit!
-                                        Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa,
-                                        accusamus repellat praesentium veniam molestias autem ipsa, atque natus
-                                        similique deserunt veritatis sint corporis!psum vel cum minima et velit aut nobis laudantium fugit!
-                                        Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa,
-                                        accusamus repellat praesentium veniam molestias autem ipsa, atque natus
-                                        similique deserunt veritatis sint corporis!
-                                        fuga tempora culpa ipsum vel cum minima et velit aut nobis laudantium fugit!
-                                        Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa,
-                                        accusamus repellat praesentium veniam molestias autem ipsa, atque natus
-                                        similique deserunt veritatis sint corporis!psum vel cum minima et velit aut nobis laudantium fugit!
-                                        Exercitationem expedita facilis minus. Sit cum dolores, ex consequuntur culpa,
-                                        accusamus repellat praesentium veniam molestias autem ipsa, atque natus
-                                        similique deserunt veritatis sint corporis!
-                                    </div>
-                                    <div class="tab-pane fade" id="cer-tab-pane" role="tabpanel"
-                                        aria-labelledby="cer-tab" tabindex="0">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt dignissimos
-                                        iusto sit totam officia aliquam nemo doloremque quas ducimus ratione possimus
-                                        magni rem suscipit sunt, nisi nihil corrupti eius harum aut velit beatae quos
-                                        alias quaerat unde? Quos eveniet eos maxime ut quam sequi sunt! Ab ex iusto
-                                        culpa corporis!
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
-    </div>
-</div>
-
-{% comment %} {% endfor %} {% endcomment %}
+    {% endfor %}
 {% endblock content %}

@@ -149,4 +149,10 @@ class ThankyouTranslationOptions(TranslationOptions):
 
 
 #*teams
-
+@register(Teamsheet)
+class TeamsheetTranslationOptions(TranslationOptions):
+    fields = ('breadcrumbOne', 'breadcrumbTwo', 'headTitle', 'subtitle', 'about',)
+    
+@register(Person)
+class PersonTranslationOptions(TranslationOptions):
+    fields = ('personJob', 'about', 'cvHead', 'cvJob', 'cvAbout', 'cvJob2', 'cvAbout2', 'cvJob3', 'cvAbout3', 'cvJob4', 'cvAbout4', 'cvJob5', 'cvAbout5', 'skillAbout', 'cerAbout')    
