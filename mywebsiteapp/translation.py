@@ -144,3 +144,9 @@ class BlogWriteTranslationOptions(TranslationOptions):
 @register(Thankyou)
 class ThankyouTranslationOptions(TranslationOptions):
     fields = ('title', 'text',)
+
+
+
+
+#*teams
+

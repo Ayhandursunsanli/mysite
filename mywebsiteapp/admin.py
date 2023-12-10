@@ -196,3 +196,6 @@ class BlogAdmin(TranslationAdmin):
 @admin.register(Thankyou)
 class ThankyouAdmin(TranslationAdmin):
     list_display = ('title', 'text',)
+
+
+#*Teams (teams.html)
