@@ -83,61 +83,61 @@ Ocean AF Yazılım | Takımımız
                                 <div class="row mt-3">
                                     <div class="col-12 person-skill">
                                         {% if request.LANGUAGE_CODE == 'tr' %}
-                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <ul class="nav nav-tabs" id="myTab{{ persons.id }}" role="tablist">
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#home-tab-pane" type="button" role="tab"
-                                                    aria-controls="home-tab-pane" aria-selected="true">Hakkımda</button>
+                                                <button class="nav-link active" id="home-tab{{ persons.id }}" data-bs-toggle="tab"
+                                                    data-bs-target="#home-tab-pane{{ persons.id }}" type="button" role="tab"
+                                                    aria-controls="home-tab-pane{{ persons.id }}" aria-selected="true">Hakkımda</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#profile-tab-pane" type="button" role="tab"
-                                                    aria-controls="profile-tab-pane" aria-selected="false">Özgeçmişim</button>
+                                                <button class="nav-link" id="profile-tab{{ persons.id }}" data-bs-toggle="tab"
+                                                    data-bs-target="#profile-tab-pane{{ persons.id }}" type="button" role="tab"
+                                                    aria-controls="profile-tab-pane{{ persons.id }}" aria-selected="false">Özgeçmişim</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#contact-tab-pane" type="button" role="tab"
-                                                    aria-controls="contact-tab-pane"
+                                                <button class="nav-link" id="contact-tab{{ persons.id }}" data-bs-toggle="tab"
+                                                    data-bs-target="#contact-tab-pane{{ persons.id }}" type="button" role="tab"
+                                                    aria-controls="contact-tab-pane{{ persons.id }}"
                                                     aria-selected="false">Yetkinliklerim</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="cer-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#cer-tab-pane" type="button" role="tab"
-                                                    aria-controls="cer-tab-pane" aria-selected="false">Sertifikalarım</button>
+                                                <button class="nav-link" id="cer-tab{{ persons.id }}" data-bs-toggle="tab"
+                                                    data-bs-target="#cer-tab-pane{{ persons.id }}" type="button" role="tab"
+                                                    aria-controls="cer-tab-pane{{ persons.id }}" aria-selected="false">Sertifikalarım</button>
                                             </li>
                                         </ul>
                                         {% else %}
-                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <ul class="nav nav-tabs" id="myTab{{ persons.id }}" role="tablist">
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#home-tab-pane" type="button" role="tab"
-                                                    aria-controls="home-tab-pane" aria-selected="true">About</button>
+                                                <button class="nav-link active" id="home-tab{{ persons.id }}" data-bs-toggle="tab"
+                                                    data-bs-target="#home-tab-pane{{ persons.id }}" type="button" role="tab"
+                                                    aria-controls="home-tab-pane{{ persons.id }}" aria-selected="true">About</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#profile-tab-pane" type="button" role="tab"
-                                                    aria-controls="profile-tab-pane" aria-selected="false">My Resume</button>
+                                                <button class="nav-link" id="profile-tab{{ persons.id }}" data-bs-toggle="tab"
+                                                    data-bs-target="#profile-tab-pane{{ persons.id }}" type="button" role="tab"
+                                                    aria-controls="profile-tab-pane{{ persons.id }}" aria-selected="false">My Resume</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#contact-tab-pane" type="button" role="tab"
-                                                    aria-controls="contact-tab-pane"
+                                                <button class="nav-link" id="contact-tab{{ persons.id }}" data-bs-toggle="tab"
+                                                    data-bs-target="#contact-tab-pane{{ persons.id }}" type="button" role="tab"
+                                                    aria-controls="contact-tab-pane{{ persons.id }}"
                                                     aria-selected="false">My Features</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" id="cer-tab" data-bs-toggle="tab"
-                                                    data-bs-target="#cer-tab-pane" type="button" role="tab"
-                                                    aria-controls="cer-tab-pane" aria-selected="false">My Certificates</button>
+                                                <button class="nav-link" id="cer-tab{{ persons.id }}" data-bs-toggle="tab"
+                                                    data-bs-target="#cer-tab-pane{{ persons.id }}" type="button" role="tab"
+                                                    aria-controls="cer-tab-pane{{ persons.id }}" aria-selected="false">My Certificates</button>
                                             </li>
                                         </ul>
                                         {% endif %}
-                                        <div class="tab-content mt-3" id="myTabContent-{{ persons_id }}">
-                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
-                                                aria-labelledby="home-tab" tabindex="0">
+                                        <div class="tab-content mt-3" id="myTabContent{{ persons.id }}">
+                                            <div class="tab-pane fade show active" id="home-tab-pane{{ persons.id }}" role="tabpanel"
+                                                aria-labelledby="home-tab{{ persons.id }}" tabindex="0">
                                                 {{ persons.about | safe }}
                                             </div>
-                                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
-                                                aria-labelledby="profile-tab" tabindex="0">
+                                            <div class="tab-pane fade" id="profile-tab-pane{{ persons.id }}" role="tabpanel"
+                                                aria-labelledby="profile-tab{{ persons.id }}" tabindex="0">
                                                 <div class="card-content">
                                                     <div class="card-subtitle">{{ persons.cvHead }}</div>
                                                     <div class="card-timeline">
@@ -185,8 +185,8 @@ Ocean AF Yazılım | Takımımız
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
-                                                aria-labelledby="contact-tab" tabindex="0">
+                                            <div class="tab-pane fade" id="contact-tab-pane{{ persons.id }}" role="tabpanel"
+                                                aria-labelledby="contact-tab{{ persons.id }}" tabindex="0">
                                                 <div>
                                                     {{ persons.skillAbout | safe }}
                                                 </div>
@@ -243,8 +243,8 @@ Ocean AF Yazılım | Takımımız
                                                     {% endif %}
                                                 </div>
                                             </div>
-                                            <div class="tab-pane fade" id="cer-tab-pane" role="tabpanel"
-                                                aria-labelledby="cer-tab" tabindex="0">
+                                            <div class="tab-pane fade" id="cer-tab-pane{{ persons.id }}" role="tabpanel"
+                                                aria-labelledby="cer-tab{{ persons.id }}" tabindex="0">
                                                 <div>
                                                     {{ persons.cerAbout | safe }}
                                                 </div>
