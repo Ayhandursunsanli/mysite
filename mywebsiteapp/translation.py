@@ -108,13 +108,6 @@ class AboutSheetTranslationOptions(TranslationOptions):
 class AboutTranslationOptions(TranslationOptions):
     fields = ('title', 'about',)
 
-@register(Certificate)
-class CertificateTranslationOptions(TranslationOptions):
-    fields = ('cert_title', 'cert_about',)
-
-@register(Myskills)
-class MySkillsTranslationOptions(TranslationOptions):
-    fields = ('skill_title', 'skill_about',)
 
 
 

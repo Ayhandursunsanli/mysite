@@ -47,15 +47,12 @@
                 <h4 class="text-center mb-3">{{ about.headTitle }}</h4>
             </div>
         </div>
-
         
-    
         {% for abo in about.about_set.all %} 
         <div class="about-section-one">
             <h4 class="minihead mb-4 text-center">{{ abo.title }}</h4>
             <div class="container about-one">
                 <div class="row aboutonesec d-flex justify-content-around align-items-center mt-md-5">
-                    <!-- <img class="aboutone-img" src="{% static 'img/bg-about.png' %}" alt=""> -->
                     <div class="col-md-6 mt-5">
                         <div class="about-imgbox">
                             <img class="framed" src="{{ abo.img.url }}" alt="">
@@ -71,79 +68,22 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            {% endfor %}
-                
-
-            {% for cer in about.certificate_set.all %}
-
-            <div class="container-fluid about-two" id="myElement">
-                <div class="row">
-                    <h4 class="minihead mb-4 text-center mt-5">{{cer.cert_title}}</h4>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-8">
-                            <div class="text-center">
-                                {{cer.cert_about |safe}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-10">
-                            <div class="row">
-                                <div class="col-md-4 mt-5">
-                                    <div class="certificates">
-                                        <img src="{{ cer.cert_img1.url }}" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mt-5">
-                                    <div class="certificates">
-                                        <img src="{{ cer.cert_img2.url }}" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mt-5">
-                                    <div class="certificates">
-                                        <img src="{{ cer.cert_img3.url }}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row d-flex justify-content-center mt-4">
+                    <div class="col-10 d-flex justify-content-center align-items-center">
+                        <a href="{% url 'teams' %}" class="learn-more mybtn m-auto">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            {% if request.LANGUAGE_CODE == 'tr' %}
+                            <span class="button-text">Takımımıza Git</span>
+                            {% else %}
+                            <span class="button-text">Go to Our Team</span>
+                            {% endif %}
+                        </a>
                     </div>
                 </div>
             </div>
             {% endfor %}
-
-
-
-            {% for skl in about.myskills_set.all %}
-
-            <div class="container-fluid about-three">
-                <div class="row mt-5">
-                    <h4 class="minihead mb-4 text-center mt-5">{{ skl.skill_title }}</h4>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-md-10">
-                            <div class="text-center">
-                                {{ skl.skill_about | safe }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <div class="col-12">
-                            <div class="competencies-logo">
-                                <img src="{{ skl.skill_img1.url }}" alt="">
-                                <img src="{{ skl.skill_img2.url }}" alt="">
-                                <img src="{{ skl.skill_img3.url }}" alt="">
-                                <img src="{{ skl.skill_img4.url }}" alt="">
-                                <img src="{{ skl.skill_img5.url }}" alt="">
-                                <img src="{{ skl.skill_img6.url }}" alt="">
-                                <img src="{{ skl.skill_img7.url }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {% endfor %}
-
         </div>
 
     {% endfor %}

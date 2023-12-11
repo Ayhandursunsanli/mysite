@@ -246,31 +246,7 @@ class About(models.Model):
         verbose_name = "Hakkımda Sayfası"
         verbose_name_plural = "Hakkımda Sayfası"
 
-class Certificate(models.Model):
-    section = models.ForeignKey(Aboutsheet, on_delete=models.CASCADE)
-    cert_title = models.CharField(max_length=500, null=True)
-    cert_about = RichTextField(null=True)
-    cert_img1 = models.ImageField(upload_to='Certificate_images/', null=True, blank=True)
-    cert_img2 = models.ImageField(upload_to='Certificate_images/', null=True, blank=True)
-    cert_img3 = models.ImageField(upload_to='Certificate_images/', null=True, blank=True)
-    cert_img4 = models.ImageField(upload_to='Certificate_images/', null=True, blank=True)
-    cert_img5 = models.ImageField(upload_to='Certificate_images/', null=True, blank=True)
 
-class Myskills(models.Model):
-    section = models.ForeignKey(Aboutsheet, on_delete=models.CASCADE)
-    skill_title = models.CharField(max_length=500, null=True)
-    skill_about = RichTextField(null=True)
-    skill_img1 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img2 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img3 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img4 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img4 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img5 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img6 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img7 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img8 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img9 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
-    skill_img10 = models.ImageField(upload_to='Skill_images/', null=True, blank=True)
 
 
 
@@ -400,6 +376,4 @@ class Person(models.Model):
 
 
 
-
-    
 

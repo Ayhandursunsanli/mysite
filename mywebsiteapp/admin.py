@@ -155,18 +155,13 @@ class AboutInline(admin.StackedInline):
     model = About
     max_num = 1
 
-class CertificateInline(admin.StackedInline):
-    model = Certificate
-    max_num = 1
 
-class MySkillsInline(admin.StackedInline):
-    model = Myskills
-    max_num = 1
 
+#*about.html
 @admin.register(Aboutsheet)
 class AboutSheetAdmin(TranslationAdmin):
     list_display = ('headTitle',)
-    inlines = [AboutInline, CertificateInline, MySkillsInline]
+    inlines = [AboutInline,]
 
 
 #*contact sheet

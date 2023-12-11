@@ -188,12 +188,10 @@ ul
     transform: translateX(-50%)
     top: 30px
     transition: 0.5s ease !important
-    // transition: width 0.4s ease-in-out, position 0.4s ease-in-out, top 0.4s ease-in-out, border-radius 0.4s ease-in-out !important
     width: 80%
     height: 94px
     border-radius: 30px
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px
-    // overflow: hidden
     .container-fluid
         padding-left: 2rem
         .navbar-brand
@@ -259,8 +257,8 @@ ul
                 .nav-link
                     color: black
                     transition: 0.4s ease-in-out
-                    &:hover
-                        letter-spacing: 2px
+                    // &:hover
+                    //     letter-spacing: 2px
                     &::after
                         content: ''
                         display: block
@@ -273,7 +271,7 @@ ul
                         width: 100%
 
                 .nav-link.activemenu
-                    letter-spacing: 2px
+                    // letter-spacing: 2px
                     &::after
                         content: ''
                         display: block
@@ -1208,16 +1206,12 @@ footer
             padding: 0
             height: 40px
             border: none
-            // background: #fff
-            // border-radius: 20px
-            
             h4
                 margin: 0
                 transition: .4s
                 color: white
 
         .card-about
-            // margin-top: 1.5rem
             height: 70px
 
         .mybtn
@@ -1300,7 +1294,7 @@ footer
 .about-section-one
     background: #ffffff80
     padding-top: 5rem
-    padding-bottom: 5rem
+    padding-bottom: 3rem
     p
         font-family: 'Mulish', sans-serif
         font-size: 14px
@@ -1340,22 +1334,78 @@ footer
 
         @media (max-width: 992px)
             clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%)
+    .mybtn
+            position: relative
+            display: inline-block
+            cursor: pointer
+            outline: none
+            border: 0
+            vertical-align: middle
+            text-decoration: none
+            background: transparent
+            padding: 0
+            font-size: inherit
+            font-family: inherit
+            &.learn-more
+                width: 12rem
+                height: auto
+                .circle
+                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+                    position: relative
+                    display: block
+                    margin: 0
+                    width: 3rem
+                    height: 3rem
+                    background: #071c4d
+                    border-radius: 1.625rem
+                    .icon
+                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+                        position: absolute
+                        top: 0
+                        bottom: 0
+                        margin: auto
+                        background: #fff
 
-.certificates
-    p
-        font-family: 'Mulish', sans-serif
-        font-size: 14px
-    img
-        width: 100%
-        object-fit: cover
+                        &.arrow
+                            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+                            left: 0.625rem
+                            width: 1.125rem
+                            height: 0.125rem
+                            background: none
+                            &::before
+                                position: absolute
+                                content: ""
+                                top: -0.29rem
+                                right: 0.0625rem
+                                width: 0.625rem
+                                height: 0.625rem
+                                border-top: 0.125rem solid white
+                                border-right: 0.125rem solid white
+                                transform: rotate(45deg)
+                .button-text
+                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1)
+                    position: absolute
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    padding: 0.75rem 0
+                    margin: 0 0 0 1.85rem
+                    color: #071c4d
+                    font-weight: 700
+                    line-height: 1.6
+                    text-align: center
+            &:hover
+                .circle
+                    width: 100%
+                    .icon
+                        &.arrow
+                            background: white
+                            transform: translate(1rem, 0)
+                .button-text
+                    color: #ffff
 
-.competencies-logo
-    display: flex
-    justify-content: space-evenly
-    flex-wrap: wrap
-    img
-        width: 100px
-        margin-bottom: 2rem
+
 
 
 // blog.html
@@ -1632,25 +1682,31 @@ footer
 // teams.html
 .teams-section-one
     .teams-person
-        border: 1px solid black
+        // border: 1px solid black
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+        border-radius: 10px
+        overflow: hidden
         .person-name
-            padding-top: 1rem
-            padding-bottom: 1rem
+            padding-top: 2rem
+            padding-bottom: 2rem
             background: linear-gradient(180deg, rgba(7,28,77,1) 9%, rgba(33,79,133,1) 100%)
             h6
                 color: white
                 margin-bottom: 0
         .person-left
             max-height: 100%
+            border-right: 1px solid #eeee
             .img-box
                 width: 100%
-                max-height: 550px
+                // max-height: 550px
+                height: 500px
                 overflow: hidden
                 img
                     width: 100%
-                    object-fit: contain
+                    height: 100%
+                    object-fit: cover
             .social
-                height: 40px
+                height: 60px
                 background: linear-gradient(180deg, rgba(7,28,77,1) 9%, rgba(33,79,133,1) 100%)
                 width: 100%
                 display: flex
@@ -1659,8 +1715,7 @@ footer
                 a
                     text-decoration: none
                     color: white
-                    i
-                        font-size: 50px
+                    
         .person-right
             .person-skill
                 .nav-tabs
@@ -1672,6 +1727,11 @@ footer
                 
                 .tab-content
                     .tab-pane
+                        padding: 1rem
+                        height: 485px
+                        overflow-y: auto
+                        p
+                            font-size: 14px
                         .card-content
                             .card-timeline
                                 margin-top: 30px
