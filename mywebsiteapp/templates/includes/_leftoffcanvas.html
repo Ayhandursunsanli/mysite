@@ -8,11 +8,11 @@
             <img src="{% static 'img/oceanafyazilimbl.png' %}" alt="" style="width: 150px;">
         </h4>
 
-    {% for navbarrighmedia in navbarrighmedia  %}
-        <a href="{{ navbarrighmedia.link }}">
-            <i class="{{ navbarrighmedia.platform }} text-white" style="font-size: 24px;" ></i>
-        </a>
-    {% endfor %}
+        {% for navbarrighmedia in navbarrighmedia  %}
+            <a href="{{ navbarrighmedia.link }}">
+                <i class="{{ navbarrighmedia.platform }} text-white" style="font-size: 24px;" ></i>
+            </a>
+        {% endfor %}
 
         <button type="button" class="btn-close bg-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
