@@ -328,8 +328,6 @@ class Person(models.Model):
     socialmediaIcon1_url = models.URLField(null=True)
     socialmediaIcon2 = models.CharField(max_length=250, null=True)
     socialmediaIcon2_url = models.URLField(null=True)
-    socialmediaIcon3 = models.CharField(max_length=250, null=True)
-    socialmediaIcon3_url = models.URLField(null=True)
     about = RichTextField(null=True)
     cvHead = models.CharField(max_length=250, null=True)
     cvYear = models.CharField(max_length=250, null=True)

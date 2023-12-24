@@ -1,7 +1,7 @@
 
 const texts = [
     "İletişime geç...",
-    "Sosyal medya hesaplarımı takip et...",
+    "Sosyal medya hesaplarını takip et...",
 
 ];
 

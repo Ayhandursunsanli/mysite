@@ -80,7 +80,11 @@
             <div class="col-12">
                 <div class="text-center p-3 footer-bottom">
                     <span class="text-white">© 2023 Designed by:</span>
-                    <a class="text-white">Ayhan D. Şanlı</a>
+                    {% if request.LANGUAGE_CODE == 'tr' %}
+                    <a class="text-white">Ocean AF Yazılım</a>
+                    {% else %}
+                    <a class="text-white">Ocean AF Software</a>    
+                    {% endif %}
                 </div>
             </div>
         </div>
